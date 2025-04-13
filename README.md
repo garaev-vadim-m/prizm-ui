@@ -1,5 +1,48 @@
-# Vue 3 + TypeScript + Vite
+# prizm-ui-vue
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+**Версия:** 2.1.11  
+**Описание:** Vue 3 UI Kit, основанный на Element Plus, с ручным импортом компонентов.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Установка
+
+Убедитесь, что в вашем проекте установлен `vue`:
+
+```bash
+npm install vue@^3.4.0
+```
+
+Затем установите `prizm-ui-vue`:
+
+```bash
+npm install prizm-ui-vue
+```
+
+Также необходимо установить `sass`, так как библиотека использует SCSS-стили:
+
+```bash
+npm install -D sass
+```
+
+## Использование
+
+Импортируйте нужные компоненты вручную:
+
+```ts
+import { PrizmButton } from 'prizm-ui-vue';
+
+export default {
+  components: {
+    PrizmButton
+  }
+};
+```
+
+Это означает, что библиотека поддерживает как ESM, так и CommonJS импорты, а также предоставляет декларации типов для TypeScript.
+
+## Лицензия
+
+[MIT](./LICENSE)
+
+---
+
+**Автор:** Garaev.VM
