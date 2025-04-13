@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ElButton } from 'element-plus';
+import { ElButton, type ButtonEmits } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/button/style/css';
 
@@ -15,13 +15,15 @@ type Props = {
   dark?: PickedProps['dark'];
 };
 
-type BaseButtonSlots = {
+type Slots = {
   default: unknown;
   loading?: unknown;
   icon?: unknown;
 };
 
-const slots = defineSlots<BaseButtonSlots>();
+defineEmits<ButtonEmits>();
+
+const slots = defineSlots<Slots>();
 const props = withDefaults(defineProps<Props>(), {
   type: 'default',
   size: 'large',

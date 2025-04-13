@@ -3,7 +3,7 @@ import { ElCheckboxGroup } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/checkbox-group/style/css';
 
-type BaseCheckboxGroupSlots = {
+type Slots = {
   default?: unknown;
 };
 
@@ -24,7 +24,7 @@ export type Props = {
 };
 
 const checkboxGroupRef = useTemplateRef('checkboxGroupRef');
-const slots = defineSlots<BaseCheckboxGroupSlots>();
+const slots = defineSlots<Slots>();
 const modelValue = defineModel<string[] | number[]>();
 const props = defineProps<Props>();
 

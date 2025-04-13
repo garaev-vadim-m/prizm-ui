@@ -1,1 +1,7 @@
-export * from './components'
+import './style.scss';
+export * from './components';
+
+import { createApp } from 'vue';
+import index from './index.vue';
+const app = createApp(index);
+app.mount('#app');

@@ -3,7 +3,7 @@ import { ElCheckbox } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/checkbox/style/css';
 
-type BaseCheckboxSlots = {
+type Slots = {
   default?: unknown;
 };
 
@@ -37,7 +37,7 @@ type Props = {
 };
 
 const checkboxRef = useTemplateRef('checkboxRef');
-const slots = defineSlots<BaseCheckboxSlots>();
+const slots = defineSlots<Slots>();
 const modelValue = defineModel<string | number | boolean>();
 const props = defineProps<Props>();
 
@@ -53,6 +53,7 @@ defineExpose({
   </ElCheckbox>
 </template>
 <style module="classes" lang="scss">
+@use '../style.scss';
 .root {
 }
 </style>
