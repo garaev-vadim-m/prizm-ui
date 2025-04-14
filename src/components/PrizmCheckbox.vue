@@ -53,7 +53,6 @@ defineExpose({
   </ElCheckbox>
 </template>
 <style module="classes" lang="scss">
-@use '../style.scss';
 .root {
 }
 </style>

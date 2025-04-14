@@ -61,16 +61,19 @@ defineExpose({
 });
 </script>
 <template>
-  <ElInput v-bind="props" v-model="modelValue" :class="[classes.root]" ref="baseInputRef">
+  <ElInput v-bind="props" ref="baseInputRef" v-model="modelValue" :class="[classes.root]">
     <template #prefix v-if="slots.prefix">
       <slot name="prefix" />
     </template>
+
     <template #suffix v-if="slots.suffix">
       <slot name="suffix" />
     </template>
+
     <template #prepend v-if="slots.prepend">
       <slot name="prepend" />
     </template>
+
     <template #append v-if="slots.append">
       <slot name="append" />
     </template>

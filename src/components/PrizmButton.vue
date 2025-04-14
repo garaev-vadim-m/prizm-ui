@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ElButton, type ButtonEmits } from 'element-plus';
-import { useTemplateRef } from 'vue';
+import { computed, useCssModule, useTemplateRef } from 'vue';
 import 'element-plus/es/components/button/style/css';
 
 type ElementProps = InstanceType<typeof ElButton>['$props'];
-type PickedProps = Pick<ElementProps, 'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark'>;
+type PickedProps = Pick<ElementProps, 'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark' | 'plain'>;
 type Props = {
   type?: PickedProps['type'];
   disabled?: boolean;
@@ -24,10 +24,15 @@ type Slots = {
 defineEmits<ButtonEmits>();
 
 const slots = defineSlots<Slots>();
+const style = useCssModule('classes');
+
 const props = withDefaults(defineProps<Props>(), {
   type: 'default',
   size: 'large',
+  plain: false,
 });
+
+const handleOutline = computed(() => (props.plain ? style.outline : ''));
 const baseButtonRef = useTemplateRef('baseButtonRef');
 
 defineExpose({
@@ -35,7 +40,7 @@ defineExpose({
 });
 </script>
 <template>
-  <ElButton ref="baseButtonRef" v-bind="props" :class="[classes.root, classes[type]]">
+  <ElButton ref="baseButtonRef" v-bind="props" :class="[classes.root, classes[type], handleOutline]">
     <template #icon v-if="slots.icon">
       <slot name="icon" />
     </template>
@@ -82,5 +87,9 @@ defineExpose({
 .danger {
   --el-button-hover-bg-color: var(--color-danger-hover);
   --el-button-hover-border-color: var(--color-danger-hover);
+}
+
+.outline {
+  --el-button-bg-color: #ffffff;
 }
 </style>

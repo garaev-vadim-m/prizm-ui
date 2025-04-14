@@ -25,6 +25,10 @@ const slots = defineSlots<Slots>();
 defineEmits<TagEmits>();
 
 const baseTagRef = useTemplateRef('baseTagRef');
+
+defineExpose({
+  baseTagRef,
+});
 </script>
 <template>
   <ElTag v-bind="props" ref="baseTagRef" :class="[classes.root, classes[type], classes[effect]]">
