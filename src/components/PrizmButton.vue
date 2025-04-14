@@ -44,9 +44,11 @@ defineExpose({
     <template #icon v-if="slots.icon">
       <slot name="icon" />
     </template>
+
     <template #default v-if="slots.default">
       <slot />
     </template>
+
     <template #loading v-if="slots.loading">
       <slot name="loading" />
     </template>

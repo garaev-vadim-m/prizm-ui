@@ -46,7 +46,7 @@ defineExpose({
 });
 </script>
 <template>
-  <ElCheckbox ref="checkboxRef" v-bind="props" v-model="modelValue">
+  <ElCheckbox ref="checkboxRef" v-bind="props" v-model="modelValue" :class="[classes.root]">
     <template #default v-if="slots.default">
       <slot />
     </template>

@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), { size: 16 });
 const slots = defineSlots<Slots>();
 </script>
 <template>
-  <ElIcon v-bind="props">
+  <ElIcon v-bind="props" :class="[classes.root]">
     <template #default v-if="slots.default">
       <slot />
     </template>

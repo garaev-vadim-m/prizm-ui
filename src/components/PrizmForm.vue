@@ -28,7 +28,7 @@ defineExpose({
 });
 </script>
 <template>
-  <ElForm v-bind="props" ref="baseFormRef">
+  <ElForm v-bind="props" ref="baseFormRef" :class="[classes.root]">
     <template #default v-if="slots.default">
       <slot />
     </template>
