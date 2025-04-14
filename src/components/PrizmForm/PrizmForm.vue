@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { type ElForm, type FormEmits } from 'element-plus';
+import { ElForm, type FormEmits } from 'element-plus';
 import { useTemplateRef } from 'vue';
+import 'element-plus/es/components/form/style/css';
 
 type ElFormProps = InstanceType<typeof ElForm>['$props'];
 
@@ -11,6 +12,7 @@ type Props = {
   statusIcon?: PickedProps['statusIcon'];
   labelPosition?: PickedProps['labelPosition'];
   requireAsteriskPosition?: PickedProps['requireAsteriskPosition'];
+  model?: PickedProps['model'];
 };
 
 type Slots = {

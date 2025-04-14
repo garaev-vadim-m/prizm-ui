@@ -1,8 +1,9 @@
 export { default as PrizmButton } from './PrizmButton.vue';
-export { default as PrizmCheckbox } from './PrizmCheckbox.vue';
-export { default as PrizmCheckboxGroup } from './PrizmCheckboxGroup.vue';
+export { default as PrizmCheckbox } from './PrizmCheckbox/PrizmCheckbox.vue';
+export { default as PrizmCheckboxGroup } from './PrizmCheckbox/PrizmCheckboxGroup.vue';
 export { default as PrizmTag } from './PrizmTag.vue';
 export { default as PrizmInput } from './PrizmInput.vue';
 export { default as PrizmIcon } from './PrizmIcon.vue';
 export { default as PrizmDatePicker } from './PrizmDatePicker.vue';
-export { default as PrizmForm } from './PrizmForm.vue';
+export { default as PrizmForm } from './PrizmForm/PrizmForm.vue';
+export { default as PrizmFormItem } from './PrizmForm/PrizmFormItem.vue';

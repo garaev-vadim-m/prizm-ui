@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { PrizmButton, PrizmTag, PrizmInput, PrizmDatePicker } from './components';
+import { PrizmButton, PrizmTag, PrizmInput, PrizmDatePicker, PrizmForm, PrizmFormItem } from './components';
 
 const datePicker = ref('');
 </script>
@@ -46,6 +46,14 @@ const datePicker = ref('');
       <PrizmDatePicker v-model="datePicker" placeholder="datePicker" size="default" />
 
       <PrizmDatePicker v-model="datePicker" placeholder="datePicker" size="small" />
+    </div>
+
+    <div :class="classes.group">
+      <PrizmForm label-position="top">
+        <PrizmFormItem label="dfdf">
+          <PrizmInput />
+        </PrizmFormItem>
+      </PrizmForm>
     </div>
   </div>
 </template>
