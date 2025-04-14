@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ElInput, type InputEmits } from 'element-plus';
 import 'element-plus/es/components/input/style/css';
+import { useTemplateRef } from 'vue';
 
 type Slots = {
   prefix?: unknown;
@@ -52,9 +53,15 @@ const props = withDefaults(defineProps<Props>(), { size: 'large' });
 
 const slots = defineSlots<Slots>();
 defineEmits<InputEmits>();
+
+const baseInputRef = useTemplateRef('baseInputRef');
+
+defineExpose({
+  baseInputRef,
+});
 </script>
 <template>
-  <ElInput v-bind="props" v-model="modelValue" :class="[classes.root]">
+  <ElInput v-bind="props" v-model="modelValue" :class="[classes.root]" ref="baseInputRef">
     <template #prefix v-if="slots.prefix">
       <slot name="prefix" />
     </template>

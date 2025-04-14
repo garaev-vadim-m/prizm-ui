@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type ElForm, type FormEmits } from 'element-plus';
+import { useTemplateRef } from 'vue';
 
 type ElFormProps = InstanceType<typeof ElForm>['$props'];
 
@@ -19,9 +20,15 @@ type Slots = {
 const props = withDefaults(defineProps<Props>(), { labelPosition: 'top', requireAsteriskPosition: 'right' });
 const slots = defineSlots<Slots>();
 defineEmits<FormEmits>();
+
+const baseFormRef = useTemplateRef('baseFormRef');
+
+defineExpose({
+  baseFormRef,
+});
 </script>
 <template>
-  <ElForm v-bind="props">
+  <ElForm v-bind="props" ref="baseFormRef">
     <template #default v-if="slots.default">
       <slot />
     </template>

@@ -39,6 +39,27 @@
     "vue/no-unused-components": "error",
     "vue/no-unused-vars": "error",
     "vue/no-reserved-component-names": "off",
+    "vue/no-export-in-script-setup": "error",
+    "vue/no-mutating-props": "error",
+    "vue/attributes-order": [
+      "error",
+      {
+        "order": [
+          "DEFINITION",         // is, v-is
+          "LIST_RENDERING",     // v-for
+          "CONDITIONALS",       // v-if, v-else-if, v-else, v-show, v-cloak
+          "RENDER_MODIFIERS",   // v-once, v-pre
+          "GLOBAL",             // id
+          "UNIQUE",             // ref, key, slot
+          "TWO_WAY_BINDING",    // v-model
+          "OTHER_DIRECTIVES",   // custom directives (например, v-my-directive)
+          "OTHER_ATTR",         // обычные атрибуты (class, type и т.п.)
+          "EVENTS",             // события (@click и др.)
+          "CONTENT"             // v-text, v-html
+        ],
+        "alphabetical": false
+      }
+    ],
     "vue/component-tags-order": [
       "error",
       {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ElTag, type TagEmits } from 'element-plus';
 import 'element-plus/es/components/tag/style/css';
+import { useTemplateRef } from 'vue';
 
 type Slots = {
   default: unknown;
@@ -22,9 +23,11 @@ const props = withDefaults(defineProps<Props>(), { type: 'info', effect: 'light'
 
 const slots = defineSlots<Slots>();
 defineEmits<TagEmits>();
+
+const baseTagRef = useTemplateRef('baseTagRef');
 </script>
 <template>
-  <ElTag v-bind="props" :class="[classes.root, classes[type], classes[effect]]">
+  <ElTag v-bind="props" ref="baseTagRef" :class="[classes.root, classes[type], classes[effect]]">
     <template #default v-if="slots.default">
       <slot />
     </template>
