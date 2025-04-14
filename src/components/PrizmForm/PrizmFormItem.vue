@@ -16,13 +16,27 @@ type Props = {
   required?: FormItemProps['required'];
   rules?: FormItemProps['rules'];
   showMessage?: FormItemProps['showMessage'];
+  width?: string;
 };
 
 const props = defineProps<Props>();
 
+function handleWidth(width: number | string | undefined): string {
+  if (width === undefined) return `100%`;
+  if (typeof width === 'number') width = String(width);
+  if (!width.length) return `100%`;
+  if (width.indexOf('px')) return `${width}px`;
+  if (width.indexOf('%')) return `${width}%`;
+  return `${width}px`;
+}
+
 const slots = defineSlots<Slots>();
 
 const baseFormItemRef = useTemplateRef('baseFormItemRef');
+
+const style = {
+  width: handleWidth(props.width),
+};
 
 defineEmits<FormEmits>();
 
@@ -31,7 +45,7 @@ defineExpose({
 });
 </script>
 <template>
-  <ElFormItem v-bind="props" ref="baseFormItemRef" :class="[classes.root]">
+  <ElFormItem v-bind="props" ref="baseFormItemRef" :class="[classes.root]" :style="style">
     <template #default v-if="slots.default">
       <slot />
     </template>
