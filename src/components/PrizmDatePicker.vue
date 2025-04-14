@@ -2,7 +2,7 @@
 import { ElDatePicker } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/date-picker/style/css';
-import { Calendar } from '@/shared/icon';
+import { IconCalendar } from '@/shared/icon';
 
 const modelValue = defineModel<string | number>({
   required: true,
@@ -59,7 +59,7 @@ const props = withDefaults(defineProps<Props>(), {
   size: 'large',
   format: 'DD.MM.YYYY',
   valueFormat: 'YYYY-MM-DD',
-  prefixIcon: Calendar,
+  prefixIcon: IconCalendar,
 });
 
 type Slots = {
