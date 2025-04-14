@@ -7,51 +7,51 @@ const datePicker = ref('');
 <template>
   <div :class="classes.root">
     <div :class="classes.group">
-      <PrizmButton>Привет</PrizmButton>
+      <PrizmButton>PrizmButton</PrizmButton>
 
-      <PrizmButton type="primary">Привет</PrizmButton>
+      <PrizmButton type="primary">PrizmButton</PrizmButton>
 
-      <PrizmButton type="info">Привет</PrizmButton>
+      <PrizmButton type="info">PrizmButton</PrizmButton>
 
-      <PrizmButton type="success">Привет</PrizmButton>
+      <PrizmButton type="success">PrizmButton</PrizmButton>
 
-      <PrizmButton type="danger">Привет</PrizmButton>
+      <PrizmButton type="danger">PrizmButton</PrizmButton>
 
-      <PrizmButton type="warning">Привет</PrizmButton>
+      <PrizmButton type="warning">PrizmButton</PrizmButton>
     </div>
 
     <div :class="classes.group">
-      <PrizmTag>Привет</PrizmTag>
+      <PrizmTag>PrizmTag</PrizmTag>
 
-      <PrizmTag type="danger">Привет</PrizmTag>
+      <PrizmTag type="danger">PrizmTag</PrizmTag>
 
-      <PrizmTag type="primary">Привет</PrizmTag>
+      <PrizmTag type="primary">PrizmTag</PrizmTag>
 
-      <PrizmTag type="warning">Привет</PrizmTag>
+      <PrizmTag type="warning">PrizmTag</PrizmTag>
 
-      <PrizmTag type="success">Привет</PrizmTag>
+      <PrizmTag type="success">PrizmTag</PrizmTag>
     </div>
 
     <div :class="classes.group">
-      <PrizmInput placeholder="input" />
+      <PrizmInput placeholder="PrizmInput" />
 
-      <PrizmInput placeholder="input" size="default" />
+      <PrizmInput placeholder="PrizmInput" size="default" />
 
-      <PrizmInput placeholder="input" size="small" />
+      <PrizmInput placeholder="PrizmInput" size="small" />
     </div>
 
     <div :class="classes.group">
-      <PrizmDatePicker v-model="datePicker" placeholder="datePicker" />
+      <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" />
 
-      <PrizmDatePicker v-model="datePicker" placeholder="datePicker" size="default" />
+      <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="default" />
 
-      <PrizmDatePicker v-model="datePicker" placeholder="datePicker" size="small" />
+      <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="small" />
     </div>
 
     <div :class="classes.group">
-      <PrizmForm label-position="top">
-        <PrizmFormItem label="dfdf">
-          <PrizmInput />
+      <PrizmForm>
+        <PrizmFormItem label="PrizmForm with PrizmFormItem">
+          <PrizmInput placeholder="PrizmInput" />
         </PrizmFormItem>
       </PrizmForm>
     </div>
