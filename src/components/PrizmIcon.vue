@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type ElIcon } from 'element-plus';
+import { ElIcon } from 'element-plus';
 import 'element-plus/es/components/icon/style/css';
 
 type ElIconProps = InstanceType<typeof ElIcon>['$props'];

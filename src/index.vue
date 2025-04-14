@@ -1,8 +1,20 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { PrizmButton, PrizmTag, PrizmInput, PrizmDatePicker, PrizmForm, PrizmFormItem } from './components';
+import {
+  PrizmButton,
+  PrizmTag,
+  PrizmInput,
+  PrizmDatePicker,
+  PrizmForm,
+  PrizmFormItem,
+  PrizmDrawer,
+} from './components';
 
 const datePicker = ref('');
+const drawer = ref(false);
+function onOpenDrawer() {
+  return (drawer.value = !drawer.value);
+}
 </script>
 <template>
   <div :class="classes.root">
@@ -54,6 +66,14 @@ const datePicker = ref('');
           <PrizmInput placeholder="PrizmInput" />
         </PrizmFormItem>
       </PrizmForm>
+    </div>
+
+    <div :class="classes.group">
+      <p @click="onOpenDrawer">12</p>
+
+      <PrizmButton @click="onOpenDrawer">Open PrizmDrawer</PrizmButton>
+
+      <PrizmDrawer v-model="drawer" />
     </div>
   </div>
 </template>

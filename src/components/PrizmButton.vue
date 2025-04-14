@@ -13,6 +13,7 @@ type Props = {
   link?: PickedProps['link'];
   plain?: PickedProps['plain'];
   dark?: PickedProps['dark'];
+  onClick: ButtonEmits['click'];
 };
 
 type Slots = {
@@ -20,8 +21,6 @@ type Slots = {
   loading?: unknown;
   icon?: unknown;
 };
-
-defineEmits<ButtonEmits>();
 
 const slots = defineSlots<Slots>();
 const style = useCssModule('classes');
