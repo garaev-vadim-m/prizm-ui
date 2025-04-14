@@ -1,0 +1,50 @@
+{
+  "name": "prizm-ui-vue",
+  "version": "2.1.13",
+  "description": "Vue 3 UI Kit with Element Plus (manual import)",
+  "author": "your-name",
+  "license": "MIT",
+  "main": "dist/prizm-ui.umd.js",
+  "module": "dist/prizm-ui.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/prizm-ui.es.js",
+      "require": "./dist/prizm-ui.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "preview": "vite preview",
+    "format": "prettier --write src/",
+    "prettier-watch": "npx onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
+  },
+  "peerDependencies": {
+    "element-plus": "^2.9.7",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "element-plus": "^2.9.7",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-vue": "^9.33.0",
+    "prettier": "^3.5.3",
+    "sass-embedded": "^1.86.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.8"
+  }
+}
