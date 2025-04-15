@@ -5,7 +5,7 @@ import 'element-plus/es/components/button/style/css';
 
 type ElementProps = InstanceType<typeof ElButton>['$props'];
 type PickedProps = Pick<ElementProps, 'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark' | 'plain'>;
-type Props = {
+export type ButtonProps = {
   type?: PickedProps['type'];
   disabled?: boolean;
   size?: PickedProps['size'];
@@ -13,6 +13,7 @@ type Props = {
   link?: PickedProps['link'];
   plain?: PickedProps['plain'];
   dark?: PickedProps['dark'];
+
   onClick?: ButtonEmits['click'];
 };
 
@@ -25,7 +26,7 @@ type Slots = {
 const slots = defineSlots<Slots>();
 const style = useCssModule('classes');
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'default',
   size: 'large',
   plain: false,

@@ -2,6 +2,8 @@
 import { ElDrawer, type DrawerProps } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/drawer/style/css';
+import { type ButtonProps } from './PrizmButton.vue';
+import { PrizmButton } from '../components';
 
 const modelValue = defineModel<boolean>({
   required: true,
@@ -12,6 +14,8 @@ const baseDrawerRef = useTemplateRef('baseDrawerRef');
 
 type Slots = {
   default?: unknown;
+  header?: unknown;
+  footer?: unknown;
 };
 
 type PickedProps = Pick<
@@ -30,6 +34,7 @@ type PickedProps = Pick<
   | 'draggable'
   | 'alignCenter'
   | 'lockScroll'
+  | 'headerClass'
 >;
 
 type Props = {
@@ -47,6 +52,14 @@ type Props = {
   draggable?: PickedProps['draggable'];
   alignCenter?: PickedProps['alignCenter'];
   lockScroll?: PickedProps['lockScroll'];
+  headerClass?: PickedProps['headerClass'];
+  defaultFooter?: boolean;
+  confirmButtonText?: string;
+  cancelButtonText?: string;
+  confirmDisabled?: boolean;
+
+  onConfirmButton?: ButtonProps['onClick'];
+  onCancelButton?: ButtonProps['onClick'];
 
   onOpen?: () => boolean;
   onOpened?: () => boolean;
@@ -55,7 +68,16 @@ type Props = {
   onOpenAutoFocus?: () => boolean;
   onCloseAutoFocus?: () => boolean;
 };
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  title: 'Default title',
+  showClose: true,
+  appendToBody: true,
+  withHeader: true,
+  defaultFooter: true,
+  confirmButtonText: 'Сохранить',
+  cancelButtonText: 'Отмена',
+  confirmDisabled: false,
+});
 const slots = defineSlots<Slots>();
 
 defineExpose({
@@ -63,13 +85,55 @@ defineExpose({
 });
 </script>
 <template>
-  <ElDrawer v-bind="props" ref="baseDrawerRef" v-model="modelValue">
+  <ElDrawer
+    v-bind="props"
+    ref="baseDrawerRef"
+    v-model="modelValue"
+    :class="[classes.root]"
+    :headerClass="classes.headerTitle">
     <template #default v-if="slots.default">
       <slot />
+    </template>
+
+    <template #header v-if="slots.header">
+      <slot name="header" />
+    </template>
+
+    <template #footer v-if="slots.footer || defaultFooter">
+      <slot name="footer">
+        <div :class="classes.footer">
+          <PrizmButton type="primary" :disabled="confirmDisabled" @click="onConfirmButton">{{
+            confirmButtonText
+          }}</PrizmButton>
+
+          <PrizmButton @click="onCancelButton">{{ cancelButtonText }}</PrizmButton>
+        </div>
+      </slot>
     </template>
   </ElDrawer>
 </template>
 <style module="classes" lang="scss">
 .root {
+}
+
+.root :global(.el-drawer__footer) {
+  padding: 0;
+}
+.headerTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--color-black);
+  margin-bottom: 0;
+  padding: 16px;
+  border: 1px solid var(--color-thin-gray, #e0e3e7);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  border-top: 1px solid var(--color-thin-gray, #e0e3e7);
+  padding: 16px;
 }
 </style>

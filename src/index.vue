@@ -69,13 +69,11 @@ function onOpenDrawer() {
     </div>
 
     <div :class="classes.group">
-      <p @click="onOpenDrawer">12</p>
-
       <PrizmButton @click="onOpenDrawer">Open PrizmDrawer</PrizmButton>
-
-      <PrizmDrawer v-model="drawer" />
     </div>
   </div>
+
+  <PrizmDrawer v-model="drawer" />
 </template>
 <style module="classes" lang="scss">
 .root {
