@@ -12,13 +12,6 @@ const baseDatePickerRef = useTemplateRef('baseDatePickerRef');
 
 type ElDatePickerProps = InstanceType<typeof ElDatePicker>['$props'];
 
-type Emits = {
-  (event: 'visibility', visibility: boolean): void;
-  (event: 'calenDarChange', val: [Date, null | Date]): void;
-  (event: 'clear'): void;
-  (event: 'panelChange', date: Date | [Date, Date], mode: 'month' | 'year', view?: string): void;
-};
-
 type PickedProps = Pick<
   ElDatePickerProps,
   | 'type'
@@ -52,6 +45,11 @@ type Props = {
   name?: PickedProps['name'];
   placeholder?: PickedProps['placeholder'];
   size?: PickedProps['size'];
+
+  onVisibility?: (visibility: boolean) => void;
+  onCalenDarChange?: (val: [Date, null | Date]) => void;
+  onClear?: () => void;
+  onPanelChange?: (date: Date | [Date, Date], mode: 'month' | 'year', view?: string) => void;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -70,8 +68,6 @@ type Slots = {
   prevYear?: unknown;
   nextYear?: unknown;
 };
-
-defineEmits<Emits>();
 
 const slots = defineSlots<Slots>();
 

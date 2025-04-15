@@ -45,6 +45,18 @@ type Props = {
   formatter?: PickedProps['formatter'];
   parser?: PickedProps['parser'];
   size?: PickedProps['size'];
+
+  onInput?: InputEmits['input'];
+  onChange?: InputEmits['change'];
+  onFocus?: InputEmits['focus'];
+  onBlur?: InputEmits['blur'];
+  onClear?: InputEmits['clear'];
+  onMouseleave?: InputEmits['mouseleave'];
+  onMouseenter?: InputEmits['mouseenter'];
+  onKeydown?: InputEmits['keydown'];
+  onCompositionstart?: InputEmits['compositionstart'];
+  onCompositionupdate?: InputEmits['compositionupdate'];
+  onCompositionend?: InputEmits['compositionend'];
 };
 
 const modelValue = defineModel<string | number>();

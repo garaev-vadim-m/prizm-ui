@@ -14,15 +14,6 @@ type Slots = {
   default?: unknown;
 };
 
-type Emits = {
-  (event: 'open'): boolean;
-  (event: 'opened'): boolean;
-  (event: 'close'): boolean;
-  (event: 'closed'): boolean;
-  (event: 'openAutoFocus'): boolean;
-  (event: 'closeAutoFocus'): boolean;
-};
-
 type PickedProps = Pick<
   DrawerProps,
   | 'closeIcon'
@@ -56,10 +47,16 @@ type Props = {
   draggable?: PickedProps['draggable'];
   alignCenter?: PickedProps['alignCenter'];
   lockScroll?: PickedProps['lockScroll'];
+
+  onOpen?: () => boolean;
+  onOpened?: () => boolean;
+  onClose?: () => boolean;
+  onClosed?: () => boolean;
+  onOpenAutoFocus?: () => boolean;
+  onCloseAutoFocus?: () => boolean;
 };
 const props = defineProps<Props>();
 const slots = defineSlots<Slots>();
-defineEmits<Emits>();
 
 defineExpose({
   baseDrawerRef,

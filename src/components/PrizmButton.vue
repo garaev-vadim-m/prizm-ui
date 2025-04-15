@@ -13,7 +13,7 @@ type Props = {
   link?: PickedProps['link'];
   plain?: PickedProps['plain'];
   dark?: PickedProps['dark'];
-  onClick: ButtonEmits['click'];
+  onClick?: ButtonEmits['click'];
 };
 
 type Slots = {
