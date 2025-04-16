@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ElDrawer, type DrawerProps } from 'element-plus';
+import { ElDrawer, type DrawerProps, type ButtonEmits } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/drawer/style/css';
-import { type ButtonProps } from './PrizmButton.vue';
 import { PrizmButton } from '../components';
 
 const modelValue = defineModel<boolean>({
@@ -58,8 +57,8 @@ type Props = {
   cancelButtonText?: string;
   confirmDisabled?: boolean;
 
-  onConfirmButton?: ButtonProps['onClick'];
-  onCancelButton?: ButtonProps['onClick'];
+  onConfirmButton?: () => unknown;
+  onCancelButton?: () => unknown;
 
   onOpen?: () => boolean;
   onOpened?: () => boolean;
@@ -77,6 +76,10 @@ const props = withDefaults(defineProps<Props>(), {
   confirmButtonText: 'Сохранить',
   cancelButtonText: 'Отмена',
   confirmDisabled: false,
+  lockScroll: true,
+
+  onConfirmButton: () => console.log('Click onConfirmButton'),
+  onCancelButton: () => console.log('Click onCancelButton'),
 });
 const slots = defineSlots<Slots>();
 

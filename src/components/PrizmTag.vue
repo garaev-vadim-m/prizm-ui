@@ -9,7 +9,10 @@ type Slots = {
 
 type ElTagProps = InstanceType<typeof ElTag>['$props'];
 
-type PickedProps = Pick<ElTagProps, 'type' | 'size' | 'effect' | 'round' | 'closable'>;
+type PickedProps = Pick<
+  ElTagProps,
+  'type' | 'size' | 'effect' | 'round' | 'closable' | 'onClick' | 'onClose' | 'color'
+>;
 
 type Props = {
   type?: PickedProps['type'];
@@ -17,12 +20,15 @@ type Props = {
   effect?: PickedProps['effect'];
   round?: PickedProps['round'];
   closable?: PickedProps['closable'];
+  color?: PickedProps['color'];
+
+  onClick?: PickedProps['onClick'];
+  onClose?: PickedProps['onClose'];
 };
 
 const props = withDefaults(defineProps<Props>(), { type: 'info', effect: 'light', size: 'large' });
 
 const slots = defineSlots<Slots>();
-defineEmits<TagEmits>();
 
 const baseTagRef = useTemplateRef('baseTagRef');
 

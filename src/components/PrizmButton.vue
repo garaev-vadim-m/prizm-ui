@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ElButton, type ButtonEmits } from 'element-plus';
+import { ElButton } from 'element-plus';
 import { computed, useCssModule, useTemplateRef } from 'vue';
 import 'element-plus/es/components/button/style/css';
 
 type ElementProps = InstanceType<typeof ElButton>['$props'];
-type PickedProps = Pick<ElementProps, 'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark' | 'plain'>;
+type PickedProps = Pick<
+  ElementProps,
+  'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark' | 'plain' | 'onClick'
+>;
 export type ButtonProps = {
   type?: PickedProps['type'];
   disabled?: boolean;
@@ -14,7 +17,7 @@ export type ButtonProps = {
   plain?: PickedProps['plain'];
   dark?: PickedProps['dark'];
 
-  onClick?: ButtonEmits['click'];
+  onClick?: PickedProps['onClick'];
 };
 
 type Slots = {
