@@ -42,15 +42,15 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
     </div>
 
     <div :class="classes.group">
+      <PrizmTag type="primary">PrizmTag</PrizmTag>
+
       <PrizmTag>PrizmTag</PrizmTag>
+
+      <PrizmTag type="success">PrizmTag</PrizmTag>
 
       <PrizmTag type="danger">PrizmTag</PrizmTag>
 
-      <PrizmTag type="primary">PrizmTag</PrizmTag>
-
       <PrizmTag type="warning">PrizmTag</PrizmTag>
-
-      <PrizmTag type="success">PrizmTag</PrizmTag>
     </div>
 
     <div :class="classes.group">
