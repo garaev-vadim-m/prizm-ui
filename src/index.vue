@@ -8,6 +8,7 @@ import {
   PrizmForm,
   PrizmFormItem,
   PrizmDrawer,
+  PrizmMessageBox,
 } from './components';
 
 const datePicker = ref('');
@@ -15,6 +16,13 @@ const drawer = ref(false);
 
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
+}
+function onOpenMessageBox(variant: 'primary' | 'danger') {
+  PrizmMessageBox({
+    title: 'Привет',
+    message: variant,
+    variant: variant,
+  });
 }
 </script>
 <template>
@@ -71,6 +79,12 @@ function onOpenDrawer() {
 
     <div :class="classes.group">
       <PrizmButton @click="onOpenDrawer">Open PrizmDrawer</PrizmButton>
+    </div>
+
+    <div :class="classes.group">
+      <PrizmButton type="primary" @click="onOpenMessageBox('primary')">Open PrizmMessageBox primary</PrizmButton>
+
+      <PrizmButton type="danger" @click="onOpenMessageBox('danger')">Open PrizmMessageBox danger</PrizmButton>
     </div>
   </div>
 

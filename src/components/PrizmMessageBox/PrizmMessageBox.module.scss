@@ -1,0 +1,72 @@
+.baseMessageBox {
+  --el-messagebox-font-size: 14px;
+  --el-messagebox-title-color: var(--color-black);
+  --el-messagebox-font-line-height: 16px;
+  --el-messagebox-padding-primary: 0;
+
+  --el-messagebox-content-color: var(--color-dark);
+  --el-messagebox-content-font-size: 14px;
+  border-radius: 2px;
+}
+
+.baseMessageBox :global(.el-message-box__header) {
+  border-bottom: 1px solid var(--color-thin-gray);
+  font-weight: 600;
+  padding: 16px;
+}
+
+.baseMessageBox :global(.el-message-box__content) {
+  line-height: 20px;
+  font-weight: 400;
+  padding: 16px;
+}
+
+.baseMessageBox :global(.el-message-box__btns) {
+  border-top: 1px solid var(--color-thin-gray);
+  justify-content: start;
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 16px;
+}
+
+.primary :global(.el-button--primary) {
+  --el-button-bg-color: var(--color-primary);
+  --el-button-border-color: var(--color-primary);
+
+  --el-button-hover-bg-color: var(--color-primary-hover);
+  --el-button-hover-border-color: var(--color-primary-hover);
+}
+
+.danger :global(.el-button--primary) {
+  --el-button-bg-color: var(--color-danger);
+  --el-button-border-color: var(--color-danger);
+
+  --el-button-hover-bg-color: var(--color-danger-hover);
+  --el-button-hover-border-color: var(--color-danger-hover);
+}
+
+.buttonCancel,
+.buttonConfirm {
+  --el-border-radius-base: 2px;
+  width: 100%;
+}
+
+.buttonCancel {
+  --el-border-color: var(--color-dark-gray);
+  --el-button-bg-color: #ffffff;
+
+  --el-button-hover-bg-color: #ffffff;
+  --el-button-hover-text-color: var(--color-dark-gray);
+  --el-button-hover-border-color: var(--color-dark-gray);
+}
+
+.buttonConfirm {
+}
+
+.vertical :global(.el-message-box__btns) {
+  flex-direction: column-reverse;
+}
+
+.baseMessageBox :global(.el-button + .el-button) {
+  margin-left: 0;
+}

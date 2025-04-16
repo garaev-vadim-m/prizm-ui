@@ -64,7 +64,6 @@ const modelValue = defineModel<string | number>();
 const props = withDefaults(defineProps<Props>(), { size: 'large' });
 
 const slots = defineSlots<Slots>();
-defineEmits<InputEmits>();
 
 const baseInputRef = useTemplateRef('baseInputRef');
 
