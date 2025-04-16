@@ -20,7 +20,7 @@ function onOpenDrawer() {
 function onOpenMessageBox(variant: 'primary' | 'danger') {
   PrizmMessageBox({
     title: 'Привет',
-    message: variant,
+    message: `Message body variant: ${variant}`,
     variant: variant,
   });
 }
