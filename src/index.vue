@@ -10,11 +10,15 @@ import {
   PrizmDrawer,
   PrizmMessageBox,
   PrizmNotification,
+  PrizmTabs,
+  PrizmTabPane,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
 const datePicker = ref('');
 const drawer = ref(false);
+
+const tabs = ref('');
 
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
@@ -121,6 +125,18 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
       <PrizmButton type="success" @click="onOpenNotification('success')">Open PrizmNotification success</PrizmButton>
 
       <PrizmButton type="warning" @click="onOpenNotification('warning')">Open PrizmNotification warning</PrizmButton>
+    </div>
+
+    <h3>Tabs</h3>
+
+    <div :class="classes.group">
+      <PrizmTabs v-model="tabs">
+        <PrizmTabPane label="Привет" name="id1" />
+
+        <PrizmTabPane label="Как дела?" name="id3" />
+
+        <PrizmTabPane label="Пока" name="id2" />
+      </PrizmTabs>
     </div>
   </div>
 
