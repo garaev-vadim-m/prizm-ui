@@ -9,3 +9,4 @@ export { default as PrizmForm } from './PrizmForm/PrizmForm.vue';
 export { default as PrizmFormItem } from './PrizmForm/PrizmFormItem.vue';
 export { default as PrizmDrawer } from './PrizmDrawer.vue';
 export { PrizmMessageBox } from './PrizmMessageBox/PrizmMessageBox';
+export { PrizmNotification } from './PrizmNotification/PrizmNotification';

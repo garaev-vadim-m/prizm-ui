@@ -9,7 +9,9 @@ import {
   PrizmFormItem,
   PrizmDrawer,
   PrizmMessageBox,
+  PrizmNotification,
 } from './components';
+import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
 const datePicker = ref('');
 const drawer = ref(false);
@@ -24,9 +26,19 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
     variant: variant,
   });
 }
+
+function onOpenNotification(type: BaseNotificationProps['type']) {
+  PrizmNotification({
+    title: type,
+    type: type,
+    message: `Variant type: ${type}`,
+  });
+}
 </script>
 <template>
   <div :class="classes.root">
+    <h3>Button</h3>
+
     <div :class="classes.group">
       <PrizmButton>PrizmButton</PrizmButton>
 
@@ -41,6 +53,8 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
       <PrizmButton type="warning">PrizmButton</PrizmButton>
     </div>
 
+    <h3>Tag</h3>
+
     <div :class="classes.group">
       <PrizmTag type="primary">PrizmTag</PrizmTag>
 
@@ -53,6 +67,8 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
       <PrizmTag type="warning">PrizmTag</PrizmTag>
     </div>
 
+    <h3>Input</h3>
+
     <div :class="classes.group">
       <PrizmInput placeholder="PrizmInput" />
 
@@ -60,6 +76,8 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
 
       <PrizmInput placeholder="PrizmInput" size="small" />
     </div>
+
+    <h3>DatePicker</h3>
 
     <div :class="classes.group">
       <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" />
@@ -69,6 +87,8 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
       <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="small" />
     </div>
 
+    <h3>Form</h3>
+
     <div :class="classes.group">
       <PrizmForm>
         <PrizmFormItem label="PrizmForm with PrizmFormItem">
@@ -77,14 +97,30 @@ function onOpenMessageBox(variant: 'primary' | 'danger') {
       </PrizmForm>
     </div>
 
+    <h3>Drawer</h3>
+
     <div :class="classes.group">
       <PrizmButton @click="onOpenDrawer">Open PrizmDrawer</PrizmButton>
     </div>
+
+    <h3>MessageBox</h3>
 
     <div :class="classes.group">
       <PrizmButton type="primary" @click="onOpenMessageBox('primary')">Open PrizmMessageBox primary</PrizmButton>
 
       <PrizmButton type="danger" @click="onOpenMessageBox('danger')">Open PrizmMessageBox danger</PrizmButton>
+    </div>
+
+    <h3>Notification</h3>
+
+    <div :class="classes.group">
+      <PrizmButton type="danger" @click="onOpenNotification('error')">Open PrizmNotification error</PrizmButton>
+
+      <PrizmButton type="primary" @click="onOpenNotification('info')">Open PrizmNotification info</PrizmButton>
+
+      <PrizmButton type="success" @click="onOpenNotification('success')">Open PrizmNotification success</PrizmButton>
+
+      <PrizmButton type="warning" @click="onOpenNotification('warning')">Open PrizmNotification warning</PrizmButton>
     </div>
   </div>
 
