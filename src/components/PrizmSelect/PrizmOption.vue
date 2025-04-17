@@ -1,0 +1,64 @@
+<script setup lang="ts">
+import { ElOption } from 'element-plus';
+import 'element-plus/es/components/option/style/css';
+
+type ElSelectProps = InstanceType<typeof ElOption>['$props'];
+type PickedProps = Pick<ElSelectProps, 'value' | 'label' | 'disabled'>;
+
+type Props = {
+  value: PickedProps['value'];
+  label?: PickedProps['label'];
+  disabled?: PickedProps['disabled'];
+  width?: 'auto' | string | number;
+};
+
+type Slots = {
+  default?: unknown;
+};
+
+/**
+ * @param {number | string | undefined} width
+ * @return {string}
+ */
+function handleWidth(width: number | string | undefined): string {
+  if (width === 'auto' || width === undefined || (typeof width === 'string' && !width.length)) return 'auto';
+  if (typeof width === 'number') width = String(width);
+  if (width.indexOf('px')) return `${width}px`;
+  if (width.indexOf('%')) return `${width}%`;
+  return `${width}px`;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  width: 'auto',
+});
+
+const inlineStyle = {
+  textAlign: 'left',
+  overflow: 'initial',
+  whiteSpace: 'initial',
+  overflowWrap: 'break-word',
+  height: 'auto',
+  paddingTop: '10px',
+  paddingBottom: '10px',
+  width: handleWidth(props.width),
+  maxWidth: '700px',
+};
+
+const slots = defineSlots<Slots>();
+</script>
+<template>
+  <ElOption v-bind="props" :class="[classes.root]" :style="inlineStyle">
+    <template #default v-if="slots.default">
+      <slot />
+    </template>
+  </ElOption>
+</template>
+<style module="classes" lang="scss">
+.root {
+  * {
+    font-weight: 400;
+    color: var(--color-dark);
+    font-size: 14px;
+  }
+}
+</style>

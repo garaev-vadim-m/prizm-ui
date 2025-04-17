@@ -15,6 +15,8 @@ import {
   PrizmRadioGroup,
   PrizmRadioButton,
   PrizmRadio,
+  PrizmSelect,
+  PrizmOption,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -23,6 +25,8 @@ const drawer = ref(false);
 
 const tabs = ref('id1');
 const radio = ref('id1');
+const select = ref('');
+const selects = ref([]);
 
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
@@ -165,6 +169,26 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
 
         <PrizmRadio value="id3">Пока</PrizmRadio>
       </PrizmRadioGroup>
+    </div>
+
+    <h3>Select</h3>
+
+    <div :class="classes.group">
+      <PrizmSelect v-model="select">
+        <PrizmOption label="Option1" value="option1" />
+
+        <PrizmOption label="Option2" value="option2" />
+
+        <PrizmOption label="Option3" value="option3" />
+      </PrizmSelect>
+
+      <PrizmSelect v-model="selects" :multiple="true">
+        <PrizmOption label="Option1" value="option1" />
+
+        <PrizmOption label="Option2" value="option2" />
+
+        <PrizmOption label="Option3" value="option3" />
+      </PrizmSelect>
     </div>
   </div>
 
