@@ -5,6 +5,20 @@ import { type PropType } from 'vue';
 
 type ElSelectProps = InstanceType<typeof ElSelect>['$props'];
 
+type Placement =
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left'
+  | 'left-start'
+  | 'left-end'
+  | 'right'
+  | 'right-start'
+  | 'right-end';
+
 type PickedProps = Pick<
   ElSelectProps,
   | 'size'
@@ -54,7 +68,7 @@ type Props = {
   onChange?: PickedProps['onChange'];
   onRemoveTag?: PickedProps['onRemove-tag'];
   multiple?: PickedProps['multiple'];
-  fallbackPlacements?: PickedProps['fallbackPlacements'];
+  fallbackPlacements?: Extract<PickedProps['fallbackPlacements'], Placement>;
   disabled?: PickedProps['disabled'];
   noDataText?: PickedProps['noDataText'];
   placement?: PickedProps['placement'];
@@ -64,6 +78,8 @@ const props = withDefaults(defineProps<Props>(), {
   size: 'large',
   noDataText: 'Нет данных',
   filterable: true,
+  fallbackPlacements: ['bottom-start', 'top-start'] satisfies Placement[],
+  placement: 'bottom-start' satisfies Placement,
 });
 </script>
 <template>

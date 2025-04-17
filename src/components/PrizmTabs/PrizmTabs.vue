@@ -47,7 +47,7 @@ const modelValue = defineModel({
 });
 </script>
 <template>
-  <ElTabs v-bind="props" v-model="modelValue">
+  <ElTabs v-bind="props" v-model="modelValue" :class="[classes.root]">
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -55,5 +55,8 @@ const modelValue = defineModel({
 </template>
 <style module="classes" lang="scss">
 .root {
+  :global(.el-tabs__header) {
+    margin: 0;
+  }
 }
 </style>

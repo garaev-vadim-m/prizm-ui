@@ -41,7 +41,6 @@ const inlineStyle = {
   paddingTop: '10px',
   paddingBottom: '10px',
   width: handleWidth(props.width),
-  maxWidth: '700px',
 };
 
 const slots = defineSlots<Slots>();
