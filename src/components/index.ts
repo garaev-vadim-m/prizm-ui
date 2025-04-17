@@ -7,7 +7,7 @@ export { default as PrizmIcon } from './PrizmIcon.vue';
 export { default as PrizmDatePicker } from './PrizmDatePicker.vue';
 export { default as PrizmForm } from './PrizmForm/PrizmForm.vue';
 export { default as PrizmFormItem } from './PrizmForm/PrizmFormItem.vue';
-// export { default as PrizmDrawer } from './PrizmDrawer.vue';
+export { default as PrizmDrawer } from './PrizmDrawer.vue';
 export { default as PrizmTabs } from './PrizmTabs/PrizmTabs.vue';
 export { default as PrizmTabPane } from './PrizmTabs/PrizmTabPane.vue';
 export { default as PrizmRadio } from './PrizmRadio/PrizmRadio.vue';
