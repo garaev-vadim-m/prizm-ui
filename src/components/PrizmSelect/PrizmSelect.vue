@@ -78,6 +78,9 @@ const props = withDefaults(defineProps<Props>(), {
   size: 'large',
   noDataText: 'Нет данных',
   filterable: true,
+  //не определяет типы
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   fallbackPlacements: ['bottom-start', 'top-start'] satisfies Placement[],
   placement: 'bottom-start' satisfies Placement,
 });
