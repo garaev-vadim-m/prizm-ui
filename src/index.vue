@@ -1,54 +1,54 @@
 <script setup lang="ts">
-// import { ref } from 'vue';
-// import {
-//   PrizmButton,
-//   PrizmTag,
-//   PrizmInput,
-//   PrizmDatePicker,
-//   PrizmForm,
-//   PrizmFormItem,
-//   PrizmDrawer,
-//   PrizmMessageBox,
-//   PrizmNotification,
-//   PrizmTabs,
-//   PrizmTabPane,
-//   PrizmRadioGroup,
-//   PrizmRadioButton,
-//   PrizmRadio,
-//   PrizmSelect,
-//   PrizmOption,
-// } from './components';
-// import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
+import { ref } from 'vue';
+import {
+  PrizmButton,
+  PrizmTag,
+  PrizmInput,
+  PrizmDatePicker,
+  PrizmForm,
+  PrizmFormItem,
+  PrizmDrawer,
+  PrizmMessageBox,
+  PrizmNotification,
+  PrizmTabs,
+  PrizmTabPane,
+  PrizmRadioGroup,
+  PrizmRadioButton,
+  PrizmRadio,
+  PrizmSelect,
+  PrizmOption,
+} from './components';
+import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
-// const datePicker = ref('');
-// const drawer = ref(false);
+const datePicker = ref('');
+const drawer = ref(false);
 
-// const tabs = ref('id1');
-// const radio = ref('id1');
-// const select = ref('');
-// const selects = ref([]);
+const tabs = ref('id1');
+const radio = ref('id1');
+const select = ref('');
+const selects = ref([]);
 
-// function onOpenDrawer() {
-//   return (drawer.value = !drawer.value);
-// }
-// function onOpenMessageBox(variant: 'primary' | 'danger') {
-//   PrizmMessageBox({
-//     title: 'Привет',
-//     message: `Message body variant: ${variant}`,
-//     variant: variant,
-//   });
-// }
+function onOpenDrawer() {
+  return (drawer.value = !drawer.value);
+}
+function onOpenMessageBox(variant: 'primary' | 'danger') {
+  PrizmMessageBox({
+    title: 'Привет',
+    message: `Message body variant: ${variant}`,
+    variant: variant,
+  });
+}
 
-// function onOpenNotification(type: BaseNotificationProps['type']) {
-//   PrizmNotification({
-//     title: type,
-//     type: type,
-//     message: `Variant type: ${type}`,
-//   });
-// }
+function onOpenNotification(type: BaseNotificationProps['type']) {
+  PrizmNotification({
+    title: type,
+    type: type,
+    message: `Variant type: ${type}`,
+  });
+}
 </script>
 <template>
-  <!-- <div :class="classes.root">
+  <div :class="classes.root">
     <h3>Button</h3>
 
     <div :class="classes.group">
@@ -226,7 +226,7 @@
     </div>
   </div>
 
-  <PrizmDrawer v-model="drawer" /> -->
+  <PrizmDrawer v-model="drawer" />
 </template>
 <style module="classes" lang="scss">
 .root {
