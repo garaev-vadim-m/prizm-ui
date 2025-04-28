@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
   width: 'auto',
 });
 
-const inlineStyle = {
+const style = {
   textAlign: 'left',
   overflow: 'initial',
   whiteSpace: 'initial',
@@ -40,13 +40,13 @@ const inlineStyle = {
   height: 'auto',
   paddingTop: '10px',
   paddingBottom: '10px',
-  width: handleWidth(props.width),
+  width: handleWidth(props.width) || 'auto',
 };
 
 const slots = defineSlots<Slots>();
 </script>
 <template>
-  <ElOption v-bind="props" :class="[classes.root]" :style="inlineStyle">
+  <ElOption v-bind="props" :class="[classes.root]" :style="style">
     <template #default v-if="slots.default">
       <slot />
     </template>

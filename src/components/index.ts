@@ -14,6 +14,6 @@ export { default as PrizmRadio } from './PrizmRadio/PrizmRadio.vue';
 export { default as PrizmRadioButton } from './PrizmRadio/PrizmRadioButton.vue';
 export { default as PrizmRadioGroup } from './PrizmRadio/PrizmRadioGroup.vue';
 export { default as PrizmSelect } from './PrizmSelect/PrizmSelect.vue';
-// export { default as PrizmOption } from './PrizmSelect/PrizmOption.vue';
+export { default as PrizmOption } from './PrizmSelect/PrizmOption.vue';
 export { PrizmMessageBox } from './PrizmMessageBox/PrizmMessageBox';
 export { PrizmNotification } from './PrizmNotification/PrizmNotification';
