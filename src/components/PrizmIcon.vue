@@ -6,9 +6,9 @@ type ElIconProps = InstanceType<typeof ElIcon>['$props'];
 type PickedProps = Pick<ElIconProps, 'size' | 'color' | 'class'>;
 
 type Props = {
-  size: PickedProps['size'];
-  color: PickedProps['color'];
-  class: PickedProps['class'];
+  size?: PickedProps['size'];
+  color?: PickedProps['color'];
+  class?: PickedProps['class'];
 };
 
 type Slots = {

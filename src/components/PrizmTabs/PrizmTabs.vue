@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ElTabs } from 'element-plus';
 import 'element-plus/es/components/tabs/style/css';
-import { type PropType } from 'vue';
+import { useTemplateRef, type PropType } from 'vue';
 
 type ElTabsProps = InstanceType<typeof ElTabs>['$props'];
 type PickedProps = Pick<
@@ -34,6 +34,8 @@ type Slots = {
   default?: unknown;
 };
 
+const baseTabsRef = useTemplateRef('baseTabsRef');
+
 const props = withDefaults(defineProps<TabsProps>(), {
   type: '',
 });
@@ -45,9 +47,13 @@ const modelValue = defineModel({
   required: true,
   default: '',
 });
+
+defineExpose({
+  baseTabsRef,
+});
 </script>
 <template>
-  <ElTabs v-bind="props" v-model="modelValue" :class="[classes.root]">
+  <ElTabs ref="baseTabsRef" v-bind="props" v-model="modelValue" :class="[classes.root]">
     <template #default v-if="slots.default">
       <slot />
     </template>

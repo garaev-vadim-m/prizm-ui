@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import { ElForm, type FormEmits } from 'element-plus';
+import { ElForm } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/form/style/css';
 
 type ElFormProps = InstanceType<typeof ElForm>['$props'];
 
-type PickedProps = Pick<ElFormProps, 'disabled' | 'statusIcon' | 'model' | 'requireAsteriskPosition' | 'labelPosition'>;
+type PickedProps = Pick<
+  ElFormProps,
+  | 'disabled'
+  | 'statusIcon'
+  | 'model'
+  | 'requireAsteriskPosition'
+  | 'labelPosition'
+  | 'onValidate'
+  | 'validateOnRuleChange'
+>;
 
 type Props = {
   disabled?: PickedProps['disabled'];
@@ -13,6 +22,9 @@ type Props = {
   labelPosition?: PickedProps['labelPosition'];
   requireAsteriskPosition?: PickedProps['requireAsteriskPosition'];
   model?: PickedProps['model'];
+  validateOnRuleChange?: PickedProps['validateOnRuleChange'];
+
+  onValidate?: PickedProps['onValidate'];
 };
 
 type Slots = {
@@ -21,7 +33,6 @@ type Slots = {
 
 const props = withDefaults(defineProps<Props>(), { labelPosition: 'top', requireAsteriskPosition: 'right' });
 const slots = defineSlots<Slots>();
-defineEmits<FormEmits>();
 
 const baseFormRef = useTemplateRef('baseFormRef');
 

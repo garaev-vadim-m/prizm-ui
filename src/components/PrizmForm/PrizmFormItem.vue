@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ElFormItem, type FormEmits, type FormItemProps } from 'element-plus';
+import { ElFormItem, type FormItemProps } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/form-item/style/css';
 
@@ -16,6 +16,7 @@ type Props = {
   required?: FormItemProps['required'];
   rules?: FormItemProps['rules'];
   showMessage?: FormItemProps['showMessage'];
+  validateStatus?: FormItemProps['validateStatus'];
   width?: string;
 };
 
@@ -37,8 +38,6 @@ const baseFormItemRef = useTemplateRef('baseFormItemRef');
 const style = {
   width: handleWidth(props.width),
 };
-
-defineEmits<FormEmits>();
 
 defineExpose({
   baseFormItemRef,

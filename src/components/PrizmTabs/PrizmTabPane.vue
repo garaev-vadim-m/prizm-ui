@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ElTabPane } from 'element-plus';
 import 'element-plus/es/components/tab-pane/style/css';
+import { useTemplateRef } from 'vue';
 
 type ElTabPaneProps = InstanceType<typeof ElTabPane>['$props'];
 type PickedProps = Pick<ElTabPaneProps, 'label' | 'disabled' | 'name' | 'closable'>;
@@ -20,9 +21,15 @@ type Slots = {
 };
 
 const slots = defineSlots<Slots>();
+
+const baseTabPaneRef = useTemplateRef('baseTabPaneRef');
+
+defineExpose({
+  baseTabPaneRef,
+});
 </script>
 <template>
-  <ElTabPane v-bind="props">
+  <ElTabPane ref="baseTabPaneRef" v-bind="props">
     <template #default v-if="slots.default">
       <slot />
     </template>

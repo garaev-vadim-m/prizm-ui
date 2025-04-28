@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ElSelect } from 'element-plus';
 import 'element-plus/es/components/select/style/css';
-import { type PropType } from 'vue';
+import { useTemplateRef, type PropType } from 'vue';
 
 type ElSelectProps = InstanceType<typeof ElSelect>['$props'];
 
@@ -33,7 +33,7 @@ type Slots = {
   loading?: unknown;
   label?: unknown;
 };
-
+const baseSelectRef = useTemplateRef('baseSelectRef');
 const slots = defineSlots<Slots>();
 
 const modelValue = defineModel({
@@ -66,9 +66,13 @@ const props = withDefaults(defineProps<Props>(), {
   filterable: true,
   placement: 'bottom-start',
 });
+
+defineExpose({
+  baseSelectRef,
+});
 </script>
 <template>
-  <ElSelect v-model="modelValue" :class="[classes.root]" v-bind="props">
+  <ElSelect ref="baseSelectRef" v-model="modelValue" :class="[classes.root]" v-bind="props">
     <template #default v-if="slots.default">
       <slot />
     </template>

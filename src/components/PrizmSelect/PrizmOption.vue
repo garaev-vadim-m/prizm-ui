@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ElOption } from 'element-plus';
 import 'element-plus/es/components/option/style/css';
+import { useTemplateRef } from 'vue';
 
 type ElSelectProps = InstanceType<typeof ElOption>['$props'];
 type PickedProps = Pick<ElSelectProps, 'value' | 'label' | 'disabled'>;
@@ -15,6 +16,8 @@ type Props = {
 type Slots = {
   default?: unknown;
 };
+
+const baseOptionRef = useTemplateRef('baseOptionRef');
 
 /**
  * @param {number | string | undefined} width
@@ -44,9 +47,13 @@ const style = {
 };
 
 const slots = defineSlots<Slots>();
+
+defineExpose({
+  baseOptionRef,
+});
 </script>
 <template>
-  <ElOption v-bind="props" :class="[classes.root]" :style="style">
+  <ElOption ref="baseOptionRef" v-bind="props" :class="[classes.root]" :style="style">
     <template #default v-if="slots.default">
       <slot />
     </template>
