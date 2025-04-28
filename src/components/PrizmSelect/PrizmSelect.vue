@@ -5,20 +5,6 @@ import { type PropType } from 'vue';
 
 type ElSelectProps = InstanceType<typeof ElSelect>['$props'];
 
-type Placement =
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end'
-  | 'left'
-  | 'left-start'
-  | 'left-end'
-  | 'right'
-  | 'right-start'
-  | 'right-end';
-
 type PickedProps = Pick<
   ElSelectProps,
   | 'size'
