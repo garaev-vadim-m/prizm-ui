@@ -48,20 +48,6 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
     message: `Variant type: ${type}`,
   });
 }
-
-const prizmForm = useTemplateRef('prizmForm');
-
-const submitForm = (formEl: undefined) => {
-  console.log(formEl);
-  if (!formEl) return;
-  // formEl.validate((valid) => {
-  //   if (valid) {
-  //     console.log('submit!');
-  //   } else {
-  //     console.log('error submit!');
-  //   }
-  // });
-};
 </script>
 <template>
   <div :class="classes.root">
@@ -118,7 +104,7 @@ const submitForm = (formEl: undefined) => {
     <h3>Form</h3>
 
     <div :class="classes.group">
-      <PrizmForm ref="prizmForm">
+      <PrizmForm>
         <PrizmFormItem label="PrizmForm with PrizmFormItem 1">
           <PrizmInput placeholder="PrizmInput" />
         </PrizmFormItem>
@@ -132,7 +118,7 @@ const submitForm = (formEl: undefined) => {
         </PrizmFormItem>
 
         <PrizmFormItem>
-          <PrizmButton nativeType="submit" type="primary" @click.prevent="submitForm(prizmForm)">Submit!</PrizmButton>
+          <PrizmButton nativeType="submit" type="primary">Submit!</PrizmButton>
         </PrizmFormItem>
 
         <PrizmFormItem>
