@@ -17,6 +17,9 @@ export { default as PrizmSelect } from './PrizmSelect/PrizmSelect.vue';
 export { default as PrizmOption } from './PrizmSelect/PrizmOption.vue';
 export { default as PrizmCollapse } from './PrizmCollapse/PrizmCollapse.vue';
 export { default as PrizmCollapseItem } from './PrizmCollapse/PrizmCollapseItem.vue';
+export { default as PrizmDropdown } from './PrizmDropdown/PrizmDropdown.vue';
+export { default as PrizmDropdownItem } from './PrizmDropdown/PrizmDropdownItem.vue';
+export { default as PrizmDropdownMenu } from './PrizmDropdown/PrizmDropdownMenu.vue';
 
 export { PrizmMessageBox } from './PrizmMessageBox/PrizmMessageBox';
 export { PrizmNotification } from './PrizmNotification/PrizmNotification';

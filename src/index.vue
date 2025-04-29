@@ -16,9 +16,12 @@ import {
   PrizmRadioButton,
   PrizmRadio,
   PrizmSelect,
-  // PrizmOption,
+  PrizmOption,
   PrizmCollapse,
   PrizmCollapseItem,
+  PrizmDropdownItem,
+  PrizmDropdown,
+  PrizmDropdownMenu,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -201,45 +204,45 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
 
     <div :class="classes.group">
       <PrizmSelect v-model="select">
-        <!-- <PrizmOption label="Option1" value="option1" /> -->
+        <PrizmOption label="Option1" value="option1" />
 
-        <!-- <PrizmOption label="Option2" value="option2" /> -->
+        <PrizmOption label="Option2" value="option2" />
 
-        <!-- <PrizmOption label="Option3" value="option3" /> -->
+        <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
 
       <PrizmSelect v-model="selects" :multiple="true">
-        <!-- <PrizmOption label="Option1" value="option1" /> -->
+        <PrizmOption label="Option1" value="option1" />
 
-        <!-- <PrizmOption label="Option2" value="option2" /> -->
+        <PrizmOption label="Option2" value="option2" />
 
-        <!-- <PrizmOption label="Option3" value="option3" /> -->
+        <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
     </div>
 
     <div :class="classes.group">
       <PrizmSelect v-model="select">
-        <!-- <PrizmOption label="Option1" value="option1" /> -->
+        <PrizmOption label="Option1" value="option1" />
 
-        <!-- <PrizmOption label="Option2" value="option2" /> -->
+        <PrizmOption label="Option2" value="option2" />
 
-        <!-- <PrizmOption label="Option3" value="option3" /> -->
+        <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
 
       <PrizmSelect v-model="select" size="default">
-        <!-- <PrizmOption label="Option1" value="option1" /> -->
+        <PrizmOption label="Option1" value="option1" />
 
-        <!-- <PrizmOption label="Option2" value="option2" /> -->
+        <PrizmOption label="Option2" value="option2" />
 
-        <!-- <PrizmOption label="Option3" value="option3" /> -->
+        <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
 
       <PrizmSelect v-model="select" size="small">
-        <!-- <PrizmOption label="Option1" value="option1" /> -->
+        <PrizmOption label="Option1" value="option1" />
 
-        <!-- <PrizmOption label="Option2" value="option2" /> -->
+        <PrizmOption label="Option2" value="option2" />
 
-        <!-- <PrizmOption label="Option3" value="option3" /> -->
+        <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
     </div>
 
@@ -259,6 +262,52 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
           <div>Пока</div>
         </PrizmCollapseItem>
       </PrizmCollapse>
+    </div>
+
+    <h3>Dropdown</h3>
+
+    <div :class="classes.group">
+      <PrizmDropdown>
+        <PrizmButton type="primary">Dropdown</PrizmButton>
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
+
+      <PrizmDropdown :splitButton="true" size="default">
+        <p>Dropdown split</p>
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
+
+      <PrizmDropdown size="small">
+        <PrizmButton type="text">Dropdown small</PrizmButton>
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
     </div>
   </div>
 

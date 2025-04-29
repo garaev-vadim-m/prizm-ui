@@ -53,10 +53,5 @@ defineExpose({
   :global(.el-collapse-item__header) {
     font-weight: 800 !important;
   }
-
-  :global(.el-collapse-item__arrow) {
-    border-left: 1px solid var(--color-thin-gray);
-    padding-left: 10px;
-  }
 }
 </style>
