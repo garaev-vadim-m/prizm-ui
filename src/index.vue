@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref } from 'vue';
 import {
   PrizmButton,
@@ -15,6 +15,10 @@ import {
   PrizmRadioGroup,
   PrizmRadioButton,
   PrizmRadio,
+  PrizmSelect,
+  PrizmOption,
+  PrizmCollapse,
+  PrizmCollapseItem,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -23,8 +27,8 @@ const drawer = ref(false);
 
 const tabs = ref('id1');
 const radio = ref('id1');
-// const select = ref('');
-// const selects = ref([]);
+const select = ref('');
+const selects = ref([]);
 
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
@@ -100,7 +104,7 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
     <h3>Form</h3>
 
     <div :class="classes.group">
-      <PrizmForm>
+      <PrizmForm ref="prizmForm">
         <PrizmFormItem label="PrizmForm with PrizmFormItem 1">
           <PrizmInput placeholder="PrizmInput" />
         </PrizmFormItem>
@@ -193,7 +197,7 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
       </PrizmRadioGroup>
     </div>
 
-    <!-- <h3>Select</h3>
+    <h3>Select</h3>
 
     <div :class="classes.group">
       <PrizmSelect v-model="select">
@@ -211,9 +215,9 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
 
         <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
-    </div> -->
+    </div>
 
-    <!-- <div :class="classes.group">
+    <div :class="classes.group">
       <PrizmSelect v-model="select">
         <PrizmOption label="Option1" value="option1" />
 
@@ -255,7 +259,7 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
           <div>Пока</div>
         </PrizmCollapseItem>
       </PrizmCollapse>
-    </div> -->
+    </div>
   </div>
 
   <PrizmDrawer v-model="drawer" />
@@ -272,4 +276,4 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
   align-items: center;
   gap: 16px;
 }
-</style>
+</style> -->
