@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from 'vue';
+import { ref } from 'vue';
 import {
   PrizmButton,
   PrizmTag,
@@ -17,8 +17,6 @@ import {
   PrizmRadio,
   PrizmSelect,
   PrizmOption,
-  PrizmCollapse,
-  PrizmCollapseItem,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 

@@ -17,7 +17,3 @@ withDefaults(
       fill="#6E778C" />
   </svg>
 </template>
-<style module="classes" lang="scss">
-.root {
-}
-</style>
