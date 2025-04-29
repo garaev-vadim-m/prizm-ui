@@ -1,3 +1,4 @@
+import './style.scss';
 import { createApp } from 'vue';
 import index from './index.vue';
 const app = createApp(index);

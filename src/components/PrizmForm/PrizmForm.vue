@@ -49,8 +49,5 @@ defineExpose({
 </template>
 <style module="classes" lang="scss">
 .root {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 </style>

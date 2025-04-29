@@ -66,7 +66,7 @@ defineExpose({
   line-height: 16px;
   font-weight: 600;
   white-space: nowrap;
-  margin-bottom: 0;
+  margin-bottom: 16px;
 
   label {
     cursor: default;
