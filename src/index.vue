@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, useTemplateRef } from 'vue';
 import {
   PrizmButton,
   PrizmTag,
@@ -48,6 +48,20 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
     message: `Variant type: ${type}`,
   });
 }
+
+const prizmForm = useTemplateRef('prizmForm');
+
+const submitForm = (formEl: undefined) => {
+  console.log(formEl);
+  if (!formEl) return;
+  // formEl.validate((valid) => {
+  //   if (valid) {
+  //     console.log('submit!');
+  //   } else {
+  //     console.log('error submit!');
+  //   }
+  // });
+};
 </script>
 <template>
   <div :class="classes.root">
@@ -104,9 +118,25 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
     <h3>Form</h3>
 
     <div :class="classes.group">
-      <PrizmForm>
-        <PrizmFormItem label="PrizmForm with PrizmFormItem">
+      <PrizmForm ref="prizmForm">
+        <PrizmFormItem label="PrizmForm with PrizmFormItem 1">
           <PrizmInput placeholder="PrizmInput" />
+        </PrizmFormItem>
+
+        <PrizmFormItem label="PrizmForm with PrizmFormItem 2">
+          <PrizmInput placeholder="PrizmInput" />
+        </PrizmFormItem>
+
+        <PrizmFormItem label="PrizmForm with PrizmFormItem 3">
+          <PrizmInput placeholder="PrizmInput" />
+        </PrizmFormItem>
+
+        <PrizmFormItem>
+          <PrizmButton nativeType="submit" type="primary" @click.prevent="submitForm(prizmForm)">Submit!</PrizmButton>
+        </PrizmFormItem>
+
+        <PrizmFormItem>
+          <PrizmButton type="default">Cancel!</PrizmButton>
         </PrizmFormItem>
       </PrizmForm>
     </div>

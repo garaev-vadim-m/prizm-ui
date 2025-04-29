@@ -6,7 +6,7 @@ import 'element-plus/es/components/button/style/css';
 type ElementProps = InstanceType<typeof ElButton>['$props'];
 type PickedProps = Pick<
   ElementProps,
-  'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark' | 'plain' | 'onClick'
+  'disabled' | 'type' | 'size' | 'icon' | 'link' | 'plain' | 'dark' | 'plain' | 'onClick' | 'nativeType'
 >;
 export type ButtonProps = {
   type?: PickedProps['type'];
@@ -16,6 +16,7 @@ export type ButtonProps = {
   link?: PickedProps['link'];
   plain?: PickedProps['plain'];
   dark?: PickedProps['dark'];
+  nativeType?: PickedProps['nativeType'];
 
   onClick?: PickedProps['onClick'];
 };
@@ -33,6 +34,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'default',
   size: 'large',
   plain: false,
+  nativeType: 'button',
 });
 
 const handleOutline = computed(() => (props.plain ? style.outline : ''));
@@ -60,6 +62,7 @@ defineExpose({
 <style module="classes" lang="scss">
 .root {
   border-radius: 2px;
+  width: 100%;
 }
 
 .root + .root {
