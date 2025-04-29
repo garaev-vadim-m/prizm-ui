@@ -15,8 +15,8 @@ export { default as PrizmRadioButton } from './PrizmRadio/PrizmRadioButton.vue';
 export { default as PrizmRadioGroup } from './PrizmRadio/PrizmRadioGroup.vue';
 // export { default as PrizmSelect } from './PrizmSelect/PrizmSelect.vue';
 // export { default as PrizmOption } from './PrizmSelect/PrizmOption.vue';
-// export { default as PrizmCollapse } from './PrizmCollapse/PrizmCollapse.vue';
-// export { default as PrizmCollapseItem } from './PrizmCollapse/PrizmCollapseItem.vue';
+export { default as PrizmCollapse } from './PrizmCollapse/PrizmCollapse.vue';
+export { default as PrizmCollapseItem } from './PrizmCollapse/PrizmCollapseItem.vue';
 
-// export { PrizmMessageBox } from './PrizmMessageBox/PrizmMessageBox';
-// export { PrizmNotification } from './PrizmNotification/PrizmNotification';
+export { PrizmMessageBox } from './PrizmMessageBox/PrizmMessageBox';
+export { PrizmNotification } from './PrizmNotification/PrizmNotification';
