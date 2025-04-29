@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import {
   PrizmButton,
@@ -16,7 +16,7 @@ import {
   PrizmRadioButton,
   PrizmRadio,
   PrizmSelect,
-  PrizmOption,
+  // PrizmOption,
   PrizmCollapse,
   PrizmCollapseItem,
 } from './components';
@@ -201,45 +201,45 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
 
     <div :class="classes.group">
       <PrizmSelect v-model="select">
-        <PrizmOption label="Option1" value="option1" />
+        <!-- <PrizmOption label="Option1" value="option1" /> -->
 
-        <PrizmOption label="Option2" value="option2" />
+        <!-- <PrizmOption label="Option2" value="option2" /> -->
 
-        <PrizmOption label="Option3" value="option3" />
+        <!-- <PrizmOption label="Option3" value="option3" /> -->
       </PrizmSelect>
 
       <PrizmSelect v-model="selects" :multiple="true">
-        <PrizmOption label="Option1" value="option1" />
+        <!-- <PrizmOption label="Option1" value="option1" /> -->
 
-        <PrizmOption label="Option2" value="option2" />
+        <!-- <PrizmOption label="Option2" value="option2" /> -->
 
-        <PrizmOption label="Option3" value="option3" />
+        <!-- <PrizmOption label="Option3" value="option3" /> -->
       </PrizmSelect>
     </div>
 
     <div :class="classes.group">
       <PrizmSelect v-model="select">
-        <PrizmOption label="Option1" value="option1" />
+        <!-- <PrizmOption label="Option1" value="option1" /> -->
 
-        <PrizmOption label="Option2" value="option2" />
+        <!-- <PrizmOption label="Option2" value="option2" /> -->
 
-        <PrizmOption label="Option3" value="option3" />
+        <!-- <PrizmOption label="Option3" value="option3" /> -->
       </PrizmSelect>
 
       <PrizmSelect v-model="select" size="default">
-        <PrizmOption label="Option1" value="option1" />
+        <!-- <PrizmOption label="Option1" value="option1" /> -->
 
-        <PrizmOption label="Option2" value="option2" />
+        <!-- <PrizmOption label="Option2" value="option2" /> -->
 
-        <PrizmOption label="Option3" value="option3" />
+        <!-- <PrizmOption label="Option3" value="option3" /> -->
       </PrizmSelect>
 
       <PrizmSelect v-model="select" size="small">
-        <PrizmOption label="Option1" value="option1" />
+        <!-- <PrizmOption label="Option1" value="option1" /> -->
 
-        <PrizmOption label="Option2" value="option2" />
+        <!-- <PrizmOption label="Option2" value="option2" /> -->
 
-        <PrizmOption label="Option3" value="option3" />
+        <!-- <PrizmOption label="Option3" value="option3" /> -->
       </PrizmSelect>
     </div>
 
@@ -276,4 +276,4 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
   align-items: center;
   gap: 16px;
 }
-</style> -->
+</style>
