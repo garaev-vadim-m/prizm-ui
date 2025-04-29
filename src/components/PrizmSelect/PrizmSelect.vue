@@ -65,6 +65,7 @@ const props = withDefaults(defineProps<Props>(), {
   noDataText: 'Нет данных',
   filterable: true,
   placement: 'bottom-start',
+  placeholder: 'Выберите...',
 });
 
 defineExpose({

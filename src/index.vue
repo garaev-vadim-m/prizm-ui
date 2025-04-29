@@ -17,6 +17,8 @@ import {
   PrizmRadio,
   PrizmSelect,
   PrizmOption,
+  PrizmCollapse,
+  PrizmCollapseItem,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -223,6 +225,24 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
 
         <PrizmOption label="Option3" value="option3" />
       </PrizmSelect>
+    </div>
+
+    <h3>Collapse</h3>
+
+    <div :class="classes.group">
+      <PrizmCollapse>
+        <PrizmCollapseItem name="one" title="PrizmCollapseItem1">
+          <div>Привет</div>
+        </PrizmCollapseItem>
+
+        <PrizmCollapseItem name="two" title="PrizmCollapseItem2">
+          <div>Как дела?</div>
+        </PrizmCollapseItem>
+
+        <PrizmCollapseItem name="three" title="PrizmCollapseItem3">
+          <div>Пока</div>
+        </PrizmCollapseItem>
+      </PrizmCollapse>
     </div>
   </div>
 
