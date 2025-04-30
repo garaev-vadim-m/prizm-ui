@@ -295,8 +295,64 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
         </template>
       </PrizmDropdown>
 
-      <PrizmDropdown size="small">
-        <PrizmButton type="text">Dropdown small</PrizmButton>
+      <PrizmDropdown size="small" type="warning" :splitButton="true">
+        Dropdown small warning
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
+
+      <PrizmDropdown size="small" type="danger" :splitButton="true">
+        Dropdown small danger
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
+
+      <PrizmDropdown size="small" type="info" :splitButton="true">
+        Dropdown small info
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
+
+      <PrizmDropdown size="small" type="success" :splitButton="true">
+        Dropdown small success
+
+        <template #dropdown>
+          <PrizmDropdownMenu>
+            <PrizmDropdownItem>Привет</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Как дела?</PrizmDropdownItem>
+
+            <PrizmDropdownItem>Пока</PrizmDropdownItem>
+          </PrizmDropdownMenu>
+        </template>
+      </PrizmDropdown>
+
+      <PrizmDropdown size="small" type="text" :splitButton="true">
+        Dropdown small text
 
         <template #dropdown>
           <PrizmDropdownMenu>

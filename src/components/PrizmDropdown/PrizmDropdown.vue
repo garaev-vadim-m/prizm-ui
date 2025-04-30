@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ElDropdown } from 'element-plus';
+import { type DropdownInstance, ElDropdown } from 'element-plus';
 import 'element-plus/es/components/dropdown/style/css';
+import { ref, useTemplateRef } from 'vue';
 
 type ElDropdownProps = InstanceType<typeof ElDropdown>['$props'];
 
@@ -32,10 +33,13 @@ type Props = {
   size?: 'large' | 'default' | 'small';
   placement?: PickedProps['placement'];
   triggerKeys?: PickedProps['triggerKeys'];
+  openList?: boolean;
 
   onClick?: PickedProps['onClick'];
   'onVisible-change'?: PickedProps['onVisible-change'];
   onCommand?: PickedProps['onCommand'];
+
+  onButtonDropDown?: typeof openDropdown;
 };
 
 type Slots = {
@@ -43,17 +47,29 @@ type Slots = {
   dropdown?: unknown;
 };
 
+const baseDropdownRef = useTemplateRef<DropdownInstance>('baseDropdownRef');
+
+function openDropdown() {
+  if (!baseDropdownRef.value || !props.splitButton || !props.openList) return;
+  return baseDropdownRef.value.handleOpen();
+}
+
 const props = withDefaults(defineProps<Props>(), {
   size: 'large',
   placement: 'top',
   trigger: 'click',
   type: 'default',
+  openList: false,
 });
 
 const slots = defineSlots<Slots>();
+
+defineExpose({
+  baseDropdownRef,
+});
 </script>
 <template>
-  <ElDropdown v-bind="props" :class="[classes.root]">
+  <ElDropdown ref="baseDropdownRef" v-bind="props" :class="[classes.root]" @click="openDropdown">
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -69,7 +85,6 @@ const slots = defineSlots<Slots>();
 }
 
 .root :global(.el-button) {
-  --el-button-border-color: var(--color-dark-gray);
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
