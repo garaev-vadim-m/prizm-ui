@@ -38,8 +38,6 @@ type Props = {
   onClick?: PickedProps['onClick'];
   'onVisible-change'?: PickedProps['onVisible-change'];
   onCommand?: PickedProps['onCommand'];
-
-  onButtonDropDown?: typeof openDropdown;
 };
 
 type Slots = {

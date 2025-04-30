@@ -22,6 +22,8 @@ import {
   PrizmDropdownItem,
   PrizmDropdown,
   PrizmDropdownMenu,
+  PrizmTable,
+  PrizmTableColumn,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -51,6 +53,33 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
     message: `Variant type: ${type}`,
   });
 }
+
+const table = [
+  {
+    id: 1,
+    name: 'Col1',
+    sex: 'woomen',
+    age: Math.floor(Math.random() * 98) + 2,
+  },
+  {
+    id: 2,
+    name: 'Col2',
+    sex: 'man',
+    age: Math.floor(Math.random() * 98) + 2,
+  },
+  {
+    id: 3,
+    name: 'Col3',
+    sex: 'woomen',
+    age: Math.floor(Math.random() * 98) + 2,
+  },
+  {
+    id: 4,
+    name: 'Col4',
+    sex: 'man',
+    age: Math.floor(Math.random() * 98) + 2,
+  },
+];
 </script>
 <template>
   <div :class="classes.root">
@@ -364,6 +393,72 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
           </PrizmDropdownMenu>
         </template>
       </PrizmDropdown>
+    </div>
+
+    <h3>Table</h3>
+
+    <div :class="classes.group">
+      <PrizmTable :data="table">
+        <PrizmTableColumn label="Name" prop="name" fixed width="180" sortable />
+
+        <PrizmTableColumn label="Sex" prop="sex" fixed width="180" sortable />
+
+        <PrizmTableColumn label="Age" prop="age" fixed width="180" sortable />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+
+        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+      </PrizmTable>
     </div>
   </div>
 
