@@ -13,7 +13,7 @@ const modelValue = defineModel<string | number>({
   required: true,
 });
 
-const baseDatePickerRef = useTemplateRef('baseDatePickerRef');
+const baseDateTimePickerRef = useTemplateRef('baseDateTimePickerRef');
 
 type ElDatePickerProps = InstanceType<typeof ElDatePicker>['$props'];
 
@@ -80,11 +80,11 @@ type Slots = {
 const slots = defineSlots<Slots>();
 
 defineExpose({
-  baseDatePickerRef,
+  baseDateTimePickerRef,
 });
 </script>
 <template>
-  <ElDatePicker v-bind="props" ref="baseDatePickerRef" v-model="modelValue" :class="classes.root">
+  <ElDatePicker v-bind="props" ref="baseDateTimePickerRef" v-model="modelValue" :class="classes.root">
     <template #default v-if="slots.default">
       <slot />
     </template>
