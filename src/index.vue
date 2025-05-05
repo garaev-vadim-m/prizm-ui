@@ -26,6 +26,7 @@ import {
   PrizmTableColumn,
   PrizmTimePicker,
   PrizmDateTimePicker,
+  PrizmAvatar,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -135,6 +136,26 @@ const table = [
       <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="default" />
 
       <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="small" />
+    </div>
+
+    <h3>TimePicker</h3>
+
+    <div :class="classes.group">
+      <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" />
+
+      <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="default" />
+
+      <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="small" />
+    </div>
+
+    <h3>DateTimePicker</h3>
+
+    <div :class="classes.group">
+      <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" />
+
+      <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="default" />
+
+      <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="small" />
     </div>
 
     <h3>Form</h3>
@@ -466,24 +487,20 @@ const table = [
     </div>
   </div>
 
-  <h3>TimePicker</h3>
+  <h3>Avatar</h3>
 
   <div :class="classes.group">
-    <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" />
+    <PrizmAvatar />
 
-    <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="default" />
+    <PrizmAvatar size="default" />
 
-    <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="small" />
-  </div>
+    <PrizmAvatar size="small" />
 
-  <h3>DateTimePicker</h3>
+    <PrizmAvatar shape="square" size="small" />
 
-  <div :class="classes.group">
-    <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" />
+    <PrizmAvatar shape="square" size="default" />
 
-    <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="default" />
-
-    <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="small" />
+    <PrizmAvatar shape="square" />
   </div>
 
   <PrizmDrawer v-model="drawer" />

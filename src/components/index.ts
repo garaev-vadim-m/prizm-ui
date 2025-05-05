@@ -24,6 +24,7 @@ export { default as PrizmDropdownItem } from './PrizmDropdown/PrizmDropdownItem.
 export { default as PrizmDropdownMenu } from './PrizmDropdown/PrizmDropdownMenu.vue';
 export { default as PrizmTable } from './PrizmTable/PrizmTable.vue';
 export { default as PrizmTableColumn } from './PrizmTable/PrizmTableColumn.vue';
+export { default as PrizmAvatar } from './PrizmAvatar.vue';
 
 export { PrizmMessageBox } from './PrizmMessageBox/PrizmMessageBox';
 export { PrizmNotification } from './PrizmNotification/PrizmNotification';
