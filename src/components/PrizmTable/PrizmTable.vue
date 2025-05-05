@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElTable
+ */
+
 import { ElTable } from 'element-plus';
 import 'element-plus/es/components/table/style/css';
 

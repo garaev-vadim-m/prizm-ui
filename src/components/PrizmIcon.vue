@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElIcon
+ */
+
 import { ElIcon } from 'element-plus';
 import 'element-plus/es/components/icon/style/css';
 

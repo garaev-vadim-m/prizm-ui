@@ -1,7 +1,11 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElDropdown
+ */
 import { type DropdownInstance, ElDropdown } from 'element-plus';
 import 'element-plus/es/components/dropdown/style/css';
-import { ref, useTemplateRef } from 'vue';
+import { useTemplateRef } from 'vue';
 
 type ElDropdownProps = InstanceType<typeof ElDropdown>['$props'];
 

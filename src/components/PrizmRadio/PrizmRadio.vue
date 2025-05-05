@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElRadio
+ */
+
 import { ElRadio } from 'element-plus';
 import 'element-plus/es/components/radio/style/css';
 import { type PropType } from 'vue';

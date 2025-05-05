@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElCollapseItem
+ */
+
 import { ElCollapseItem, type CollapseItemProps } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/collapse-item/style/css';

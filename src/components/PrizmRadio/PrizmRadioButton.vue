@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElRadioButton
+ */
+
 import { ElRadioButton } from 'element-plus';
 import 'element-plus/es/components/radio-button/style/css';
 import { type PropType } from 'vue';

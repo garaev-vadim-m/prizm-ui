@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElOption
+ */
+
 import { ElOption } from 'element-plus';
 import 'element-plus/es/components/option/style/css';
 import { useTemplateRef } from 'vue';

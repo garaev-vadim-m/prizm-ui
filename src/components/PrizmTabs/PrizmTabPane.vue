@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElTabPane
+ */
+
 import { ElTabPane } from 'element-plus';
 import 'element-plus/es/components/tab-pane/style/css';
 import { useTemplateRef } from 'vue';

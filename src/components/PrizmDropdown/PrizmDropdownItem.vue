@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElDropdownItem
+ */
 import { ElDropdownItem } from 'element-plus';
 import 'element-plus/es/components/dropdown-item/style/css';
 

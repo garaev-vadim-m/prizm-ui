@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElDatePicker
+ */
+
 import { ElDatePicker } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/date-picker/style/css';

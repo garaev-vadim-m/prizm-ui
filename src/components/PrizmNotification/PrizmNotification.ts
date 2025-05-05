@@ -1,7 +1,6 @@
 /**
- * @author Garaev.VM@gazprom-neft.ru
- * @components ElNotification
- * https://element-plus.org/en-US/component/notification.html
+ * @author Garaev.VM
+ * @components ElNotificaton
  */
 import { ElNotification, type NotificationInstance } from 'element-plus';
 import 'element-plus/es/components/notification/style/css';
@@ -29,7 +28,7 @@ const classLookup: Record<BaseNotificationProps['type'], string> = {
 export const PrizmNotification = ({
   type,
   position = 'top-right',
-  duration = 4000,
+  duration = 1000,
   message = '',
   title = '',
 }: BaseNotificationProps) => {

@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElSelect
+ */
+
 import { ElSelect } from 'element-plus';
 import 'element-plus/es/components/select/style/css';
 import { useTemplateRef, type PropType } from 'vue';

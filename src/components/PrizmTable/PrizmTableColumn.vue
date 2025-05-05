@@ -1,6 +1,10 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElTableColumn
+ */
+
 import { ElTableColumn } from 'element-plus';
-import { IconArrowTop } from '@/shared/icon';
 import 'element-plus/es/components/table-column/style/css';
 
 type ElTableColumnProps = InstanceType<typeof ElTableColumn>['$props'];

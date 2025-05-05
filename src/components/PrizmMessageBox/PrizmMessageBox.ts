@@ -1,3 +1,8 @@
+/**
+ * @author Garaev.VM
+ * @components ElMessageBox
+ */
+
 import { ElMessageBox, type ElMessageBoxOptions, type MessageBoxData, type MessageBoxType } from 'element-plus';
 import 'element-plus/es/components/message-box/style/css';
 import classes from './PrizmMessageBox.module.scss';

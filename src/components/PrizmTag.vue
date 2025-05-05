@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { ElTag, type TagEmits } from 'element-plus';
+/**
+ * @author Garaev.VM
+ * @components ElTag
+ */
+
+import { ElTag } from 'element-plus';
 import 'element-plus/es/components/tag/style/css';
 import { useTemplateRef } from 'vue';
 

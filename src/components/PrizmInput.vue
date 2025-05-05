@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElInput
+ */
+
 import { ElInput, type InputEmits } from 'element-plus';
 import 'element-plus/es/components/input/style/css';
 import { useTemplateRef } from 'vue';

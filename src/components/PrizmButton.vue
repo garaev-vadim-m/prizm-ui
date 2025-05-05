@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElButton
+ */
+
 import { ElButton } from 'element-plus';
 import { computed, useCssModule, useTemplateRef } from 'vue';
 import 'element-plus/es/components/button/style/css';

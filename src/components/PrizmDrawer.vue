@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { ElDrawer, type DrawerProps, type ButtonEmits } from 'element-plus';
+/**
+ * @author Garaev.VM
+ * @components ElDrawer
+ */
+
+import { ElDrawer, type DrawerProps } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/drawer/style/css';
 import { PrizmButton } from '../components';

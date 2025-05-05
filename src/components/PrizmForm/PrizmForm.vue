@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElForm
+ */
 import { ElForm } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/form/style/css';

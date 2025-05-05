@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElCheckbox
+ */
+
 import { ElCheckbox } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/checkbox/style/css';

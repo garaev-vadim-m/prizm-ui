@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElTabs
+ */
+
 import { ElTabs } from 'element-plus';
 import 'element-plus/es/components/tabs/style/css';
 import { useTemplateRef, type PropType } from 'vue';

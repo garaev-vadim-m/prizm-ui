@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @author Garaev.VM
+ * @components ElDialog
+ */
+
 import { ElDialog, type DialogEmits, type DialogProps } from 'element-plus';
 import { computed, useCssModule, useTemplateRef } from 'vue';
 import 'element-plus/es/components/dialog/style/css';
