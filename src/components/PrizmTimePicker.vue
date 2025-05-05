@@ -4,7 +4,7 @@
  * @components ElDatePicker
  */
 
-import { ElDatePicker } from 'element-plus';
+import { ElTimePicker } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/date-picker/style/css';
 import { IconCalendar } from '@/shared/icon';
@@ -13,9 +13,9 @@ const modelValue = defineModel<string | number>({
   required: true,
 });
 
-const baseDatePickerRef = useTemplateRef('baseDatePickerRef');
+const baseTimePickerRef = useTemplateRef('baseTimePickerRef');
 
-type ElDatePickerProps = InstanceType<typeof ElDatePicker>['$props'];
+type ElDatePickerProps = InstanceType<typeof ElTimePicker>['$props'];
 
 type PickedProps = Pick<
   ElDatePickerProps,
@@ -33,6 +33,9 @@ type PickedProps = Pick<
   | 'name'
   | 'placeholder'
   | 'size'
+  | 'rangeSeparator'
+  | 'timeFormat'
+  | 'unlinkPanels'
 >;
 
 type Props = {
@@ -50,6 +53,9 @@ type Props = {
   name?: PickedProps['name'];
   placeholder?: PickedProps['placeholder'];
   size?: PickedProps['size'];
+  rangeSeparator?: PickedProps['rangeSeparator'];
+  timeFormat?: PickedProps['timeFormat'];
+  unlinkPanels?: PickedProps['unlinkPanels'];
 
   onVisibility?: (visibility: boolean) => void;
   onCalendarChange?: (val: [Date, null | Date]) => void;
@@ -60,8 +66,9 @@ type Props = {
 const props = withDefaults(defineProps<Props>(), {
   clearable: false,
   size: 'large',
-  format: 'DD.MM.YYYY',
-  valueFormat: 'YYYY-MM-DD',
+  format: 'DD.MM.YYYY:hh:mm:ss',
+  timeFormat: 'hh:mm:ss',
+  valueFormat: 'YYYY-MM-DD:hh-mm-ss',
   prefixIcon: IconCalendar,
 });
 
@@ -77,11 +84,11 @@ type Slots = {
 const slots = defineSlots<Slots>();
 
 defineExpose({
-  baseDatePickerRef,
+  baseTimePickerRef,
 });
 </script>
 <template>
-  <ElDatePicker v-bind="props" ref="baseDatePickerRef" v-model="modelValue" :class="classes.root">
+  <ElTimePicker v-bind="props" ref="baseTimePickerRef" v-model="modelValue" :class="classes.root">
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -105,7 +112,7 @@ defineExpose({
     <template #nextYear v-if="slots.nextYear">
       <slot name="nextYear" />
     </template>
-  </ElDatePicker>
+  </ElTimePicker>
 </template>
 <style module="classes" lang="scss">
 .root {
