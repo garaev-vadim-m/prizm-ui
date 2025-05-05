@@ -27,6 +27,7 @@ import {
   PrizmTimePicker,
   PrizmDateTimePicker,
   PrizmAvatar,
+  PrizmTooltip,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
@@ -161,7 +162,7 @@ const table = [
     <h3>Form</h3>
 
     <div :class="classes.group">
-      <PrizmForm ref="prizmForm">
+      <PrizmForm ref="prizmForm" :class="classes.form">
         <PrizmFormItem label="PrizmForm with PrizmFormItem 1">
           <PrizmInput placeholder="PrizmInput" />
         </PrizmFormItem>
@@ -501,6 +502,18 @@ const table = [
     <PrizmAvatar shape="square" size="default" />
 
     <PrizmAvatar shape="square" />
+  </div>
+
+  <h3>Tooltip</h3>
+
+  <div :class="classes.group">
+    <PrizmTooltip content="Привет">
+      <PrizmButton :style="{ width: '200px' }" type="primary">Эффект дарк</PrizmButton>
+    </PrizmTooltip>
+
+    <PrizmTooltip content="Как дела?" effect="light">
+      <PrizmButton :style="{ width: '200px' }" type="primary">Эффект лайт</PrizmButton>
+    </PrizmTooltip>
   </div>
 
   <PrizmDrawer v-model="drawer" />
