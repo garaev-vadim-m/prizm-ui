@@ -5,6 +5,8 @@ export { default as PrizmTag } from './PrizmTag.vue';
 export { default as PrizmInput } from './PrizmInput.vue';
 export { default as PrizmIcon } from './PrizmIcon.vue';
 export { default as PrizmDatePicker } from './PrizmDatePicker.vue';
+export { default as PrizmDateTimePicker } from './PrizmDateTimePicker.vue';
+export { default as PrizmTimePicker } from './PrizmTimePicker.vue';
 export { default as PrizmForm } from './PrizmForm/PrizmForm.vue';
 export { default as PrizmFormItem } from './PrizmForm/PrizmFormItem.vue';
 export { default as PrizmDrawer } from './PrizmDrawer.vue';

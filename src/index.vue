@@ -24,10 +24,14 @@ import {
   PrizmDropdownMenu,
   PrizmTable,
   PrizmTableColumn,
+  PrizmTimePicker,
+  PrizmDateTimePicker,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 
 const datePicker = ref('');
+const time = ref('');
+const dateTime = ref('');
 const drawer = ref(false);
 
 const tabs = ref('id1');
@@ -460,6 +464,26 @@ const table = [
         <PrizmTableColumn label="MockAge" prop="age" width="180" />
       </PrizmTable>
     </div>
+  </div>
+
+  <h3>TimePicker</h3>
+
+  <div :class="classes.group">
+    <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" />
+
+    <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="default" />
+
+    <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="small" />
+  </div>
+
+  <h3>DateTimePicker</h3>
+
+  <div :class="classes.group">
+    <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" />
+
+    <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="default" />
+
+    <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="small" />
   </div>
 
   <PrizmDrawer v-model="drawer" />
