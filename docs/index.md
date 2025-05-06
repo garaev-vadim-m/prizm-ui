@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Prizm"
-  text: "vue ui kit"
-  tagline: описание в разработке
+  name: "PrizmVue"
+  text: "todo"
+  tagline: ui kit Основанный на element-plus по дизайн системе Prizm
   actions:
     - theme: brand
       text: get started

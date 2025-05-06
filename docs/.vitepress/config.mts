@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'PrizmUiKit',
-  description: 'PrizmUiKit',
+  title: 'Prizm ui-kit',
+  description: 'ui-kit основанный на element-plus по дизайн системе Prizm',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -59,6 +59,43 @@ export default defineConfig({
               ],
             },
             { text: 'Avatar', link: '/components/prizm-avatar' },
+          ],
+        },
+        {
+          text: 'Feedback components',
+          collapsed: false,
+          items: [
+            { text: 'Dialog', link: '/components/prizm-dialog' },
+            { text: 'Tooltip', link: '/components/prizm-tooltip' },
+            { text: 'Message box', link: '/components/prizm-message-box' },
+            { text: 'Notification', link: '/components/prizm-notification' },
+            { text: 'Drawer', link: '/components/prizm-drawer' },
+          ],
+        },
+        {
+          text: 'Navigation components',
+          collapsed: false,
+          items: [
+            { text: 'Tabs', link: '/components/prizm-dialog' },
+            {
+              text: 'Dropdown',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Dropdown',
+                  link: '/components/dropdown/prizm-dropdown.md',
+                },
+                {
+                  text: 'Dropdown menu',
+                  link: '/components/dropdown/prizm-dropdown-menu.md',
+                },
+                {
+                  text: 'Dropdown item',
+                  link: '/components/dropdown/prizm-dropdown-item.md',
+                },
+              ],
+            },
+            { text: 'Todo anchor', link: '/components/prizm-dialog' },
           ],
         },
       ],

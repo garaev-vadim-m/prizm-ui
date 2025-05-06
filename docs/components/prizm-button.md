@@ -14,7 +14,7 @@ import { PrizmButton } from 'prizm-ui-vue';
 ```vue
 
 <script setup lang="ts">
-import { PrizmInput } from 'prizm-ui-vue';
+import { PrizmButton } from 'prizm-ui-vue';
 
 function handleClick() {
   console.log('Кнопка нажата')
