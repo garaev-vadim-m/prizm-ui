@@ -108,10 +108,6 @@ const slots = defineSlots<Slots>();
   box-shadow: 2px 0 4px 0 rgba(191, 198, 215, 0.5);
 }
 
-.root :global(.el-table__header-wrapper) {
-  z-index: 5;
-  box-shadow: 2px 2px 4px 0 rgba(191, 198, 215, 0.5);
-}
 .root_header {
   font-weight: 600;
   font-size: 12px;
