@@ -25,3 +25,4 @@ dist-ssr
 *.bundle
 *.7z
 *.zip
+docs/.vitepress/cache
