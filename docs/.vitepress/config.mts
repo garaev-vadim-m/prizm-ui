@@ -9,9 +9,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide' },
-      { text: 'Style guide', link: '/style-guide' },
       { text: 'Components', link: '/components/prizm-button' },
-      { text: 'Package', link: '/package' },
     ],
 
     sidebar: {
@@ -66,6 +64,6 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/garaev-vadim-m' }],
   },
 });

@@ -18,14 +18,8 @@ features:
   - title: Guide
     details: Установка ui-kit
     link: /guide
-  - title: Style guide
-    details: Правила написания кода
-    link: /style-guide
   - title: Components
     details: Компоненты для использовая
     link: /components
-  - title: Package
-    details: Используемые пакеты
-    link: /package
 ---
 
