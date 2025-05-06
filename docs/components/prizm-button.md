@@ -11,12 +11,21 @@ sidebar: auto
 ## Импорт
 
 ```ts
-import PrizmButton from '@/components/PrizmButton.vue';
+import { PrizmButton } from 'prizm-ui-vue';
 ```
 
 ## Пример использования
 
 ```vue
+
+<script setup lang="ts">
+import { PrizmInput } from 'prizm-ui-vue';
+
+function handleClick() {
+  console.log('Кнопка нажата')
+}
+</script>
+
 <PrizmButton type="primary" @click="handleClick">
   Нажми меня
 </PrizmButton>
