@@ -4,19 +4,28 @@ layout: home
 
 hero:
   name: "Prizm"
-  text: "Vue ui kit"
+  text: "vue ui kit"
   tagline: описание в разработке
   actions:
     - theme: brand
-      text: Get started
+      text: get started
       link: /guide
+    - theme: alt
+      text: Исходный код
+      link: https://github.com/garaev-vadim-m/prizm-ui
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Guide
+    details: Установка ui-kit
+    link: /guide
+  - title: Style guide
+    details: Правила написания кода
+    link: /style-guide
+  - title: Components
+    details: Компоненты для использовая
+    link: /components
+  - title: Package
+    details: Используемые пакеты
+    link: /package
 ---
 

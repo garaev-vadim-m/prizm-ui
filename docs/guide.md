@@ -41,7 +41,7 @@ export default {
 
 ## Лицензия
 
-[MIT](./LICENSE)
+[MIT]
 
 ---
 

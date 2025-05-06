@@ -11,6 +11,7 @@ export default defineConfig({
       { text: 'Guide', link: '/guide' },
       { text: 'Style guide', link: '/style-guide' },
       { text: 'Components', link: '/components/prizm-button' },
+      { text: 'Package', link: '/package' },
     ],
 
     sidebar: {
