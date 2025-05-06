@@ -10,7 +10,7 @@ sidebar: auto
 ## Импорт
 
 ```ts
-import PrizmInput from '@/components/PrizmInput.vue';
+import { PrizmInput } from from 'prizm-ui-vue';
 ```
 
 ## Пример использования
