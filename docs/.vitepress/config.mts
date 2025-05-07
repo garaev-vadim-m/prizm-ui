@@ -1,11 +1,9 @@
 import { defineConfig } from 'vitepress';
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Prizm ui-kit',
   description: 'ui-kit основанный на element-plus по дизайн системе Prizm',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide' },
@@ -59,6 +57,8 @@ export default defineConfig({
               ],
             },
             { text: 'Avatar', link: '/components/prizm-avatar' },
+            { text: 'Skeleton', link: '/components/prizm-skeleton' },
+            { text: 'Pagination', link: '/components/prizm-pagination' },
           ],
         },
         {
@@ -76,26 +76,35 @@ export default defineConfig({
           text: 'Navigation components',
           collapsed: false,
           items: [
-            { text: 'Tabs', link: '/components/prizm-dialog' },
+            { text: 'Tabs',collapsed: true, items: [
+              {
+                text: 'Tabs',
+                link: '/components/tabs/prizm-tabs'
+              },
+              {
+                text: 'Tab-pane',
+                link: '/components/tabs/prizm-tab-pane'
+              },
+            ] },
             {
               text: 'Dropdown',
               collapsed: true,
               items: [
                 {
                   text: 'Dropdown',
-                  link: '/components/dropdown/prizm-dropdown.md',
+                  link: '/components/dropdown/prizm-dropdown',
                 },
                 {
                   text: 'Dropdown menu',
-                  link: '/components/dropdown/prizm-dropdown-menu.md',
+                  link: '/components/dropdown/prizm-dropdown-menu',
                 },
                 {
                   text: 'Dropdown item',
-                  link: '/components/dropdown/prizm-dropdown-item.md',
+                  link: '/components/dropdown/prizm-dropdown-item',
                 },
               ],
             },
-            { text: 'Todo anchor', link: '/components/prizm-dialog' },
+            { text: 'Anchor', link: '/components/prizm-anchor' },
           ],
         },
       ],

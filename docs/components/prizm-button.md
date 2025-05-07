@@ -1,4 +1,3 @@
-
 # PrizmButton
 
 Компонент кнопки, основанный на `ElButton` из Element Plus. Поддерживает иконки, стилизацию через CSS-модули и состояния загрузки.
@@ -12,45 +11,43 @@ import { PrizmButton } from 'prizm-ui-vue';
 ## Пример использования
 
 ```vue
-
 <script setup lang="ts">
 import { PrizmButton } from 'prizm-ui-vue';
 
 function handleClick() {
-  console.log('Кнопка нажата')
+  console.log('Кнопка нажата');
 }
 </script>
-
-<PrizmButton type="primary" @click="handleClick">
-  Нажми меня
-</PrizmButton>
+<template>
+  <PrizmButton type="primary" @click="handleClick"> Нажми меня </PrizmButton>
+</template>
 ```
 
 ---
 
 ## Props
 
-| Название      | Тип                                                                  | По умолчанию | Описание                         |
-|---------------|----------------------------------------------------------------------|--------------|----------------------------------|
-| `type`        | `'primary'` \| `'success'` \| `'warning'` \| `'danger'` \| `'default'` | `'default'`  | Тип кнопки                       |
-| `size`        | `'small'` \| `'default'` \| `'large'`                                 | `'large'`    | Размер кнопки                    |
-| `icon`        | `string` \| `Component`                                               | `—`          | Иконка слева                     |
-| `link`        | `boolean`                                                             | `false`      | Стилизация как ссылка           |
-| `plain`       | `boolean`                                                             | `false`      | Простой стиль (outline)         |
-| `dark`        | `boolean`                                                             | `false`      | Темная тема                      |
-| `nativeType`  | `'button'` \| `'submit'` \| `'reset'`                                 | `'button'`   | HTML-атрибут `type`             |
-| `disabled`    | `boolean`                                                             | `false`      | Отключена ли кнопка             |
-| `onClick`     | `(e: MouseEvent) => void`                                             | `—`          | Обработчик события `click`      |
+| Название     | Тип                                                                    | По умолчанию | Описание                   |
+| ------------ | ---------------------------------------------------------------------- | ------------ | -------------------------- |
+| `type`       | `'primary'` \| `'success'` \| `'warning'` \| `'danger'` \| `'default'` | `'default'`  | Тип кнопки                 |
+| `size`       | `'small'` \| `'default'` \| `'large'`                                  | `'large'`    | Размер кнопки              |
+| `icon`       | `string` \| `Component`                                                | `—`          | Иконка слева               |
+| `link`       | `boolean`                                                              | `false`      | Стилизация как ссылка      |
+| `plain`      | `boolean`                                                              | `false`      | Простой стиль (outline)    |
+| `dark`       | `boolean`                                                              | `false`      | Темная тема                |
+| `nativeType` | `'button'` \| `'submit'` \| `'reset'`                                  | `'button'`   | HTML-атрибут `type`        |
+| `disabled`   | `boolean`                                                              | `false`      | Отключена ли кнопка        |
+| `onClick`    | `(e: MouseEvent) => void`                                              | `—`          | Обработчик события `click` |
 
 ---
 
 ## Слоты
 
-| Название   | Описание                            |
-|------------|-------------------------------------|
-| `default`  | Основное содержимое кнопки          |
-| `icon`     | Слот для пользовательской иконки    |
-| `loading`  | Слот для кастомного индикатора загрузки |
+| Название  | Описание                                |
+| --------- | --------------------------------------- |
+| `default` | Основное содержимое кнопки              |
+| `icon`    | Слот для пользовательской иконки        |
+| `loading` | Слот для кастомного индикатора загрузки |
 
 ---
 

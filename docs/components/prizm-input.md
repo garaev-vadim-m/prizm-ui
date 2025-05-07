@@ -16,7 +16,15 @@ import { PrizmInput } from from 'prizm-ui-vue';
 ## Пример использования
 
 ```vue
-<PrizmInput v-model="text" placeholder="Введите текст" />
+<script setup lang="ts">
+import { PrizmInput } from from 'prizm-ui-vue';
+import { ref } from 'vue';
+
+const text = ref('')
+</script>
+<template>
+  <PrizmInput v-model="text" placeholder="Введите текст" />
+</template>
 ```
 
 ---
