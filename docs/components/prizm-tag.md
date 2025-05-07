@@ -1,6 +1,6 @@
 ---
-title: Table
+title: Tag
 sidebar: auto
 ---
 
-# Table
+# Tag

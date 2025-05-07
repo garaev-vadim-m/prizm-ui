@@ -106,6 +106,7 @@ export default defineConfig({
             { text: 'Avatar', link: '/components/prizm-avatar' },
             { text: 'Skeleton', link: '/components/prizm-skeleton' },
             { text: 'Pagination', link: '/components/prizm-pagination' },
+            { text: 'Tag', link: '/components/prizm-tag' },
             {
               text: 'Collapse',
               collapsed: true,

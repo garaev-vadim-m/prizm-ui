@@ -1,9 +1,9 @@
 ---
-title: PrizmInput
+title: Input
 sidebar: auto
 ---
 
-# PrizmInput
+# Input
 
 Пользовательский input-компонент на основе `ElInput` из Element Plus с поддержкой кастомных иконок, стилей и событий.
 

@@ -1,4 +1,9 @@
-# PrizmButton
+---
+title: Button
+sidebar: auto
+---
+
+# Button
 
 Компонент кнопки, основанный на `ElButton` из Element Plus. Поддерживает иконки, стилизацию через CSS-модули и состояния загрузки.
 
