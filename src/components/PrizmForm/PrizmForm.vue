@@ -18,6 +18,8 @@ type PickedProps = Pick<
   | 'labelPosition'
   | 'onValidate'
   | 'validateOnRuleChange'
+  | 'labelWidth'
+  | 'inline'
 >;
 
 type Props = {
@@ -27,6 +29,8 @@ type Props = {
   requireAsteriskPosition?: PickedProps['requireAsteriskPosition'];
   model?: PickedProps['model'];
   validateOnRuleChange?: PickedProps['validateOnRuleChange'];
+  labelWidth?: PickedProps['labelWidth'];
+  inline?: PickedProps['inline'];
 
   onValidate?: PickedProps['onValidate'];
 };
@@ -35,7 +39,11 @@ type Slots = {
   default?: unknown;
 };
 
-const props = withDefaults(defineProps<Props>(), { labelPosition: 'top', requireAsteriskPosition: 'right' });
+const props = withDefaults(defineProps<Props>(), {
+  labelPosition: 'top',
+  requireAsteriskPosition: 'right',
+  labelWidth: 'auto',
+});
 const slots = defineSlots<Slots>();
 
 const baseFormRef = useTemplateRef('baseFormRef');
