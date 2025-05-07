@@ -42,6 +42,53 @@ export default defineConfig({
             { text: 'Date picker', link: '/components/prizm-date-picker' },
             { text: 'Date time picker', link: '/components/prizm-date-time-picker' },
             { text: 'Time picker', link: '/components/prizm-date-time-picker' },
+            { text: 'Switch', link: '/components/prizm-switch' },
+            {
+              text: 'Checkbox',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Checkbox',
+                  link: '/components/checkbox/prizm-checkbox',
+                },
+                {
+                  text: 'Checkbox group',
+                  link: '/components/checkbox/prizm-checkbox-group',
+                },
+              ],
+            },
+            {
+              text: 'Select',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Select',
+                  link: '/components/select/prizm-select',
+                },
+                {
+                  text: 'Option',
+                  link: '/components/select/prizm-option',
+                },
+              ],
+            },
+            {
+              text: 'Radio',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Radio',
+                  link: '/components/radio/prizm-radio',
+                },
+                {
+                  text: 'Radio group',
+                  link: '/components/radio/prizm-radio-group',
+                },
+                {
+                  text: 'Radio button',
+                  link: '/components/radio/prizm-radio-button',
+                },
+              ],
+            },
           ],
         },
         {
@@ -59,6 +106,20 @@ export default defineConfig({
             { text: 'Avatar', link: '/components/prizm-avatar' },
             { text: 'Skeleton', link: '/components/prizm-skeleton' },
             { text: 'Pagination', link: '/components/prizm-pagination' },
+            {
+              text: 'Collapse',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Collapse',
+                  link: '/components/collapse/prizm-collapse',
+                },
+                {
+                  text: 'Collapse item',
+                  link: '/components/collapse/prizm-collapse-item',
+                },
+              ],
+            },
           ],
         },
         {
@@ -76,16 +137,20 @@ export default defineConfig({
           text: 'Navigation components',
           collapsed: false,
           items: [
-            { text: 'Tabs',collapsed: true, items: [
-              {
-                text: 'Tabs',
-                link: '/components/tabs/prizm-tabs'
-              },
-              {
-                text: 'Tab-pane',
-                link: '/components/tabs/prizm-tab-pane'
-              },
-            ] },
+            {
+              text: 'Tabs',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Tabs',
+                  link: '/components/tabs/prizm-tabs',
+                },
+                {
+                  text: 'Tab-pane',
+                  link: '/components/tabs/prizm-tab-pane',
+                },
+              ],
+            },
             {
               text: 'Dropdown',
               collapsed: true,
