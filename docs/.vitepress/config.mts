@@ -177,5 +177,9 @@ export default defineConfig({
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/garaev-vadim-m' }],
+    
+    search: {
+      provider: 'local'
+    }
   },
 });

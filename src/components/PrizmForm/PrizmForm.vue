@@ -5,6 +5,7 @@
  */
 import { ElForm } from 'element-plus';
 import { useTemplateRef } from 'vue';
+import type PrizmFormItem from './PrizmFormItem.vue';
 import 'element-plus/es/components/form/style/css';
 
 type ElFormProps = InstanceType<typeof ElForm>['$props'];
@@ -36,7 +37,7 @@ type Props = {
 };
 
 type Slots = {
-  default?: unknown;
+  default: typeof PrizmFormItem;
 };
 
 const props = withDefaults(defineProps<Props>(), {

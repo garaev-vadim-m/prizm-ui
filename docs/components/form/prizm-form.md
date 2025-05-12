@@ -166,3 +166,31 @@ const submitForm = async (formEl: FormInstance | undefined) => {
   </PrizmForm>
 </template>
 ```
+
+## Props
+
+| Название                  | Тип                              | По умолчанию | Описание                                     |
+| ------------------------- | -------------------------------- | ------------ | -------------------------------------------- |
+| `disabled`                | `boolean`                        | `false`      | Блокировка формы                             |
+| `statusIcon`              | `boolean`                        | `false`      | Отображение статуса формы                    |
+| `inline`                  | `boolean`                        | `false`      | Отоброжение формы по горизонтали             |
+| `labelPosition`           | `'top'` \| `'right'` \| `'left'` | `left`       | Отображение label                            |
+| `requireAsteriskPosition` | `'top'` \| `'right'` \| `'left'` | `right`      | Отображение иконки обязательности заполнения |
+| `model`                   | `object`                         | `-`          | Оъект формы                                  |
+| `rules`                   | `object`                         | `-`          | Объект валидации формы                       |
+| `labelWidth`              | `string` \| `number`             | `auto`       | Объект валидации формы                       |
+| `validateOnRuleChange`    | `boolean`                        | `true`       | Проверка валидации формы                     |
+
+## Slots
+
+| Название  | Описание                                            |
+| --------- | --------------------------------------------------- |
+| `default` | Слот для <Badge type="info" text="PrizmFormItem" /> |
+
+## Event
+
+| Название   | Тип                                                               |                       |
+| ---------- | ----------------------------------------------------------------- | --------------------- |
+| `validate` | `(prop: FormItemProp, isValid: boolean, message: string) => void` | Метод валидации формы |
+
+---
