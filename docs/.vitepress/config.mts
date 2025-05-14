@@ -41,7 +41,7 @@ export default defineConfig({
             },
             { text: 'Date picker', link: '/components/prizm-date-picker' },
             { text: 'Date time picker', link: '/components/prizm-date-time-picker' },
-            { text: 'Time picker', link: '/components/prizm-date-time-picker' },
+            { text: 'Time picker', link: '/components/prizm-time-picker' },
             { text: 'Switch', link: '/components/prizm-switch' },
             {
               text: 'Checkbox',
