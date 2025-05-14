@@ -31,8 +31,12 @@ type PickedProps = Pick<
   | 'format'
   | 'valueFormat'
   | 'name'
+  | 'rangeSeparator'
   | 'placeholder'
+  | 'startPlaceholder'
+  | 'endPlaceholder'
   | 'size'
+  | 'shortcuts'
 >;
 
 type Props = {
@@ -50,6 +54,10 @@ type Props = {
   name?: PickedProps['name'];
   placeholder?: PickedProps['placeholder'];
   size?: PickedProps['size'];
+  shortcuts?: PickedProps['shortcuts'];
+  startPlaceholder?: PickedProps['startPlaceholder'];
+  endPlaceholder?: PickedProps['endPlaceholder'];
+  rangeSeparator?: PickedProps['rangeSeparator'];
 
   onVisibility?: (visibility: boolean) => void;
   onCalendarChange?: (val: [Date, null | Date]) => void;
@@ -62,6 +70,7 @@ const props = withDefaults(defineProps<Props>(), {
   size: 'large',
   format: 'DD.MM.YYYY',
   valueFormat: 'YYYY-MM-DD',
+  rangeSeparator: '—',
   prefixIcon: IconCalendar,
 });
 
