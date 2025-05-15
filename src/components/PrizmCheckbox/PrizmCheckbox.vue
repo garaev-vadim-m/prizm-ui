@@ -16,21 +16,10 @@ type ElCheckboxProps = InstanceType<typeof ElCheckbox>['$props'];
 
 type PickedProps = Pick<
   ElCheckboxProps,
-  | 'class'
-  | 'modelValue'
-  | 'name'
-  | 'disabled'
-  | 'falseValue'
-  | 'falseLabel'
-  | 'validateEvent'
-  | 'size'
-  | 'value'
-  | 'label'
-  | 'checked'
+  'name' | 'disabled' | 'falseValue' | 'validateEvent' | 'size' | 'value' | 'label' | 'checked'
 >;
 
 type Props = {
-  class?: PickedProps['class'];
   name?: PickedProps['name'];
   disabled?: PickedProps['disabled'];
   falseValue?: PickedProps['falseValue'];
@@ -43,8 +32,12 @@ type Props = {
 
 const checkboxRef = useTemplateRef('checkboxRef');
 const slots = defineSlots<Slots>();
-const modelValue = defineModel<string | number | boolean>();
-const props = defineProps<Props>();
+const modelValue = defineModel<string | number | boolean>({
+  required: true,
+});
+const props = withDefaults(defineProps<Props>(), {
+  size: 'large',
+});
 
 defineExpose({
   checkboxRef,
