@@ -23,7 +23,6 @@ type PickedProps = Pick<
   | 'onChange'
   | 'onRemove-tag'
   | 'multiple'
-  | 'fallbackPlacements'
   | 'disabled'
   | 'noDataText'
   | 'placement'
@@ -59,7 +58,6 @@ type Props = {
   onChange?: PickedProps['onChange'];
   onRemoveTag?: PickedProps['onRemove-tag'];
   multiple?: PickedProps['multiple'];
-  fallbackPlacements?: PickedProps['fallbackPlacements'];
   disabled?: PickedProps['disabled'];
   noDataText?: PickedProps['noDataText'];
   placement?: PickedProps['placement'];

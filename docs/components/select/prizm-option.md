@@ -5,7 +5,7 @@ sidebar: auto
 
 # Option
 
-Компонент список выбора селекта, основанный на `ElOption` из Element Plus.
+Компонент опции, основанный на `ElOption` из Element Plus.
 
 ## Импорт
 
@@ -15,12 +15,14 @@ import { PrizmOption } from 'prizm-ui-vue';
 
 ## Props
 
-### Todo write props
+| Название   | Тип                        | По умолчанию | Описание            |
+| ---------- | -------------------------- | ------------ | ------------------- |
+| `disabled` | `boolean`                  | `false`      | Блокировка опции    |
+| `label`    | `string`                   |              | Название опции      |
+| `width`    | `string \| number \| auto` | `auto`       | Ширина опции выбора |
 
 ## Slots
 
-### Todo write slots
-
-## Events
-
-### Todo write events
+| Название  | Описание                  |
+| --------- | ------------------------- |
+| `default` | Основное содержимое опции |
