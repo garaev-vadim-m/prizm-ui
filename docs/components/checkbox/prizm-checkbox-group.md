@@ -51,3 +51,11 @@ const cities = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
   </PrizmCheckboxGroup>
 </template>
 ```
+
+## Props
+
+### Todo write
+
+## Slots
+
+### Todo write slots
