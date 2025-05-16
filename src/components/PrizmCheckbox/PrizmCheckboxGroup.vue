@@ -14,13 +14,9 @@ type Slots = {
 
 type ElCheckboxGroupProps = InstanceType<typeof ElCheckboxGroup>['$props'];
 
-type PickedProps = Pick<
-  ElCheckboxGroupProps,
-  'class' | 'max' | 'fill' | 'disabled' | 'min' | 'modelValue' | 'textColor'
->;
+type PickedProps = Pick<ElCheckboxGroupProps, 'max' | 'fill' | 'disabled' | 'min' | 'textColor'>;
 
 export type Props = {
-  class?: PickedProps['class'];
   max?: PickedProps['max'];
   fill?: PickedProps['fill'];
   disabled?: PickedProps['disabled'];
@@ -30,7 +26,9 @@ export type Props = {
 
 const checkboxGroupRef = useTemplateRef('checkboxGroupRef');
 const slots = defineSlots<Slots>();
-const modelValue = defineModel<string[] | number[]>();
+const modelValue = defineModel<string[] | number[]>({
+  required: true,
+});
 const props = defineProps<Props>();
 
 defineExpose({
