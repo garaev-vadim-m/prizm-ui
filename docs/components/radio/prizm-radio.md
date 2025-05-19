@@ -144,3 +144,14 @@ const radio3 = ref('Russian');
   </div>
 </template>
 ```
+
+## Props
+### Todo write props
+
+## Slots
+
+### Todo write slots
+
+## Events
+
+### Todo write events
