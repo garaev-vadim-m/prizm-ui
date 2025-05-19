@@ -55,10 +55,11 @@ import { PrizmRadio } from 'prizm-ui-vue';
 import { ref } from 'vue';
 
 const radio = ref('selected and disabled');
+const disabled = ref(true)
 </script>
 
 <template>
   <PrizmRadio v-model="radio" disabled value="disabled">Option A</PrizmRadio>
-  <PrizmRadio v-model="radio" disabled value="selected and disabled"> Option B </PrizmRadio>
+  <PrizmRadio v-model="radio" :disabled="disabled" value="selected and disabled"> Option B </PrizmRadio>
 </template>
 ```
