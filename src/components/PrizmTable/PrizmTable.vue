@@ -6,6 +6,7 @@
 
 import { ElTable } from 'element-plus';
 import 'element-plus/es/components/table/style/css';
+import { useTemplateRef } from 'vue';
 
 type ElTableProps = InstanceType<typeof ElTable>['$props'];
 
@@ -27,11 +28,13 @@ type PickedProps = Pick<
   | 'tableLayout'
   | 'onScroll'
   | 'allowDragLastColumn'
+  | 'rowClassName'
   | 'flexible'
   | 'onCell-click'
   | 'onRow-click'
   | 'emptyText'
   | 'showSummary'
+  | 'showOverflowTooltip'
 >;
 
 type Slots = {
@@ -58,12 +61,16 @@ type Props = {
   flexible?: PickedProps['flexible'];
   emptyText?: PickedProps['emptyText'];
   showSummary?: PickedProps['showSummary'];
+  rowClassName?: PickedProps['rowClassName'];
+  showOverflowTooltip?: PickedProps['showOverflowTooltip'];
 
   onLoad?: PickedProps['load'];
   onCellClick?: PickedProps['onCell-click'];
   onRowClick?: PickedProps['onRow-click'];
   onScroll?: PickedProps['onScroll'];
 };
+
+const baseTableRef = useTemplateRef('baseTableRef');
 
 const props = withDefaults(defineProps<Props>(), {
   emptyText: 'Нет данных',
@@ -74,9 +81,13 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const slots = defineSlots<Slots>();
+
+defineExpose({
+  baseTableRef,
+});
 </script>
 <template>
-  <ElTable v-bind="props" :class="[classes.root]" :header-cell-class-name="classes.root_header">
+  <ElTable ref="baseTableRef" v-bind="props" :class="[classes.root]" :header-cell-class-name="classes.root_header">
     <template #default v-if="slots.default">
       <slot />
     </template>
