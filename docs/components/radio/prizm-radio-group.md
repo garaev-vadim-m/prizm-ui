@@ -11,7 +11,7 @@ sidebar: auto
 import { PrizmRadioGroup } from 'prizm-ui-vue';
 ```
 
-## Пример
+## Пример испоьлзования
 
 ```vue
 <script lang="ts" setup>
