@@ -659,3 +659,321 @@ const tableData: User[] = [
   </PrizmTable>
 </template>
 ```
+
+## Expandable row
+
+```vue
+<script lang="ts" setup>
+import { PrizmTable, PrizmTableColumn } from 'prizm-ui-vue';
+import { ref } from 'vue';
+
+const tableData = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+  {
+    date: '2016-05-08',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+  {
+    date: '2016-05-06',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+  {
+    date: '2016-05-07',
+    name: 'Tom',
+    state: 'California',
+    city: 'San Francisco',
+    address: '3650 21st St, San Francisco',
+    zip: 'CA 94114',
+    family: [
+      {
+        name: 'Jerry',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Spike',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+      {
+        name: 'Tyke',
+        state: 'California',
+        city: 'San Francisco',
+        address: '3650 21st St, San Francisco',
+        zip: 'CA 94114',
+      },
+    ],
+  },
+];
+</script>
+
+<template>
+  <PrizmTable :data="tableData" preserve-expanded-content style="width: 100%">
+    <PrizmTableColumn type="expand">
+      <template #default="props">
+        <div>
+          <p>State: {{ props.row.state }}</p>
+          <p>City: {{ props.row.city }}</p>
+          <p>Address: {{ props.row.address }}</p>
+          <p>Zip: {{ props.row.zip }}</p>
+          <h3>Family</h3>
+          <el-table :data="props.row.family">
+            <PrizmTableColumn label="Name" prop="name" />
+            <PrizmTableColumn label="State" prop="state" />
+            <PrizmTableColumn label="City" prop="city" />
+            <PrizmTableColumn label="Address" prop="address" />
+            <PrizmTableColumn label="Zip" prop="zip" />
+          </el-table>
+        </div>
+      </template>
+    </PrizmTableColumn>
+    <PrizmTableColumn label="Date" prop="date" />
+    <PrizmTableColumn label="Name" prop="name" />
+  </PrizmTable>
+</template>
+```
+
+## Summary show
+
+```vue
+<script lang="ts" setup>
+import { PrizmTable, PrizmTableColumn } from 'prizm-ui-vue';
+
+interface Product {
+  id: string;
+  name: string;
+  amount1: string;
+  amount2: string;
+  amount3: number;
+}
+
+const tableData: Product[] = [
+  {
+    id: '12987122',
+    name: 'Tom',
+    amount1: '234',
+    amount2: '3.2',
+    amount3: 10,
+  },
+  {
+    id: '12987123',
+    name: 'Tom',
+    amount1: '165',
+    amount2: '4.43',
+    amount3: 12,
+  },
+  {
+    id: '12987124',
+    name: 'Tom',
+    amount1: '324',
+    amount2: '1.9',
+    amount3: 9,
+  },
+  {
+    id: '12987125',
+    name: 'Tom',
+    amount1: '621',
+    amount2: '2.2',
+    amount3: 17,
+  },
+  {
+    id: '12987126',
+    name: 'Tom',
+    amount1: '539',
+    amount2: '4.1',
+    amount3: 15,
+  },
+];
+</script>
+
+<template>
+  <PrizmTable :data="tableData" border show-summary style="width: 100%">
+    <PrizmTableColumn prop="id" label="ID" width="180" />
+    <PrizmTableColumn prop="name" label="Name" />
+    <PrizmTableColumn prop="amount1" sortable label="Amount 1" />
+    <PrizmTableColumn prop="amount2" sortable label="Amount 2" />
+    <PrizmTableColumn prop="amount3" sortable label="Amount 3" />
+  </PrizmTable>
+</template>
+```
