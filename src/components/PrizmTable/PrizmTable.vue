@@ -27,7 +27,6 @@ type PickedProps = Pick<
   | 'fit'
   | 'tableLayout'
   | 'onScroll'
-  | 'allowDragLastColumn'
   | 'rowClassName'
   | 'flexible'
   | 'onCell-click'
@@ -57,7 +56,6 @@ type Props = {
   cellStyle?: PickedProps['cellStyle'];
   fit?: PickedProps['fit'];
   tableLayout?: PickedProps['tableLayout'];
-  allowDragLastColumn?: PickedProps['allowDragLastColumn'];
   flexible?: PickedProps['flexible'];
   emptyText?: PickedProps['emptyText'];
   showSummary?: PickedProps['showSummary'];
