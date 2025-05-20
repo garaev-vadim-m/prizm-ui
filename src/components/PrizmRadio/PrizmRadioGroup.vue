@@ -9,10 +9,9 @@ import 'element-plus/es/components/radio-group/style/css';
 import { type PropType } from 'vue';
 
 type ElRadioProps = InstanceType<typeof ElRadioGroup>['$props'];
-type PickedProps = Pick<ElRadioProps, 'fill' | 'disabled' | 'name' | 'onChange'>;
+type PickedProps = Pick<ElRadioProps, 'disabled' | 'name' | 'onChange'>;
 
 type Props = {
-  fill?: PickedProps['fill'];
   disabled?: PickedProps['disabled'];
   name?: PickedProps['name'];
 
