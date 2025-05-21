@@ -5,3 +5,8 @@
 .content-container {
   max-width: 100% !important;
 }
+
+table, thead, tbody {
+  width: 100% !important;
+  display: table !important;
+}
