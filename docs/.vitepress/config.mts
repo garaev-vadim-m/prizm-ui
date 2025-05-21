@@ -5,11 +5,14 @@ export default defineConfig({
   description: 'ui-kit основанный на element-plus по дизайн системе Prizm',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
-      { text: 'Components', link: '/components/prizm-button' },
+      { text: 'Главня', link: '/' },
+      { text: 'Гайд по установке', link: '/guide' },
+      { text: 'Компоненты', link: '/components/prizm-button' },
     ],
-
+    docFooter: {
+      prev: 'Предыдущая страница',
+      next: 'Следующая страница'
+    },
     sidebar: {
       '/components/': [
         {
@@ -177,9 +180,9 @@ export default defineConfig({
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/garaev-vadim-m' }],
-    
+
     search: {
-      provider: 'local'
-    }
+      provider: 'local',
+    },
   },
 });

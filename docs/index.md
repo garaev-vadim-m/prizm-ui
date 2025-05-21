@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "PrizmVue"
-  text: "todo"
+  name: 'PrizmVue'
+  text: 'todo'
   tagline: ui kit Основанный на element-plus по дизайн системе Prizm
   actions:
     - theme: brand
@@ -22,4 +22,3 @@ features:
     details: Компоненты для использовая
     link: /components
 ---
-
