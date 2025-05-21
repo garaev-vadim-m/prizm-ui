@@ -193,4 +193,13 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 | ---------- | ----------------------------------------------------------------- | --------------------- |
 | `validate` | `(prop: FormItemProp, isValid: boolean, message: string) => void` | Метод валидации формы |
 
----
+## Expose
+
+| Название        | Expose                                     | Описание                                                   |
+| --------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| `validate`      | `someRef.$refs.baseTableRef.validate`      | Валидация формы                                            |
+| `validateField` | `someRef.$refs.baseTableRef.validateField` | Валидация указанных полей                                  |
+| `resetFields`   | `someRef.$refs.baseTableRef.resetFields`   | Очистка полей                                              |
+| `scrollToField` | `someRef.$refs.baseTableRef.scrollToField` | Скролл к указанному полю                                   |
+| `clearValidate` | `someRef.$refs.baseTableRef.clearValidate` | Очистка сообщения валидации указанного поля или всех поелй |
+| `fields`        | `someRef.$refs.baseTableRef.fields`        | Получение контекста всех полей                             |

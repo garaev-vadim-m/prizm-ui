@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, useTemplateRef } from 'vue';
 import {
   PrizmButton,
   PrizmTag,
@@ -40,6 +40,7 @@ const tabs = ref('id1');
 const radio = ref('id1');
 const select = ref('');
 const selects = ref([]);
+const prizmForm = useTemplateRef('prizmForm');
 
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
@@ -86,6 +87,10 @@ const table = [
     age: Math.floor(Math.random() * 98) + 2,
   },
 ];
+
+function onClickForm(form) {
+  console.log(form.$refs.baseFormRef);
+}
 </script>
 <template>
   <div :class="classes.root">
@@ -176,7 +181,7 @@ const table = [
         </PrizmFormItem>
 
         <PrizmFormItem>
-          <PrizmButton nativeType="submit" type="primary">Submit!</PrizmButton>
+          <PrizmButton nativeType="submit" type="primary" @click.prevent="onClickForm(prizmForm)">Submit!</PrizmButton>
         </PrizmFormItem>
 
         <PrizmFormItem>

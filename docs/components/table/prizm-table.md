@@ -1017,3 +1017,21 @@ const tableData: Product[] = [
 | `cellClick` | Событие клика по ячейке |
 | `rowClick`  | Событие клика по строке |
 | `scroll`    | Событие скролла таблицы |
+
+## Expose
+
+| Название             | Expose                                          | Описание                                                                             |
+| -------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `clearSelection`     | `someRef.$refs.baseTableRef.clearSelection`     | Очистка множественного выбра                                                         |
+| `getSelectionRows`   | `someRef.$refs.baseTableRef.getSelectionRows`   | Возвращает выбранные строки                                                          |
+| `toggleRowSelection` | `someRef.$refs.baseTableRef.toggleRowSelection` | Переключение множественного выбора, можно напрямую указать выбрана ли строка         |
+| `toggleAllSelection` | `someRef.$refs.baseTableRef.toggleAllSelection` | Переключение множественного выбора, при выборе всех элементов и отмене все элементов |
+| `setCurrentRow`      | `someRef.$refs.baseTableRef.setCurrentRow`      | Используется в таблице одиночного выбора                                             |
+| `clearSort`          | `someRef.$refs.baseTableRef.clearSort`          | Очистка сортировки, возврат исходного значения                                       |
+| `clearFilter`        | `someRef.$refs.baseTableRef.clearFilter`        | Очистка фильтра колонки                                                              |
+| `doLayout`           | `someRef.$refs.baseTableRef.doLayout`           | Обновления макета таблицы                                                            |
+| `sort`               | `someRef.$refs.baseTableRef.sort`               | Сортировка таблицы вручную, свойство prop для сортировки, свойство order для порядка |
+| `scrollTo`           | `someRef.$refs.baseTableRef.scrollTo`           | Прокрутка к определенному набору координат                                           |
+| `setScrollTop`       | `someRef.$refs.baseTableRef.setScrollTop`       | Прокрутка по вертикали                                                               |
+| `setScrollLeft`      | `someRef.$refs.baseTableRef.setScrollLeft`      | Прокрутка по горизонтали                                                             |
+| `columns`            | `someRef.$refs.baseTableRef.columns`            | Получение контекста колонок                                                          |
