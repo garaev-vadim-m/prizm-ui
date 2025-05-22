@@ -69,7 +69,7 @@ const { fits, url } = toRefs(state);
   <div class="demo-fit">
     <div v-for="fit in fits" :key="fit" class="block">
       <span class="title">{{ fit }}</span>
-      <el-avatar shape="square" :size="100" :fit="fit" :src="url" />
+      <PrizAvatar shape="square" :size="100" :fit="fit" :src="url" />
     </div>
   </div>
 </template>
