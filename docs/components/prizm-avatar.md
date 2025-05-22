@@ -23,15 +23,17 @@ import { ref } from 'vue';
 const avatarPath = ref('somePath');
 const avatarPath2 = 'somePath';
 </script>
-<!-- circle -->
-<PrizAvatar size="large" src="somePath" />
-<PrizAvatar size="default" :src="avatarPath" />
-<PrizAvatar size="small" :src="avatarPath2" />
+<template>
+  <!-- circle -->
+  <PrizAvatar size="large" src="somePath" />
+  <PrizAvatar size="default" :src="avatarPath" />
+  <PrizAvatar size="small" :src="avatarPath2" />
 
-<!-- square -->
-<PrizAvatar shape="square" size="small" :src="avatarPath2" />
-<PrizAvatar shape="square" size="default" :src="avatarPath" />
-<PrizAvatar shape="square" size="large" src="somePath" />
+  <!-- square -->
+  <PrizAvatar shape="square" size="small" :src="avatarPath2" />
+  <PrizAvatar shape="square" size="default" :src="avatarPath" />
+  <PrizAvatar shape="square" size="large" src="somePath" />
+</template>
 ```
 
 ## Fallback

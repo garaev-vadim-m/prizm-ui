@@ -13,6 +13,8 @@ sidebar: auto
 import { PrizmTable } from 'prizm-ui-vue';
 ```
 
+## Примеры использования
+
 ## Basic usage
 
 ```vue

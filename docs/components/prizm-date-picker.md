@@ -13,7 +13,7 @@ sidebar: auto
 import { PrizmDatePicker } from 'prizm-ui-vue';
 ```
 
-## Пример использования
+## Примеры использования
 
 ## Basic usage
 

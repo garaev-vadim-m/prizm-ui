@@ -13,6 +13,8 @@ sidebar: auto
 import { PrizmRadio } from 'prizm-ui-vue';
 ```
 
+## Примеры использования
+
 ## Basic usage
 
 ```vue

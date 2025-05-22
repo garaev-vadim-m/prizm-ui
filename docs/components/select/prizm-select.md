@@ -11,6 +11,8 @@ sidebar: auto
 import { PrizmSelect } from 'prizm-ui-vue';
 ```
 
+## Примеры использования
+
 ## Basic usage
 
 ```vue

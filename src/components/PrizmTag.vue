@@ -16,7 +16,7 @@ type ElTagProps = InstanceType<typeof ElTag>['$props'];
 
 type PickedProps = Pick<
   ElTagProps,
-  'type' | 'size' | 'effect' | 'round' | 'closable' | 'onClick' | 'onClose' | 'color'
+  'type' | 'size' | 'effect' | 'round' | 'closable' | 'onClick' | 'onClose' | 'color' | 'disableTransitions'
 >;
 
 type Props = {
@@ -26,12 +26,18 @@ type Props = {
   round?: PickedProps['round'];
   closable?: PickedProps['closable'];
   color?: PickedProps['color'];
+  disableTransitions?: PickedProps['disableTransitions'];
 
   onClick?: PickedProps['onClick'];
   onClose?: PickedProps['onClose'];
 };
 
-const props = withDefaults(defineProps<Props>(), { type: 'info', effect: 'light', size: 'large' });
+const props = withDefaults(defineProps<Props>(), {
+  type: 'info',
+  effect: 'light',
+  size: 'large',
+  disableTransitions: false,
+});
 
 const slots = defineSlots<Slots>();
 
