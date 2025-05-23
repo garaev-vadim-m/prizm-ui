@@ -30,6 +30,7 @@ import {
   PrizmTooltip,
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
+import { type CollapseModelValue } from './index';
 
 const datePicker = ref('');
 const time = ref('');
@@ -91,6 +92,10 @@ const table = [
 function onClickForm(form) {
   console.log(form.$refs.baseFormRef);
 }
+const activeNames = ref(['1']);
+const handleChange = (val: CollapseModelValue) => {
+  console.log(val);
+};
 </script>
 <template>
   <div :class="classes.root">
@@ -309,7 +314,7 @@ function onClickForm(form) {
     <h3>Collapse</h3>
 
     <div :class="classes.group">
-      <PrizmCollapse>
+      <PrizmCollapse v-model="activeNames" @change="handleChange">
         <PrizmCollapseItem name="one" title="PrizmCollapseItem1">
           <div>Привет</div>
         </PrizmCollapseItem>
