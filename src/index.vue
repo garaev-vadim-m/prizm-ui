@@ -92,12 +92,13 @@ const table = [
   },
 ];
 
-function onClickForm(form) {
+function onClickForm(form: any) {
   console.log(form.$refs.baseFormRef);
 }
 const activeNames = ref(['1']);
-const handleChange = (val: CollapseModelValue) => {
-  console.log(val);
+const handleChange = (val: CollapseModelValue): string => {
+  // console.log(val);
+  return `${val}`;
 };
 
 function onOpenDialog() {

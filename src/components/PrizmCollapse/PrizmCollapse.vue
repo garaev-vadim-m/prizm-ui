@@ -4,7 +4,7 @@
  * @components ElCollapse
  */
 
-import { ElCollapse, type CollapseProps, type CollapseActiveName, type CollapseEmits } from 'element-plus';
+import { ElCollapse, type CollapseProps, type CollapseActiveName, type CollapseModelValue } from 'element-plus';
 import { useTemplateRef } from 'vue';
 import 'element-plus/es/components/collapse/style/css';
 
@@ -15,7 +15,7 @@ type Slots = {
 type Props = {
   accordion?: CollapseProps['accordion'];
 
-  onChange?: CollapseEmits['change'];
+  onChange?: (value: CollapseModelValue) => any;
 };
 const modelValue = defineModel<CollapseActiveName[] | number | string>();
 const baseCollapseRef = useTemplateRef('baseCollapseRef');
