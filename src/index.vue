@@ -31,6 +31,7 @@ import {
 } from './components';
 import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
 import { type CollapseModelValue } from './index';
+import PrizmDialog from './components/PrizmDialog.vue';
 
 const datePicker = ref('');
 const time = ref('');
@@ -42,6 +43,8 @@ const radio = ref('id1');
 const select = ref('');
 const selects = ref([]);
 const prizmForm = useTemplateRef('prizmForm');
+
+const dialog = ref(false);
 
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
@@ -96,6 +99,10 @@ const activeNames = ref(['1']);
 const handleChange = (val: CollapseModelValue) => {
   console.log(val);
 };
+
+function onOpenDialog() {
+  return (dialog.value = !dialog.value);
+}
 </script>
 <template>
   <div :class="classes.root">
@@ -207,6 +214,12 @@ const handleChange = (val: CollapseModelValue) => {
       <PrizmButton type="primary" @click="onOpenMessageBox('primary')">Open PrizmMessageBox primary</PrizmButton>
 
       <PrizmButton type="danger" @click="onOpenMessageBox('danger')">Open PrizmMessageBox danger</PrizmButton>
+    </div>
+
+    <h3>Dialog</h3>
+
+    <div :class="classes.group">
+      <PrizmButton type="primary" @click="onOpenDialog">Open PrizmDialog</PrizmButton>
     </div>
 
     <h3>Notification</h3>
@@ -527,6 +540,16 @@ const handleChange = (val: CollapseModelValue) => {
   </div>
 
   <PrizmDrawer v-model="drawer" />
+
+  <PrizmDialog v-model="dialog" title="Привет">
+    <div>
+      <p>Как дела?</p>
+    </div>
+
+    <div>
+      <p>Пока</p>
+    </div>
+  </PrizmDialog>
 </template>
 <style module="classes" lang="scss">
 .root {
