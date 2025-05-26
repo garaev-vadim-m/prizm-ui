@@ -142,3 +142,83 @@ const gridData = [
   </PrizmDialog>
 </template>
 ```
+
+## Customized Header
+
+```vue
+<script lang="ts" setup>
+import { PrizmDialog, PrizmButton, PrizmIcon, IconClose } from 'prizm-ui-vue';
+import { ref } from 'vue';
+
+const visible = ref(false);
+</script>
+
+<template>
+  <PrizmButton plain @click="visible = true"> Open Dialog with customized header </PrizmButton>
+
+  <PrizmDialog v-model="visible" :show-close="false" width="500">
+    <template #header="{ close, titleId, titleClass }">
+      <div class="my-header">
+        <h4 :id="titleId" :class="titleClass">This is a custom header!</h4>
+        <PrizmButton type="danger" @click="close">
+          <PrizmIcon class="el-icon--left"><IconClose /></PrizmIcon>
+          Close
+        </PrizmButton>
+      </div>
+    </template>
+    This is dialog content.
+  </PrizmDialog>
+</template>
+
+<style scoped>
+.my-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+</style>
+```
+
+## Nested Dialog
+
+##### If a Dialog is nested in another Dialog, <Badge type="info" text="append-to-body" /> is required.
+
+```vue
+<script lang="ts" setup>
+import { PrizmDialog, PrizmButton } from 'prizm-ui-vue';
+import { ref } from 'vue';
+
+const outerVisible = ref(false);
+const innerVisible = ref(false);
+</script>
+
+<template>
+  <PrizmButton plain @click="outerVisible = true"> Open the outer Dialog </PrizmButton>
+
+  <PrizmDialog v-model="outerVisible" title="Outer Dialog" width="800">
+    <span>This is the outer Dialog</span>
+    <PrizmDialog v-model="innerVisible" width="500" title="Inner Dialog" append-to-body>
+      <span>This is the inner Dialog</span>
+    </PrizmDialog>
+    <template #footer>
+      <div class="dialog-footer">
+        <PrizmButton @click="outerVisible = false">Cancel</PrizmButton>
+        <PrizmButton type="primary" @click="innerVisible = true"> Open the inner Dialog </PrizmButton>
+      </div>
+    </template>
+  </PrizmDialog>
+</template>
+```
+
+## Props
+
+### Todo write props
+
+## Slots
+
+### Todo write slots
+
+## Events
+
+### Todo write events

@@ -29,7 +29,7 @@ const props = withDefaults(
       onCloseAutoFocus?: DialogEmits['closeAutoFocus'];
     }
   >(),
-  { varticalFooter: true },
+  { varticalFooter: true, center: true },
 );
 
 const baseDialogRef = useTemplateRef('baseDialogRef');
