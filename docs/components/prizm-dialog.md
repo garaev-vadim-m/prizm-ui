@@ -211,14 +211,58 @@ const innerVisible = ref(false);
 </template>
 ```
 
+## Default footer
+
+```vue
+<script lang="ts" setup>
+import { PrizmDialog, PrizmButton } from 'prizm-ui-vue';
+import { ref } from 'vue';
+
+const dialog = ref(false);
+</script>
+<template>
+  <PrizmButton plain @click="dialog = true"> Open the outer Dialog </PrizmButton>
+  <!-- todo write component -->
+</template>
+```
+
 ## Props
 
-### Todo write props
+| Название            | Тип                | По умолчанию | Описание                                                  |
+| ------------------- | ------------------ | ------------ | --------------------------------------------------------- |
+| `title`             | `string`           |              | Заголовок                                                 |
+| `center`            | `boolean`          | `false`      | Центрирование контента                                    |
+| `width`             | `string \| number` |              | Ширина модального окна                                    |
+| `fullscreen`        | `boolean`          | `false`      | Ширина во всю страницу                                    |
+| `appendToBody`      | `boolean`          | `true`       | Инициализация компонента в body                           |
+| `lockScroll`        | `boolean`          | `true`       | Блокировка скролла вне модального окна                    |
+| `alignCenter`       | `boolean`          | `true`       | Центрирование модального кона                             |
+| `varticalFooter`    | `boolean`          | `true`       | Вертикальное расположение кнопок                          |
+| `defaultFooter`     | `boolean`          | `true`       | Стандартный футер модального окна                         |
+| `confirmDisabled`   | `boolean`          | `false`      | Блокировка кнопки подверждения. Если defaultFooter = true |
+| `cancelDisabled`    | `boolean`          | `false`      | Блокировка кнопки отмены. Если defaultFooter = true       |
+| `confirmButtonText` | `string`           | `Сохранить`  | Текст кнопки подверждения. Если defaultFooter = true      |
+| `cancelButtonText`  | `string`           | `Отмены`     | Текст кнопки отмены. Если defaultFooter = true            |
 
 ## Slots
 
-### Todo write slots
+| Название  | Описание                             |
+| --------- | ------------------------------------ |
+| `default` | Основное содержимое модального окна  |
+| `header`  | Содержимое шапки модального окна     |
+| `footer`  | Содержимое футера модального окна    |
+| `title`   | Содержимое заголовка модального окна |
 
 ## Events
 
-### Todo write events
+| Название           | Описание                                                           |
+| ------------------ | ------------------------------------------------------------------ |
+| `onBeforeClose`    | Событие закрытия модального окна вне области окна                  |
+| `onOpen`           | Событие открытие модального окна                                   |
+| `onOpened`         | Событие открытого модального окна                                  |
+| `onClose`          | Событие закрытия модального окна                                   |
+| `onClosed`         | Событие закрытого модального окна                                  |
+| `onOpenAutoFocus`  | Событие фокусирования при открытии модального окна                 |
+| `onCloseAutoFocus` | Событие фокусирования при закрытии модального окна                 |
+| `onConfirmButton`  | Событие нажатия на кнопку подтверждения. Если defaultFooter = true |
+| `onCancelButton`   | Событие нажатия на кнопку отмены. Если defaultFooter = true        |
