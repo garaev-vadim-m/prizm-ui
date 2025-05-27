@@ -30,6 +30,7 @@ const props = withDefaults(
     appendToBody?: DialogProps['appendToBody'];
     lockScroll?: DialogProps['lockScroll'];
     alignCenter?: DialogProps['alignCenter'];
+
     varticalFooter?: boolean;
     defaultFooter?: boolean;
     confirmDisabled?: boolean;

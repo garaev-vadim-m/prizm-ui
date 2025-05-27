@@ -40,14 +40,14 @@ const handleClose = (done: () => void) => {
 <template>
   <PrizmButton plain @click="dialogVisible = true"> Click to open the Dialog </PrizmButton>
 
-  <PrizmDialog v-model="dialogVisible" title="Tips" width="500" :before-close="handleClose">
+  <PrizmDialog
+    v-model="dialogVisible"
+    title="Tips"
+    width="500"
+    :before-close="handleClose"
+    @confirmButton="() => (dialogVisible = false)"
+    @cancelButton="() => (dialogVisible = false)">
     <span>This is a message</span>
-    <template #footer>
-      <div class="dialog-footer">
-        <PrizmButton @click="dialogVisible = false">Cancel</PrizmButton>
-        <PrizmButton type="primary" @click="dialogVisible = false"> Confirm </PrizmButton>
-      </div>
-    </template>
   </PrizmDialog>
 </template>
 ```
@@ -106,6 +106,9 @@ const gridData = [
     address: 'No.1518,  Jinshajiang Road, Putuo District',
   },
 ];
+function handleVisible() {
+  dialogFormVisible.value = false;
+}
 </script>
 
 <template>
@@ -113,7 +116,12 @@ const gridData = [
 
   <PrizmButton plain @click="dialogFormVisible = true"> Open a Form nested Dialog </PrizmButton>
 
-  <PrizmDialog v-model="dialogTableVisible" title="Shipping address" width="800">
+  <PrizmDialog
+    v-model="dialogTableVisible"
+    title="Shipping address"
+    width="800"
+    @confirmButton="handleVisible"
+    @cancelButton="handleVisible">
     <PrizmTable :data="gridData">
       <PrizmTableColumn property="date" label="Date" width="150" />
       <PrizmTableColumn property="name" label="Name" width="200" />
@@ -133,12 +141,6 @@ const gridData = [
         </PrizmSelect>
       </PrizmFormItem>
     </PrizmForm>
-    <template #footer>
-      <div class="dialog-footer">
-        <PrizmButton @click="dialogFormVisible = false">Cancel</PrizmButton>
-        <PrizmButton type="primary" @click="dialogFormVisible = false"> Confirm </PrizmButton>
-      </div>
-    </template>
   </PrizmDialog>
 </template>
 ```
@@ -161,7 +163,7 @@ const visible = ref(false);
       <div class="my-header">
         <h4 :id="titleId" :class="titleClass">This is a custom header!</h4>
         <PrizmButton type="danger" @click="close">
-          <PrizmIcon class="el-icon--left"><IconClose /></PrizmIcon>
+          <PrizmIcon><IconClose /></PrizmIcon>
           Close
         </PrizmButton>
       </div>
@@ -191,38 +193,31 @@ import { ref } from 'vue';
 
 const outerVisible = ref(false);
 const innerVisible = ref(false);
+function handleOuterVisible() {
+  outerVisible.value = false;
+}
+
+function handleInnerVisible(value: boolean) {
+  innerVisible.value = value;
+}
 </script>
 
 <template>
   <PrizmButton plain @click="outerVisible = true"> Open the outer Dialog </PrizmButton>
 
-  <PrizmDialog v-model="outerVisible" title="Outer Dialog" width="800">
+  <PrizmDialog
+    v-model="outerVisible"
+    title="Outer Dialog"
+    width="800"
+    @confirmButton="handleOuterVisible"
+    @cancelButton="() => handleInnerVisible(true)"
+    cancelButtonText="Cancel"
+    confirmButtonText="Open the inner Dialog">
     <span>This is the outer Dialog</span>
-    <PrizmDialog v-model="innerVisible" width="500" title="Inner Dialog" append-to-body>
+    <PrizmDialog v-model="innerVisible" width="500" title="Inner Dialog" append-to-body :defaultFooter="false">
       <span>This is the inner Dialog</span>
     </PrizmDialog>
-    <template #footer>
-      <div class="dialog-footer">
-        <PrizmButton @click="outerVisible = false">Cancel</PrizmButton>
-        <PrizmButton type="primary" @click="innerVisible = true"> Open the inner Dialog </PrizmButton>
-      </div>
-    </template>
   </PrizmDialog>
-</template>
-```
-
-## Default footer
-
-```vue
-<script lang="ts" setup>
-import { PrizmDialog, PrizmButton } from 'prizm-ui-vue';
-import { ref } from 'vue';
-
-const dialog = ref(false);
-</script>
-<template>
-  <PrizmButton plain @click="dialog = true"> Open the outer Dialog </PrizmButton>
-  <!-- todo write component -->
 </template>
 ```
 
