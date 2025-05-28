@@ -5,10 +5,7 @@ import { useTemplateRef } from 'vue';
 
 type ElTooltipProps = InstanceType<typeof ElTooltip>['$props'];
 
-type PickerProps = Pick<
-  ElTooltipProps,
-  'content' | 'trigger' | 'effect' | 'onContextmenu' | 'placement' | 'onBlur' | 'onClick' | 'onFocus'
->;
+type PickerProps = Pick<ElTooltipProps, 'content' | 'trigger' | 'effect'>;
 
 type Props = {
   content?: PickerProps['content'];
@@ -27,10 +24,6 @@ type Props = {
     | 'right'
     | 'right-start'
     | 'right-end';
-  onContextmenu?: PickerProps['onContextmenu'];
-  onBlur?: PickerProps['onBlur'];
-  onClick?: PickerProps['onClick'];
-  onFocus?: PickerProps['onFocus'];
 };
 
 type Slots = {
