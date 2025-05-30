@@ -13,13 +13,13 @@ sidebar: auto
 import { PrizmMessageBox } from from 'prizm-ui-vue';
 ```
 
-```vue
-<template>
-  <el-button plain @click="open">Click to open the Message Box</el-button>
-</template>
+## Примеры использования
 
+## Basic usage
+
+```vue
 <script lang="ts" setup>
-import { PrizmMessageBox, PrizmNotification } from from 'prizm-ui-vue';
+import { PrizmMessageBox, PrizmNotification, PrizmButton } from from 'prizm-ui-vue';
 
 const open = () => {
   PrizmMessageBox({
@@ -42,6 +42,10 @@ const open = () => {
     });
 };
 </script>
+
+<template>
+  <PrizmButton plain @click="open">Click to open the Message Box</PrizmButton>
+</template>
 ```
 
 ## Props
