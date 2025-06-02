@@ -37,6 +37,7 @@ type TabsProps = {
 
 type Slots = {
   default?: unknown;
+  addIcon?: unknown;
 };
 
 const baseTabsRef = useTemplateRef('baseTabsRef');
@@ -61,6 +62,10 @@ defineExpose({
   <ElTabs ref="baseTabsRef" v-bind="props" v-model="modelValue" :class="[classes.root]">
     <template #default v-if="slots.default">
       <slot />
+    </template>
+
+    <template #add-icon v-if="slots.addIcon">
+      <slot name="addIcon" />
     </template>
   </ElTabs>
 </template>

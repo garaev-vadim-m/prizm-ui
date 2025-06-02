@@ -11,4 +11,6 @@ export type {
   CollapseModelValue,
   CollapseActiveName,
   DrawerProps,
+  TabsPaneContext,
+  TabPaneName,
 } from 'element-plus';
