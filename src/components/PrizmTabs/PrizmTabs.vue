@@ -25,14 +25,15 @@ type PickedProps = Pick<
 
 type TabsProps = {
   type?: PickedProps['type'];
+  addable?: PickedProps['addable'];
+  editable?: PickedProps['editable'];
+
   onEdit?: PickedProps['onEdit'];
   onTabAdd?: PickedProps['onTabAdd'];
   onTabChange?: PickedProps['onTabChange'];
   onTabClick?: PickedProps['onTabClick'];
   onTabRemove?: PickedProps['onTabRemove'];
-  addable?: PickedProps['addable'];
-  beforeLeave?: PickedProps['beforeLeave'];
-  editable?: PickedProps['editable'];
+  onBeforeLeave?: PickedProps['beforeLeave'];
 };
 
 type Slots = {
