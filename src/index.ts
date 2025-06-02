@@ -10,4 +10,5 @@ export type {
   InputInstance,
   CollapseModelValue,
   CollapseActiveName,
+  DrawerProps,
 } from 'element-plus';

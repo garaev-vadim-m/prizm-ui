@@ -37,6 +37,8 @@ const datePicker = ref('');
 const time = ref('');
 const dateTime = ref('');
 const drawer = ref(false);
+const drawer2 = ref(false);
+const drawer3 = ref(false);
 
 const tabs = ref('id1');
 const radio = ref('id1');
@@ -49,6 +51,13 @@ const dialog = ref(false);
 function onOpenDrawer() {
   return (drawer.value = !drawer.value);
 }
+function onOpenDrawer2() {
+  return (drawer2.value = !drawer2.value);
+}
+function onOpenDrawer3() {
+  return (drawer3.value = !drawer3.value);
+}
+
 function onOpenMessageBox(variant: 'primary' | 'danger') {
   PrizmMessageBox({
     title: 'Привет',
@@ -207,6 +216,10 @@ function onOpenDialog() {
 
     <div :class="classes.group">
       <PrizmButton @click="onOpenDrawer">Open PrizmDrawer</PrizmButton>
+
+      <PrizmButton @click="onOpenDrawer2">Open2 PrizmDrawer</PrizmButton>
+
+      <PrizmButton @click="onOpenDrawer3">Open3 PrizmDrawer</PrizmButton>
     </div>
 
     <h3>MessageBox</h3>
@@ -541,6 +554,18 @@ function onOpenDialog() {
   </div>
 
   <PrizmDrawer v-model="drawer" />
+
+  <PrizmDrawer v-model="drawer2">
+    <template #header>
+      <p>Custom header</p>
+    </template>
+
+    <template #footer>
+      <p>Custom footer</p>
+    </template>
+  </PrizmDrawer>
+
+  <PrizmDrawer v-model="drawer3" :defaultFooter="false" title="Drawer3" size="200" />
 
   <PrizmDialog v-model="dialog" title="Привет">
     <div>

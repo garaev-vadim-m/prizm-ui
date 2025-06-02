@@ -26,17 +26,12 @@ type PickedProps = Pick<
   DrawerProps,
   | 'closeIcon'
   | 'appendToBody'
-  | 'center'
-  | 'width'
   | 'withHeader'
   | 'showClose'
   | 'fullscreen'
   | 'beforeClose'
   | 'title'
   | 'size'
-  | 'destroyOnClose'
-  | 'draggable'
-  | 'alignCenter'
   | 'lockScroll'
   | 'headerClass'
 >;
@@ -44,17 +39,12 @@ type PickedProps = Pick<
 type Props = {
   closeIcon?: PickedProps['closeIcon'];
   appendToBody?: PickedProps['appendToBody'];
-  center?: PickedProps['center'];
-  width?: PickedProps['width'];
   withHeader?: PickedProps['withHeader'];
   showClose?: PickedProps['showClose'];
   fullscreen?: PickedProps['fullscreen'];
   beforeClose?: PickedProps['beforeClose'];
   title?: PickedProps['title'];
   size?: PickedProps['size'];
-  destroyOnClose?: PickedProps['destroyOnClose'];
-  draggable?: PickedProps['draggable'];
-  alignCenter?: PickedProps['alignCenter'];
   lockScroll?: PickedProps['lockScroll'];
   headerClass?: PickedProps['headerClass'];
   defaultFooter?: boolean;
@@ -64,13 +54,6 @@ type Props = {
 
   onConfirmButton?: () => unknown;
   onCancelButton?: () => unknown;
-
-  onOpen?: () => boolean;
-  onOpened?: () => boolean;
-  onClose?: () => boolean;
-  onClosed?: () => boolean;
-  onOpenAutoFocus?: () => boolean;
-  onCloseAutoFocus?: () => boolean;
 };
 const props = withDefaults(defineProps<Props>(), {
   title: 'Default title',
