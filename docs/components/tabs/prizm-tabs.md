@@ -5,7 +5,7 @@ sidebar: auto
 
 # Tabs
 
-Компонент радио кнопки, основанный на `ElTabs` из Element Plus.
+Компонент вкладок, основанный на `ElTabs` из Element Plus.
 
 ## Импорт
 
