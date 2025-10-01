@@ -51,7 +51,7 @@ type Props = {
   formatter?: PickedProps["formatter"];
   parser?: PickedProps["parser"];
   size?: PickedProps["size"];
-  showPassword: PickedProps["showPassword"];
+  showPassword?: PickedProps["showPassword"];
 
   onInput?: InputEmits["input"];
   onChange?: InputEmits["change"];
