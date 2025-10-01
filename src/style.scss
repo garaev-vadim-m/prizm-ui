@@ -1,4 +1,4 @@
-@use './app/style/index.scss';
+@use "./app/style/index.scss";
 
 :root.light {
   /*color*/
@@ -14,13 +14,16 @@
   --color-light-gray: #f3f4f5;
   --color-thin-gray: #e0e3e7;
   --color-swamp: #f3f4f566;
+  --color-info: #6e778c;
   /*end color*/
 
   /*color hover*/
-  --color-primary-hover: rgba(67, 108, 238, 60%);
-  --color-danger-hover: rgba(212, 67, 50, 60%);
-  --color-success-hover: rgba(73, 171, 77, 60%);
-  --color-warning-hover: rgba(255, 124, 10, 60%);
+  --color-primary-hover: rgba(61, 99, 218, 1);
+  --color-danger-hover: rgba(193, 63, 47, 1);
+  --color-success-hover: rgba(62, 124, 19, 1);
+  --color-warning-hover: rgba(222, 142, 39, 1);
+  --color-info-hover: rgba(100, 109, 132, 1);
+
   /*end color hover*/
 
   --border-radius: 2px;
@@ -32,9 +35,9 @@
   /*переопределение цветов*/
   --el-color-primary: #436cee;
   --el-color-danger: #d44332;
-  --el-color-success: #49ab4d;
+  --el-color-success: #498714;
   --el-color-warning: #ff7c0a;
-
+  --el-color-info: #6e778c;
   --el-border-color: #6e778c;
   --el-text-color-regular: #0f1115;
 }

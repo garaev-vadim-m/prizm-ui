@@ -4,10 +4,10 @@
  * @components ElDialog
  */
 
-import { ElDialog, type DialogEmits, type DialogProps } from 'element-plus';
-import { computed, useCssModule, useTemplateRef } from 'vue';
-import 'element-plus/es/components/dialog/style/css';
-import PrizmButton from './PrizmButton.vue';
+import { ElDialog, type DialogEmits, type DialogProps } from "element-plus";
+import { computed, useCssModule, useTemplateRef } from "vue";
+import "element-plus/es/components/dialog/style/css";
+import PrizmButton from "./PrizmButton.vue";
 
 type Slots = {
   header?: unknown;
@@ -23,13 +23,13 @@ const modelValue = defineModel({
 const slots = defineSlots<Slots>();
 const props = withDefaults(
   defineProps<{
-    title?: DialogProps['title'];
-    center?: DialogProps['center'];
-    width?: DialogProps['width'];
-    fullscreen?: DialogProps['fullscreen'];
-    appendToBody?: DialogProps['appendToBody'];
-    lockScroll?: DialogProps['lockScroll'];
-    alignCenter?: DialogProps['alignCenter'];
+    title?: DialogProps["title"];
+    center?: DialogProps["center"];
+    width?: DialogProps["width"];
+    fullscreen?: DialogProps["fullscreen"];
+    appendToBody?: DialogProps["appendToBody"];
+    lockScroll?: DialogProps["lockScroll"];
+    alignCenter?: DialogProps["alignCenter"];
 
     varticalFooter?: boolean;
     defaultFooter?: boolean;
@@ -38,13 +38,13 @@ const props = withDefaults(
     confirmButtonText?: string;
     cancelButtonText?: string;
 
-    onBeforeClose?: DialogProps['beforeClose'];
-    onOpen?: DialogEmits['open'];
-    onOpened?: DialogEmits['opened'];
-    onClose?: DialogEmits['close'];
-    onClosed?: DialogEmits['closed'];
-    onOpenAutoFocus?: DialogEmits['openAutoFocus'];
-    onCloseAutoFocus?: DialogEmits['closeAutoFocus'];
+    onBeforeClose?: DialogProps["beforeClose"];
+    onOpen?: DialogEmits["open"];
+    onOpened?: DialogEmits["opened"];
+    onClose?: DialogEmits["close"];
+    onClosed?: DialogEmits["closed"];
+    onOpenAutoFocus?: DialogEmits["openAutoFocus"];
+    onCloseAutoFocus?: DialogEmits["closeAutoFocus"];
     onConfirmButton?: () => unknown;
     onCancelButton?: () => unknown;
   }>(),
@@ -55,18 +55,20 @@ const props = withDefaults(
     defaultFooter: true,
     confirmDisabled: false,
     cancelDisabled: false,
-    confirmButtonText: 'Сохранить',
-    cancelButtonText: 'Отмена',
-    onConfirmButton: () => console.log('Click onConfirmButton'),
-    onCancelButton: () => console.log('Click onCancelButton'),
+    confirmButtonText: "Сохранить",
+    cancelButtonText: "Отмена",
+    onConfirmButton: () => console.log("Click onConfirmButton"),
+    onCancelButton: () => console.log("Click onCancelButton"),
   },
 );
 
-const baseDialogRef = useTemplateRef('baseDialogRef');
+const baseDialogRef = useTemplateRef("baseDialogRef");
 
-const style = useCssModule('classes');
+const style = useCssModule("classes");
 
-const handleStyleFooter = computed(() => (props.varticalFooter ? style.root_footerVertical : ''));
+const handleStyleFooter = computed(() =>
+  props.varticalFooter ? style.root_footerVertical : "",
+);
 
 defineExpose({
   baseDialogRef,
@@ -80,7 +82,8 @@ defineExpose({
     :class="[classes.root]"
     :header-class="classes.root_header"
     :footer-class="[handleStyleFooter, classes.root_footer].join(' ')"
-    :body-class="classes.root_body">
+    :body-class="classes.root_body"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -91,11 +94,16 @@ defineExpose({
 
     <template #footer v-if="slots.footer || defaultFooter">
       <slot name="footer">
-        <PrizmButton type="primary" :disabled="confirmDisabled" @click="onConfirmButton">{{
-          confirmButtonText
-        }}</PrizmButton>
+        <PrizmButton
+          type="primary"
+          :disabled="confirmDisabled"
+          @click="onConfirmButton"
+          >{{ confirmButtonText }}</PrizmButton
+        >
 
-        <PrizmButton :disabled="cancelDisabled" @click="onCancelButton">{{ cancelButtonText }}</PrizmButton>
+        <PrizmButton :disabled="cancelDisabled" @click="onCancelButton">{{
+          cancelButtonText
+        }}</PrizmButton>
       </slot>
     </template>
 

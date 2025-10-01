@@ -4,8 +4,8 @@
  * @components ElDropdownMenu
  */
 
-import { ElDropdownMenu } from 'element-plus';
-import 'element-plus/es/components/dropdown-menu/style/css';
+import { ElDropdownMenu } from "element-plus";
+import "element-plus/es/components/dropdown-menu/style/css";
 
 type Slots = {
   default?: unknown;

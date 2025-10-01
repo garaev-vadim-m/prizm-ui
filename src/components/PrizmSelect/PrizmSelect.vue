@@ -4,28 +4,28 @@
  * @components ElSelect
  */
 
-import { ElSelect } from 'element-plus';
-import 'element-plus/es/components/select/style/css';
-import { useTemplateRef, type PropType } from 'vue';
+import { ElSelect } from "element-plus";
+import "element-plus/es/components/select/style/css";
+import { useTemplateRef, type PropType } from "vue";
 
-type ElSelectProps = InstanceType<typeof ElSelect>['$props'];
+type ElSelectProps = InstanceType<typeof ElSelect>["$props"];
 
 type PickedProps = Pick<
   ElSelectProps,
-  | 'size'
-  | 'clearable'
-  | 'clearIcon'
-  | 'effect'
-  | 'filterable'
-  | 'placeholder'
-  | 'defaultFirstOption'
-  | 'onClear'
-  | 'onChange'
-  | 'onRemove-tag'
-  | 'multiple'
-  | 'disabled'
-  | 'noDataText'
-  | 'placement'
+  | "size"
+  | "clearable"
+  | "clearIcon"
+  | "effect"
+  | "filterable"
+  | "placeholder"
+  | "defaultFirstOption"
+  | "onClear"
+  | "onChange"
+  | "onRemove-tag"
+  | "multiple"
+  | "disabled"
+  | "noDataText"
+  | "placement"
 >;
 type Slots = {
   default?: unknown;
@@ -37,38 +37,38 @@ type Slots = {
   loading?: unknown;
   label?: unknown;
 };
-const baseSelectRef = useTemplateRef('baseSelectRef');
+const baseSelectRef = useTemplateRef("baseSelectRef");
 const slots = defineSlots<Slots>();
 
 const modelValue = defineModel({
   type: String as PropType<string | number | boolean | string[] | number[]>,
   required: true,
-  default: '',
+  default: "",
 });
 
 type Props = {
-  size?: PickedProps['size'];
-  clearable?: PickedProps['clearable'];
-  clearIcon?: PickedProps['clearIcon'];
-  effect?: PickedProps['effect'];
-  filterable?: PickedProps['filterable'];
-  placeholder?: PickedProps['placeholder'];
-  defaultFirstOption?: PickedProps['defaultFirstOption'];
-  onClear?: PickedProps['onClear'];
-  onChange?: PickedProps['onChange'];
-  onRemoveTag?: PickedProps['onRemove-tag'];
-  multiple?: PickedProps['multiple'];
-  disabled?: PickedProps['disabled'];
-  noDataText?: PickedProps['noDataText'];
-  placement?: PickedProps['placement'];
+  size?: PickedProps["size"];
+  clearable?: PickedProps["clearable"];
+  clearIcon?: PickedProps["clearIcon"];
+  effect?: PickedProps["effect"];
+  filterable?: PickedProps["filterable"];
+  placeholder?: PickedProps["placeholder"];
+  defaultFirstOption?: PickedProps["defaultFirstOption"];
+  onClear?: PickedProps["onClear"];
+  onChange?: PickedProps["onChange"];
+  onRemoveTag?: PickedProps["onRemove-tag"];
+  multiple?: PickedProps["multiple"];
+  disabled?: PickedProps["disabled"];
+  noDataText?: PickedProps["noDataText"];
+  placement?: PickedProps["placement"];
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'large',
-  noDataText: 'Нет данных',
+  size: "large",
+  noDataText: "Нет данных",
   filterable: true,
-  placement: 'bottom-start',
-  placeholder: 'Выберите...',
+  placement: "bottom-start",
+  placeholder: "Выберите...",
 });
 
 defineExpose({
@@ -76,7 +76,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElSelect ref="baseSelectRef" v-model="modelValue" :class="[classes.root]" v-bind="props">
+  <ElSelect
+    ref="baseSelectRef"
+    v-model="modelValue"
+    :class="[classes.root]"
+    v-bind="props"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

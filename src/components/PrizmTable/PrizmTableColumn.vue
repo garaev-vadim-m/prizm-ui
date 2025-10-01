@@ -4,40 +4,40 @@
  * @components ElTableColumn
  */
 
-import { ElTableColumn } from 'element-plus';
-import 'element-plus/es/components/table-column/style/css';
+import { ElTableColumn } from "element-plus";
+import "element-plus/es/components/table-column/style/css";
 
-type ElTableColumnProps = InstanceType<typeof ElTableColumn>['$props'];
+type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"];
 type PickedProps = Pick<
   ElTableColumnProps,
-  | 'prop'
-  | 'label'
-  | 'width'
-  | 'sortable'
-  | 'fixed'
-  | 'className'
-  | 'align'
-  | 'resizable'
-  | 'columnKey'
-  | 'headerAlign'
-  | 'type'
-  | 'filterMethod'
+  | "prop"
+  | "label"
+  | "width"
+  | "sortable"
+  | "fixed"
+  | "className"
+  | "align"
+  | "resizable"
+  | "columnKey"
+  | "headerAlign"
+  | "type"
+  | "filterMethod"
 >;
 
 type Props = {
-  prop?: PickedProps['align'];
-  label?: PickedProps['label'];
-  width?: PickedProps['width'];
-  sortable?: PickedProps['sortable'];
-  fixed?: PickedProps['fixed'];
-  className?: PickedProps['className'];
-  align?: PickedProps['align'];
-  resizable?: PickedProps['resizable'];
-  columnKey?: PickedProps['columnKey'];
-  headerAlign?: PickedProps['headerAlign'];
-  type?: PickedProps['type'];
+  prop?: PickedProps["align"];
+  label?: PickedProps["label"];
+  width?: PickedProps["width"];
+  sortable?: PickedProps["sortable"];
+  fixed?: PickedProps["fixed"];
+  className?: PickedProps["className"];
+  align?: PickedProps["align"];
+  resizable?: PickedProps["resizable"];
+  columnKey?: PickedProps["columnKey"];
+  headerAlign?: PickedProps["headerAlign"];
+  type?: PickedProps["type"];
 
-  onFilterMethod?: PickedProps['filterMethod'];
+  onFilterMethod?: PickedProps["filterMethod"];
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -69,7 +69,7 @@ const slots = defineSlots<Slots>();
   border: 0;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 12px;
     height: 22px;
@@ -79,14 +79,14 @@ const slots = defineSlots<Slots>();
 
 :global(.el-table .sort-caret.ascending) {
   &::before {
-    background-image: url('@/shared/iconSvg/arrow_top.svg');
+    background-image: url("@/shared/iconSvg/arrow_top.svg");
     top: 10px;
   }
 }
 
 :global(.el-table .sort-caret.descending) {
   &::before {
-    background-image: url('@/shared/iconSvg/arrow_top.svg');
+    background-image: url("@/shared/iconSvg/arrow_top.svg");
     top: -28px;
     left: 5px;
     rotate: 180deg;

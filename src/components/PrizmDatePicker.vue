@@ -4,73 +4,77 @@
  * @components ElDatePicker
  */
 
-import { ElDatePicker } from 'element-plus';
-import { useTemplateRef } from 'vue';
-import 'element-plus/es/components/date-picker/style/css';
-import { IconCalendar } from '@/shared/icon';
+import { ElDatePicker } from "element-plus";
+import { useTemplateRef } from "vue";
+import "element-plus/es/components/date-picker/style/css";
+import { IconCalendar } from "@/shared/icon";
 
 const modelValue = defineModel<string | number>({
   required: true,
 });
 
-const baseDatePickerRef = useTemplateRef('baseDatePickerRef');
+const baseDatePickerRef = useTemplateRef("baseDatePickerRef");
 
-type ElDatePickerProps = InstanceType<typeof ElDatePicker>['$props'];
+type ElDatePickerProps = InstanceType<typeof ElDatePicker>["$props"];
 
 type PickedProps = Pick<
   ElDatePickerProps,
-  | 'type'
-  | 'cellClassName'
-  | 'clearable'
-  | 'dateFormat'
-  | 'disabled'
-  | 'arrowControl'
-  | 'isRange'
-  | 'prefixIcon'
-  | 'clearIcon'
-  | 'format'
-  | 'valueFormat'
-  | 'name'
-  | 'rangeSeparator'
-  | 'placeholder'
-  | 'startPlaceholder'
-  | 'endPlaceholder'
-  | 'size'
-  | 'shortcuts'
+  | "type"
+  | "cellClassName"
+  | "clearable"
+  | "dateFormat"
+  | "disabled"
+  | "arrowControl"
+  | "isRange"
+  | "prefixIcon"
+  | "clearIcon"
+  | "format"
+  | "valueFormat"
+  | "name"
+  | "rangeSeparator"
+  | "placeholder"
+  | "startPlaceholder"
+  | "endPlaceholder"
+  | "size"
+  | "shortcuts"
 >;
 
 type Props = {
-  type?: PickedProps['type'];
-  cellClassName?: PickedProps['cellClassName'];
-  clearable?: PickedProps['clearable'];
-  dateFormat?: PickedProps['dateFormat'];
-  disabled?: PickedProps['disabled'];
-  arrowControl?: PickedProps['arrowControl'];
-  isRange?: PickedProps['isRange'];
-  prefixIcon?: PickedProps['prefixIcon'];
-  clearIcon?: PickedProps['clearIcon'];
-  format?: PickedProps['format'];
-  valueFormat?: PickedProps['valueFormat'];
-  name?: PickedProps['name'];
-  placeholder?: PickedProps['placeholder'];
-  size?: PickedProps['size'];
-  shortcuts?: PickedProps['shortcuts'];
-  startPlaceholder?: PickedProps['startPlaceholder'];
-  endPlaceholder?: PickedProps['endPlaceholder'];
-  rangeSeparator?: PickedProps['rangeSeparator'];
+  type?: PickedProps["type"];
+  cellClassName?: PickedProps["cellClassName"];
+  clearable?: PickedProps["clearable"];
+  dateFormat?: PickedProps["dateFormat"];
+  disabled?: PickedProps["disabled"];
+  arrowControl?: PickedProps["arrowControl"];
+  isRange?: PickedProps["isRange"];
+  prefixIcon?: PickedProps["prefixIcon"];
+  clearIcon?: PickedProps["clearIcon"];
+  format?: PickedProps["format"];
+  valueFormat?: PickedProps["valueFormat"];
+  name?: PickedProps["name"];
+  placeholder?: PickedProps["placeholder"];
+  size?: PickedProps["size"];
+  shortcuts?: PickedProps["shortcuts"];
+  startPlaceholder?: PickedProps["startPlaceholder"];
+  endPlaceholder?: PickedProps["endPlaceholder"];
+  rangeSeparator?: PickedProps["rangeSeparator"];
 
   onVisibility?: (visibility: boolean) => void;
   onCalendarChange?: (val: [Date, null | Date]) => void;
   onClear?: () => void;
-  onPanelChange?: (date: Date | [Date, Date], mode: 'month' | 'year', view?: string) => void;
+  onPanelChange?: (
+    date: Date | [Date, Date],
+    mode: "month" | "year",
+    view?: string,
+  ) => void;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   clearable: false,
-  size: 'large',
-  format: 'DD.MM.YYYY',
-  valueFormat: 'YYYY-MM-DD',
-  rangeSeparator: '—',
+  size: "large",
+  format: "DD.MM.YYYY",
+  valueFormat: "YYYY-MM-DD",
+  rangeSeparator: "—",
   prefixIcon: IconCalendar,
 });
 
@@ -90,7 +94,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElDatePicker v-bind="props" ref="baseDatePickerRef" v-model="modelValue" :class="classes.root">
+  <ElDatePicker
+    v-bind="props"
+    ref="baseDatePickerRef"
+    v-model="modelValue"
+    :class="classes.root"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

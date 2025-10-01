@@ -1,5 +1,5 @@
-export { default as IconCalendar } from './IconCalendar.vue';
-export { default as IconDubleArrow } from './IconDubleArrow.vue';
-export { default as IconArrowTop } from './IconArrowTop.vue';
-export { default as IconClock } from './IconClock.vue';
-export { default as IconUser } from './IconUser.vue';
+export { default as IconCalendar } from "./IconCalendar.vue";
+export { default as IconDubleArrow } from "./IconDubleArrow.vue";
+export { default as IconArrowTop } from "./IconArrowTop.vue";
+export { default as IconClock } from "./IconClock.vue";
+export { default as IconUser } from "./IconUser.vue";

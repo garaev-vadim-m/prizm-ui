@@ -4,36 +4,36 @@
  * @components ElTabs
  */
 
-import { ElTabs } from 'element-plus';
-import 'element-plus/es/components/tabs/style/css';
-import { useTemplateRef, type PropType } from 'vue';
+import { ElTabs } from "element-plus";
+import "element-plus/es/components/tabs/style/css";
+import { useTemplateRef, type PropType } from "vue";
 
-type ElTabsProps = InstanceType<typeof ElTabs>['$props'];
+type ElTabsProps = InstanceType<typeof ElTabs>["$props"];
 type PickedProps = Pick<
   ElTabsProps,
-  | 'type'
-  | 'onEdit'
-  | 'onTabAdd'
-  | 'onTabChange'
-  | 'onTabClick'
-  | 'onTabRemove'
-  | 'addable'
-  | 'beforeLeave'
-  | 'editable'
-  | 'closable'
+  | "type"
+  | "onEdit"
+  | "onTabAdd"
+  | "onTabChange"
+  | "onTabClick"
+  | "onTabRemove"
+  | "addable"
+  | "beforeLeave"
+  | "editable"
+  | "closable"
 >;
 
 type TabsProps = {
-  type?: PickedProps['type'];
-  addable?: PickedProps['addable'];
-  editable?: PickedProps['editable'];
+  type?: PickedProps["type"];
+  addable?: PickedProps["addable"];
+  editable?: PickedProps["editable"];
 
-  onEdit?: PickedProps['onEdit'];
-  onTabAdd?: PickedProps['onTabAdd'];
-  onTabChange?: PickedProps['onTabChange'];
-  onTabClick?: PickedProps['onTabClick'];
-  onTabRemove?: PickedProps['onTabRemove'];
-  onBeforeLeave?: PickedProps['beforeLeave'];
+  onEdit?: PickedProps["onEdit"];
+  onTabAdd?: PickedProps["onTabAdd"];
+  onTabChange?: PickedProps["onTabChange"];
+  onTabClick?: PickedProps["onTabClick"];
+  onTabRemove?: PickedProps["onTabRemove"];
+  onBeforeLeave?: PickedProps["beforeLeave"];
 };
 
 type Slots = {
@@ -41,10 +41,10 @@ type Slots = {
   addIcon?: unknown;
 };
 
-const baseTabsRef = useTemplateRef('baseTabsRef');
+const baseTabsRef = useTemplateRef("baseTabsRef");
 
 const props = withDefaults(defineProps<TabsProps>(), {
-  type: '',
+  type: "",
 });
 
 const slots = defineSlots<Slots>();
@@ -52,7 +52,7 @@ const slots = defineSlots<Slots>();
 const modelValue = defineModel({
   type: String as PropType<string | number>,
   required: true,
-  default: '',
+  default: "",
 });
 
 defineExpose({
@@ -60,7 +60,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElTabs ref="baseTabsRef" v-bind="props" v-model="modelValue" :class="[classes.root]">
+  <ElTabs
+    ref="baseTabsRef"
+    v-bind="props"
+    v-model="modelValue"
+    :class="[classes.root]"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

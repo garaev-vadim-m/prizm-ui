@@ -4,27 +4,30 @@
  * @components ElCheckboxGroup
  */
 
-import { ElCheckboxGroup } from 'element-plus';
-import { useTemplateRef } from 'vue';
-import 'element-plus/es/components/checkbox-group/style/css';
+import { ElCheckboxGroup } from "element-plus";
+import { useTemplateRef } from "vue";
+import "element-plus/es/components/checkbox-group/style/css";
 
 type Slots = {
   default?: unknown;
 };
 
-type ElCheckboxGroupProps = InstanceType<typeof ElCheckboxGroup>['$props'];
+type ElCheckboxGroupProps = InstanceType<typeof ElCheckboxGroup>["$props"];
 
-type PickedProps = Pick<ElCheckboxGroupProps, 'max' | 'fill' | 'disabled' | 'min' | 'textColor'>;
+type PickedProps = Pick<
+  ElCheckboxGroupProps,
+  "max" | "fill" | "disabled" | "min" | "textColor"
+>;
 
 export type Props = {
-  max?: PickedProps['max'];
-  fill?: PickedProps['fill'];
-  disabled?: PickedProps['disabled'];
-  min?: PickedProps['min'];
-  textColor?: PickedProps['textColor'];
+  max?: PickedProps["max"];
+  fill?: PickedProps["fill"];
+  disabled?: PickedProps["disabled"];
+  min?: PickedProps["min"];
+  textColor?: PickedProps["textColor"];
 };
 
-const checkboxGroupRef = useTemplateRef('checkboxGroupRef');
+const checkboxGroupRef = useTemplateRef("checkboxGroupRef");
 const slots = defineSlots<Slots>();
 const modelValue = defineModel<string[] | number[]>({
   required: true,
@@ -36,7 +39,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElCheckboxGroup ref="checkboxGroupRef" v-bind="props" v-model="modelValue" :class="[classes.root]">
+  <ElCheckboxGroup
+    ref="checkboxGroupRef"
+    v-bind="props"
+    v-model="modelValue"
+    :class="[classes.root]"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

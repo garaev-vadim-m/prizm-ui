@@ -1,6 +1,6 @@
-import './style.scss';
-export * from './components';
-export * from './shared/icon';
+import "./style.scss";
+export * from "./components";
+export * from "./shared/icon";
 export type {
   FormInstance,
   FormRules,
@@ -13,4 +13,4 @@ export type {
   DrawerProps,
   TabsPaneContext,
   TabPaneName,
-} from 'element-plus';
+} from "element-plus";

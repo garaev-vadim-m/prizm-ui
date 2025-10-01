@@ -4,51 +4,63 @@
  * @components ElTag
  */
 
-import { ElTag } from 'element-plus';
-import 'element-plus/es/components/tag/style/css';
-import { useTemplateRef } from 'vue';
+import { ElTag } from "element-plus";
+import "element-plus/es/components/tag/style/css";
+import { useTemplateRef } from "vue";
 
 type Slots = {
   default: unknown;
 };
 
-type ElTagProps = InstanceType<typeof ElTag>['$props'];
+type ElTagProps = InstanceType<typeof ElTag>["$props"];
 
 type PickedProps = Pick<
   ElTagProps,
-  'type' | 'size' | 'effect' | 'round' | 'closable' | 'onClick' | 'onClose' | 'color' | 'disableTransitions'
+  | "type"
+  | "size"
+  | "effect"
+  | "round"
+  | "closable"
+  | "onClick"
+  | "onClose"
+  | "color"
+  | "disableTransitions"
 >;
 
 type Props = {
-  type?: PickedProps['type'];
-  size?: PickedProps['size'];
-  effect?: PickedProps['effect'];
-  round?: PickedProps['round'];
-  closable?: PickedProps['closable'];
-  color?: PickedProps['color'];
-  disableTransitions?: PickedProps['disableTransitions'];
+  type?: PickedProps["type"];
+  size?: PickedProps["size"];
+  effect?: PickedProps["effect"];
+  round?: PickedProps["round"];
+  closable?: PickedProps["closable"];
+  color?: PickedProps["color"];
+  disableTransitions?: PickedProps["disableTransitions"];
 
-  onClick?: PickedProps['onClick'];
-  onClose?: PickedProps['onClose'];
+  onClick?: PickedProps["onClick"];
+  onClose?: PickedProps["onClose"];
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  type: 'info',
-  effect: 'light',
-  size: 'large',
+  type: "info",
+  effect: "light",
+  size: "large",
   disableTransitions: false,
 });
 
 const slots = defineSlots<Slots>();
 
-const baseTagRef = useTemplateRef('baseTagRef');
+const baseTagRef = useTemplateRef("baseTagRef");
 
 defineExpose({
   baseTagRef,
 });
 </script>
 <template>
-  <ElTag v-bind="props" ref="baseTagRef" :class="[classes.root, classes[type], classes[effect]]">
+  <ElTag
+    v-bind="props"
+    ref="baseTagRef"
+    :class="[classes.root, classes[type], classes[effect]]"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

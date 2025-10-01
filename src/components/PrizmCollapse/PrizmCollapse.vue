@@ -4,21 +4,26 @@
  * @components ElCollapse
  */
 
-import { ElCollapse, type CollapseProps, type CollapseActiveName, type CollapseModelValue } from 'element-plus';
-import { useTemplateRef } from 'vue';
-import 'element-plus/es/components/collapse/style/css';
+import {
+  ElCollapse,
+  type CollapseProps,
+  type CollapseActiveName,
+  type CollapseModelValue,
+} from "element-plus";
+import { useTemplateRef } from "vue";
+import "element-plus/es/components/collapse/style/css";
 
 type Slots = {
   default?: unknown;
 };
 
 type Props = {
-  accordion?: CollapseProps['accordion'];
+  accordion?: CollapseProps["accordion"];
 
   onChange?: (value: CollapseModelValue) => any;
 };
 const modelValue = defineModel<CollapseActiveName[] | number | string>();
-const baseCollapseRef = useTemplateRef('baseCollapseRef');
+const baseCollapseRef = useTemplateRef("baseCollapseRef");
 const slots = defineSlots<Slots>();
 const props = defineProps<Props>();
 defineExpose({
@@ -26,7 +31,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElCollapse v-bind="props" ref="baseCollapseRef" v-model="modelValue" :class="[classes.root]">
+  <ElCollapse
+    v-bind="props"
+    ref="baseCollapseRef"
+    v-model="modelValue"
+    :class="[classes.root]"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

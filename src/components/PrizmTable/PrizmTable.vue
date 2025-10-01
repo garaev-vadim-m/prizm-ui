@@ -4,36 +4,36 @@
  * @components ElTable
  */
 
-import { ElTable } from 'element-plus';
-import 'element-plus/es/components/table/style/css';
-import { useTemplateRef } from 'vue';
+import { ElTable } from "element-plus";
+import "element-plus/es/components/table/style/css";
+import { useTemplateRef } from "vue";
 
-type ElTableProps = InstanceType<typeof ElTable>['$props'];
+type ElTableProps = InstanceType<typeof ElTable>["$props"];
 
 type PickedProps = Pick<
   ElTableProps,
-  | 'data'
-  | 'size'
-  | 'maxHeight'
-  | 'className'
-  | 'scrollbarAlwaysOn'
-  | 'load'
-  | 'border'
-  | 'cellClassName'
-  | 'headerCellClassName'
-  | 'headerRowClassName'
-  | 'treeProps'
-  | 'cellStyle'
-  | 'fit'
-  | 'tableLayout'
-  | 'onScroll'
-  | 'rowClassName'
-  | 'flexible'
-  | 'onCell-click'
-  | 'onRow-click'
-  | 'emptyText'
-  | 'showSummary'
-  | 'showOverflowTooltip'
+  | "data"
+  | "size"
+  | "maxHeight"
+  | "className"
+  | "scrollbarAlwaysOn"
+  | "load"
+  | "border"
+  | "cellClassName"
+  | "headerCellClassName"
+  | "headerRowClassName"
+  | "treeProps"
+  | "cellStyle"
+  | "fit"
+  | "tableLayout"
+  | "onScroll"
+  | "rowClassName"
+  | "flexible"
+  | "onCell-click"
+  | "onRow-click"
+  | "emptyText"
+  | "showSummary"
+  | "showOverflowTooltip"
 >;
 
 type Slots = {
@@ -43,39 +43,39 @@ type Slots = {
 };
 
 type Props = {
-  data?: PickedProps['data'];
-  size?: PickedProps['size'];
-  maxHeight?: PickedProps['maxHeight'];
-  className?: PickedProps['className'];
-  scrollbarAlwaysOn?: PickedProps['scrollbarAlwaysOn'];
-  border?: PickedProps['border'];
-  cellClassName?: PickedProps['cellClassName'];
-  headerCellClassName?: PickedProps['headerCellClassName'];
-  headerRowClassName?: PickedProps['headerRowClassName'];
-  treeProps?: PickedProps['treeProps'];
-  cellStyle?: PickedProps['cellStyle'];
-  fit?: PickedProps['fit'];
-  tableLayout?: PickedProps['tableLayout'];
-  flexible?: PickedProps['flexible'];
-  emptyText?: PickedProps['emptyText'];
-  showSummary?: PickedProps['showSummary'];
-  rowClassName?: PickedProps['rowClassName'];
-  showOverflowTooltip?: PickedProps['showOverflowTooltip'];
+  data?: PickedProps["data"];
+  size?: PickedProps["size"];
+  maxHeight?: PickedProps["maxHeight"];
+  className?: PickedProps["className"];
+  scrollbarAlwaysOn?: PickedProps["scrollbarAlwaysOn"];
+  border?: PickedProps["border"];
+  cellClassName?: PickedProps["cellClassName"];
+  headerCellClassName?: PickedProps["headerCellClassName"];
+  headerRowClassName?: PickedProps["headerRowClassName"];
+  treeProps?: PickedProps["treeProps"];
+  cellStyle?: PickedProps["cellStyle"];
+  fit?: PickedProps["fit"];
+  tableLayout?: PickedProps["tableLayout"];
+  flexible?: PickedProps["flexible"];
+  emptyText?: PickedProps["emptyText"];
+  showSummary?: PickedProps["showSummary"];
+  rowClassName?: PickedProps["rowClassName"];
+  showOverflowTooltip?: PickedProps["showOverflowTooltip"];
 
-  onLoad?: PickedProps['load'];
-  onCellClick?: PickedProps['onCell-click'];
-  onRowClick?: PickedProps['onRow-click'];
-  onScroll?: PickedProps['onScroll'];
+  onLoad?: PickedProps["load"];
+  onCellClick?: PickedProps["onCell-click"];
+  onRowClick?: PickedProps["onRow-click"];
+  onScroll?: PickedProps["onScroll"];
 };
 
-const baseTableRef = useTemplateRef('baseTableRef');
+const baseTableRef = useTemplateRef("baseTableRef");
 
 const props = withDefaults(defineProps<Props>(), {
-  emptyText: 'Нет данных',
+  emptyText: "Нет данных",
   scrollbarAlwaysOn: true,
   fit: true,
   border: true,
-  tableLayout: 'fixed',
+  tableLayout: "fixed",
 });
 
 const slots = defineSlots<Slots>();
@@ -85,7 +85,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElTable ref="baseTableRef" v-bind="props" :class="[classes.root]" :header-cell-class-name="classes.root_header">
+  <ElTable
+    ref="baseTableRef"
+    v-bind="props"
+    :class="[classes.root]"
+    :header-cell-class-name="classes.root_header"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

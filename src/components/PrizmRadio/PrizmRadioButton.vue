@@ -4,18 +4,18 @@
  * @components ElRadioButton
  */
 
-import { ElRadioButton } from 'element-plus';
-import 'element-plus/es/components/radio-button/style/css';
-import { type PropType } from 'vue';
+import { ElRadioButton } from "element-plus";
+import "element-plus/es/components/radio-button/style/css";
+import { type PropType } from "vue";
 
-type ElRadioProps = InstanceType<typeof ElRadioButton>['$props'];
-type PickedProps = Pick<ElRadioProps, 'disabled' | 'label' | 'name' | 'value'>;
+type ElRadioProps = InstanceType<typeof ElRadioButton>["$props"];
+type PickedProps = Pick<ElRadioProps, "disabled" | "label" | "name" | "value">;
 
 type Props = {
-  disabled?: PickedProps['disabled'];
-  label?: PickedProps['label'];
-  name?: PickedProps['name'];
-  value?: PickedProps['value'];
+  disabled?: PickedProps["disabled"];
+  label?: PickedProps["label"];
+  name?: PickedProps["name"];
+  value?: PickedProps["value"];
 };
 
 type Slots = {
@@ -27,7 +27,7 @@ const props = defineProps<Props>();
 const modelValue = defineModel({
   type: String as PropType<string | number | boolean>,
   required: false,
-  default: '',
+  default: "",
 });
 
 const slots = defineSlots<Slots>();

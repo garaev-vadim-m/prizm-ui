@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { ElTooltip } from 'element-plus';
-import 'element-plus/es/components/tooltip/style/css';
-import { useTemplateRef } from 'vue';
+import { ElTooltip } from "element-plus";
+import "element-plus/es/components/tooltip/style/css";
+import { useTemplateRef } from "vue";
 
-type ElTooltipProps = InstanceType<typeof ElTooltip>['$props'];
+type ElTooltipProps = InstanceType<typeof ElTooltip>["$props"];
 
-type PickerProps = Pick<ElTooltipProps, 'content' | 'trigger' | 'effect'>;
+type PickerProps = Pick<ElTooltipProps, "content" | "trigger" | "effect">;
 
 type Props = {
-  content?: PickerProps['content'];
-  trigger?: PickerProps['trigger'];
-  effect?: PickerProps['effect'];
+  content?: PickerProps["content"];
+  trigger?: PickerProps["trigger"];
+  effect?: PickerProps["effect"];
   placement?:
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end';
+    | "top"
+    | "top-start"
+    | "top-end"
+    | "bottom"
+    | "bottom-start"
+    | "bottom-end"
+    | "left"
+    | "left-start"
+    | "left-end"
+    | "right"
+    | "right-start"
+    | "right-end";
 };
 
 type Slots = {
@@ -32,13 +32,13 @@ type Slots = {
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  effect: 'dark',
-  placement: 'right',
+  effect: "dark",
+  placement: "right",
 });
 
 const slots = defineSlots<Slots>();
 
-const bseTooltipRef = useTemplateRef('bseTooltipRef');
+const bseTooltipRef = useTemplateRef("bseTooltipRef");
 
 defineExpose({
   bseTooltipRef,

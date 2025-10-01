@@ -4,18 +4,21 @@
  * @components ElTabPane
  */
 
-import { ElTabPane } from 'element-plus';
-import 'element-plus/es/components/tab-pane/style/css';
-import { useTemplateRef } from 'vue';
+import { ElTabPane } from "element-plus";
+import "element-plus/es/components/tab-pane/style/css";
+import { useTemplateRef } from "vue";
 
-type ElTabPaneProps = InstanceType<typeof ElTabPane>['$props'];
-type PickedProps = Pick<ElTabPaneProps, 'label' | 'disabled' | 'name' | 'closable'>;
+type ElTabPaneProps = InstanceType<typeof ElTabPane>["$props"];
+type PickedProps = Pick<
+  ElTabPaneProps,
+  "label" | "disabled" | "name" | "closable"
+>;
 
 type Props = {
-  label?: PickedProps['label'];
-  disabled?: PickedProps['disabled'];
-  name?: PickedProps['name'];
-  closable?: PickedProps['closable'];
+  label?: PickedProps["label"];
+  disabled?: PickedProps["disabled"];
+  name?: PickedProps["name"];
+  closable?: PickedProps["closable"];
 };
 
 const props = defineProps<Props>();
@@ -27,7 +30,7 @@ type Slots = {
 
 const slots = defineSlots<Slots>();
 
-const baseTabPaneRef = useTemplateRef('baseTabPaneRef');
+const baseTabPaneRef = useTemplateRef("baseTabPaneRef");
 
 defineExpose({
   baseTabPaneRef,

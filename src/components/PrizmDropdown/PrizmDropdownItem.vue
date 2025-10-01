@@ -3,17 +3,17 @@
  * @author Garaev.VM
  * @components ElDropdownItem
  */
-import { ElDropdownItem } from 'element-plus';
-import 'element-plus/es/components/dropdown-item/style/css';
+import { ElDropdownItem } from "element-plus";
+import "element-plus/es/components/dropdown-item/style/css";
 
-type ElDropdownItemProps = InstanceType<typeof ElDropdownItem>['$props'];
+type ElDropdownItemProps = InstanceType<typeof ElDropdownItem>["$props"];
 
-type PickedProps = Pick<ElDropdownItemProps, 'disabled' | 'icon' | 'onClick'>;
+type PickedProps = Pick<ElDropdownItemProps, "disabled" | "icon" | "onClick">;
 
 type Props = {
-  disabled?: PickedProps['disabled'];
-  icon?: PickedProps['icon'];
-  onClick?: PickedProps['onClick'];
+  disabled?: PickedProps["disabled"];
+  icon?: PickedProps["icon"];
+  onClick?: PickedProps["onClick"];
 };
 
 const props = defineProps<Props>();

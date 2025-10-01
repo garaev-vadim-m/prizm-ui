@@ -4,68 +4,76 @@
  * @components ElTimePicker
  */
 
-import { ElTimePicker } from 'element-plus';
-import { useTemplateRef } from 'vue';
-import 'element-plus/es/components/time-picker/style/css';
-import { IconClock } from '@/shared/icon';
+import { ElTimePicker } from "element-plus";
+import { useTemplateRef } from "vue";
+import "element-plus/es/components/time-picker/style/css";
+import { IconClock } from "@/shared/icon";
 
 const modelValue = defineModel<string | number>({
   required: true,
 });
 
-const baseTimePickerRef = useTemplateRef('baseTimePickerRef');
+const baseTimePickerRef = useTemplateRef("baseTimePickerRef");
 
-type ElDatePickerProps = InstanceType<typeof ElTimePicker>['$props'];
+type ElDatePickerProps = InstanceType<typeof ElTimePicker>["$props"];
 
 type PickedProps = Pick<
   ElDatePickerProps,
-  | 'type'
-  | 'cellClassName'
-  | 'clearable'
-  | 'disabled'
-  | 'arrowControl'
-  | 'isRange'
-  | 'prefixIcon'
-  | 'clearIcon'
-  | 'format'
-  | 'valueFormat'
-  | 'name'
-  | 'placeholder'
-  | 'size'
-  | 'rangeSeparator'
-  | 'timeFormat'
-  | 'unlinkPanels'
+  | "type"
+  | "cellClassName"
+  | "clearable"
+  | "disabled"
+  | "arrowControl"
+  | "isRange"
+  | "prefixIcon"
+  | "clearIcon"
+  | "format"
+  | "valueFormat"
+  | "name"
+  | "placeholder"
+  | "size"
+  | "rangeSeparator"
+  | "timeFormat"
+  | "unlinkPanels"
 >;
 
 type Props = {
-  type?: PickedProps['type'];
-  cellClassName?: PickedProps['cellClassName'];
-  clearable?: PickedProps['clearable'];
-  disabled?: PickedProps['disabled'];
-  arrowControl?: PickedProps['arrowControl'];
-  isRange?: PickedProps['isRange'];
-  prefixIcon?: PickedProps['prefixIcon'];
-  clearIcon?: PickedProps['clearIcon'];
-  format?: PickedProps['format'];
-  valueFormat?: PickedProps['valueFormat'];
-  name?: PickedProps['name'];
-  placeholder?: PickedProps['placeholder'];
-  size?: PickedProps['size'];
-  rangeSeparator?: PickedProps['rangeSeparator'];
-  timeFormat?: PickedProps['timeFormat'];
-  unlinkPanels?: PickedProps['unlinkPanels'];
+  type?: PickedProps["type"];
+  cellClassName?: PickedProps["cellClassName"];
+  clearable?: PickedProps["clearable"];
+  disabled?: PickedProps["disabled"];
+  arrowControl?: PickedProps["arrowControl"];
+  isRange?: PickedProps["isRange"];
+  prefixIcon?: PickedProps["prefixIcon"];
+  clearIcon?: PickedProps["clearIcon"];
+  format?: PickedProps["format"];
+  valueFormat?: PickedProps["valueFormat"];
+  name?: PickedProps["name"];
+  placeholder?: PickedProps["placeholder"];
+  size?: PickedProps["size"];
+  rangeSeparator?: PickedProps["rangeSeparator"];
+  timeFormat?: PickedProps["timeFormat"];
+  unlinkPanels?: PickedProps["unlinkPanels"];
 
   onVisibility?: (visibility: boolean) => void;
-  onChange?: (val: number | string | Date | [number, number] | [string, string] | [Date, Date]) => void;
+  onChange?: (
+    val:
+      | number
+      | string
+      | Date
+      | [number, number]
+      | [string, string]
+      | [Date, Date],
+  ) => void;
   onClear?: () => void;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   clearable: false,
-  size: 'large',
-  format: 'hh:mm:ss',
-  timeFormat: 'hh:mm:ss',
-  valueFormat: 'hh-mm-ss',
+  size: "large",
+  format: "hh:mm:ss",
+  timeFormat: "hh:mm:ss",
+  valueFormat: "hh-mm-ss",
   prefixIcon: IconClock,
 });
 
@@ -80,7 +88,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElTimePicker v-bind="props" ref="baseTimePickerRef" v-model="modelValue" :class="classes.root">
+  <ElTimePicker
+    v-bind="props"
+    ref="baseTimePickerRef"
+    v-model="modelValue"
+    :class="classes.root"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from 'vue';
+import { ref, useTemplateRef } from "vue";
 import {
   PrizmButton,
   PrizmTag,
@@ -28,23 +28,23 @@ import {
   PrizmDateTimePicker,
   PrizmAvatar,
   PrizmTooltip,
-} from './components';
-import { type BaseNotificationProps } from './components/PrizmNotification/PrizmNotification';
-import { type CollapseModelValue } from './index';
-import PrizmDialog from './components/PrizmDialog.vue';
+} from "./components";
+import { type BaseNotificationProps } from "./components/PrizmNotification/PrizmNotification";
+import { type CollapseModelValue } from "./index";
+import PrizmDialog from "./components/PrizmDialog.vue";
 
-const datePicker = ref('');
-const time = ref('');
-const dateTime = ref('');
+const datePicker = ref("");
+const time = ref("");
+const dateTime = ref("");
 const drawer = ref(false);
 const drawer2 = ref(false);
 const drawer3 = ref(false);
 
-const tabs = ref('id1');
-const radio = ref('id1');
-const select = ref('');
+const tabs = ref("id1");
+const radio = ref("id1");
+const select = ref("");
 const selects = ref([]);
-const prizmForm = useTemplateRef('prizmForm');
+const prizmForm = useTemplateRef("prizmForm");
 
 const dialog = ref(false);
 
@@ -58,15 +58,15 @@ function onOpenDrawer3() {
   return (drawer3.value = !drawer3.value);
 }
 
-function onOpenMessageBox(variant: 'primary' | 'danger') {
+function onOpenMessageBox(variant: "primary" | "danger") {
   PrizmMessageBox({
-    title: 'Привет',
+    title: "Привет",
     message: `Message body variant: ${variant}`,
     variant: variant,
   });
 }
 
-function onOpenNotification(type: BaseNotificationProps['type']) {
+function onOpenNotification(type: BaseNotificationProps["type"]) {
   PrizmNotification({
     title: type,
     type: type,
@@ -77,26 +77,26 @@ function onOpenNotification(type: BaseNotificationProps['type']) {
 const table = [
   {
     id: 1,
-    name: 'Col1',
-    sex: 'woomen',
+    name: "Col1",
+    sex: "woomen",
     age: Math.floor(Math.random() * 98) + 2,
   },
   {
     id: 2,
-    name: 'Col2',
-    sex: 'man',
+    name: "Col2",
+    sex: "man",
     age: Math.floor(Math.random() * 98) + 2,
   },
   {
     id: 3,
-    name: 'Col3',
-    sex: 'woomen',
+    name: "Col3",
+    sex: "woomen",
     age: Math.floor(Math.random() * 98) + 2,
   },
   {
     id: 4,
-    name: 'Col4',
-    sex: 'man',
+    name: "Col4",
+    sex: "man",
     age: Math.floor(Math.random() * 98) + 2,
   },
 ];
@@ -104,7 +104,7 @@ const table = [
 function onClickForm(form: any) {
   console.log(form.$refs.baseFormRef);
 }
-const activeNames = ref(['1']);
+const activeNames = ref(["1"]);
 const handleChange = (val: CollapseModelValue): string => {
   // console.log(val);
   return `${val}`;
@@ -130,6 +130,20 @@ function onOpenDialog() {
       <PrizmButton type="danger">PrizmButton</PrizmButton>
 
       <PrizmButton type="warning">PrizmButton</PrizmButton>
+    </div>
+
+    <div :class="classes.group">
+      <PrizmButton disabled>PrizmButton</PrizmButton>
+
+      <PrizmButton disabled type="primary">PrizmButton</PrizmButton>
+
+      <PrizmButton disabled type="info">PrizmButton</PrizmButton>
+
+      <PrizmButton disabled type="success">PrizmButton</PrizmButton>
+
+      <PrizmButton disabled type="danger">PrizmButton</PrizmButton>
+
+      <PrizmButton disabled type="warning">PrizmButton</PrizmButton>
     </div>
 
     <h3>Tag</h3>
@@ -161,9 +175,17 @@ function onOpenDialog() {
     <div :class="classes.group">
       <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" />
 
-      <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="default" />
+      <PrizmDatePicker
+        v-model="datePicker"
+        placeholder="PrizmDatePicker"
+        size="default"
+      />
 
-      <PrizmDatePicker v-model="datePicker" placeholder="PrizmDatePicker" size="small" />
+      <PrizmDatePicker
+        v-model="datePicker"
+        placeholder="PrizmDatePicker"
+        size="small"
+      />
     </div>
 
     <h3>TimePicker</h3>
@@ -171,9 +193,17 @@ function onOpenDialog() {
     <div :class="classes.group">
       <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" />
 
-      <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="default" />
+      <PrizmTimePicker
+        v-model="time"
+        placeholder="PrizmTimePicker"
+        size="default"
+      />
 
-      <PrizmTimePicker v-model="time" placeholder="PrizmTimePicker" size="small" />
+      <PrizmTimePicker
+        v-model="time"
+        placeholder="PrizmTimePicker"
+        size="small"
+      />
     </div>
 
     <h3>DateTimePicker</h3>
@@ -181,9 +211,17 @@ function onOpenDialog() {
     <div :class="classes.group">
       <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" />
 
-      <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="default" />
+      <PrizmDateTimePicker
+        v-model="dateTime"
+        placeholder="PrizmTimePicker"
+        size="default"
+      />
 
-      <PrizmDateTimePicker v-model="dateTime" placeholder="PrizmTimePicker" size="small" />
+      <PrizmDateTimePicker
+        v-model="dateTime"
+        placeholder="PrizmTimePicker"
+        size="small"
+      />
     </div>
 
     <h3>Form</h3>
@@ -203,7 +241,12 @@ function onOpenDialog() {
         </PrizmFormItem>
 
         <PrizmFormItem>
-          <PrizmButton nativeType="submit" type="primary" @click.prevent="onClickForm(prizmForm)">Submit!</PrizmButton>
+          <PrizmButton
+            nativeType="submit"
+            type="primary"
+            @click.prevent="onClickForm(prizmForm)"
+            >Submit!</PrizmButton
+          >
         </PrizmFormItem>
 
         <PrizmFormItem>
@@ -225,27 +268,41 @@ function onOpenDialog() {
     <h3>MessageBox</h3>
 
     <div :class="classes.group">
-      <PrizmButton type="primary" @click="onOpenMessageBox('primary')">Open PrizmMessageBox primary</PrizmButton>
+      <PrizmButton type="primary" @click="onOpenMessageBox('primary')"
+        >Open PrizmMessageBox primary</PrizmButton
+      >
 
-      <PrizmButton type="danger" @click="onOpenMessageBox('danger')">Open PrizmMessageBox danger</PrizmButton>
+      <PrizmButton type="danger" @click="onOpenMessageBox('danger')"
+        >Open PrizmMessageBox danger</PrizmButton
+      >
     </div>
 
     <h3>Dialog</h3>
 
     <div :class="classes.group">
-      <PrizmButton type="primary" @click="onOpenDialog">Open PrizmDialog</PrizmButton>
+      <PrizmButton type="primary" @click="onOpenDialog"
+        >Open PrizmDialog</PrizmButton
+      >
     </div>
 
     <h3>Notification</h3>
 
     <div :class="classes.group">
-      <PrizmButton type="danger" @click="onOpenNotification('error')">Open PrizmNotification error</PrizmButton>
+      <PrizmButton type="danger" @click="onOpenNotification('error')"
+        >Open PrizmNotification error</PrizmButton
+      >
 
-      <PrizmButton type="primary" @click="onOpenNotification('info')">Open PrizmNotification info</PrizmButton>
+      <PrizmButton type="primary" @click="onOpenNotification('info')"
+        >Open PrizmNotification info</PrizmButton
+      >
 
-      <PrizmButton type="success" @click="onOpenNotification('success')">Open PrizmNotification success</PrizmButton>
+      <PrizmButton type="success" @click="onOpenNotification('success')"
+        >Open PrizmNotification success</PrizmButton
+      >
 
-      <PrizmButton type="warning" @click="onOpenNotification('warning')">Open PrizmNotification warning</PrizmButton>
+      <PrizmButton type="warning" @click="onOpenNotification('warning')"
+        >Open PrizmNotification warning</PrizmButton
+      >
     </div>
 
     <h3>Tabs</h3>
@@ -545,11 +602,15 @@ function onOpenDialog() {
 
   <div :class="classes.group">
     <PrizmTooltip content="Привет">
-      <PrizmButton :style="{ width: '200px' }" type="primary">Эффект дарк</PrizmButton>
+      <PrizmButton :style="{ width: '200px' }" type="primary"
+        >Эффект дарк</PrizmButton
+      >
     </PrizmTooltip>
 
     <PrizmTooltip content="Как дела?" effect="light">
-      <PrizmButton :style="{ width: '200px' }" type="primary">Эффект лайт</PrizmButton>
+      <PrizmButton :style="{ width: '200px' }" type="primary"
+        >Эффект лайт</PrizmButton
+      >
     </PrizmTooltip>
   </div>
 
@@ -565,7 +626,12 @@ function onOpenDialog() {
     </template>
   </PrizmDrawer>
 
-  <PrizmDrawer v-model="drawer3" :defaultFooter="false" title="Drawer3" size="200" />
+  <PrizmDrawer
+    v-model="drawer3"
+    :defaultFooter="false"
+    title="Drawer3"
+    size="200"
+  />
 
   <PrizmDialog v-model="dialog" title="Привет">
     <div>

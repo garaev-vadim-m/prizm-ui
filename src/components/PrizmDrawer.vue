@@ -4,17 +4,17 @@
  * @components ElDrawer
  */
 
-import { ElDrawer, type DrawerProps } from 'element-plus';
-import { useTemplateRef } from 'vue';
-import 'element-plus/es/components/drawer/style/css';
-import { PrizmButton } from '../components';
+import { ElDrawer, type DrawerProps } from "element-plus";
+import { useTemplateRef } from "vue";
+import "element-plus/es/components/drawer/style/css";
+import { PrizmButton } from "../components";
 
 const modelValue = defineModel<boolean>({
   required: true,
   default: false,
 });
 
-const baseDrawerRef = useTemplateRef('baseDrawerRef');
+const baseDrawerRef = useTemplateRef("baseDrawerRef");
 
 type Slots = {
   default?: unknown;
@@ -24,29 +24,29 @@ type Slots = {
 
 type PickedProps = Pick<
   DrawerProps,
-  | 'closeIcon'
-  | 'appendToBody'
-  | 'withHeader'
-  | 'showClose'
-  | 'fullscreen'
-  | 'beforeClose'
-  | 'title'
-  | 'size'
-  | 'lockScroll'
-  | 'headerClass'
+  | "closeIcon"
+  | "appendToBody"
+  | "withHeader"
+  | "showClose"
+  | "fullscreen"
+  | "beforeClose"
+  | "title"
+  | "size"
+  | "lockScroll"
+  | "headerClass"
 >;
 
 type Props = {
-  closeIcon?: PickedProps['closeIcon'];
-  appendToBody?: PickedProps['appendToBody'];
-  withHeader?: PickedProps['withHeader'];
-  showClose?: PickedProps['showClose'];
-  fullscreen?: PickedProps['fullscreen'];
-  beforeClose?: PickedProps['beforeClose'];
-  title?: PickedProps['title'];
-  size?: PickedProps['size'];
-  lockScroll?: PickedProps['lockScroll'];
-  headerClass?: PickedProps['headerClass'];
+  closeIcon?: PickedProps["closeIcon"];
+  appendToBody?: PickedProps["appendToBody"];
+  withHeader?: PickedProps["withHeader"];
+  showClose?: PickedProps["showClose"];
+  fullscreen?: PickedProps["fullscreen"];
+  beforeClose?: PickedProps["beforeClose"];
+  title?: PickedProps["title"];
+  size?: PickedProps["size"];
+  lockScroll?: PickedProps["lockScroll"];
+  headerClass?: PickedProps["headerClass"];
   defaultFooter?: boolean;
   confirmButtonText?: string;
   cancelButtonText?: string;
@@ -56,18 +56,18 @@ type Props = {
   onCancelButton?: () => unknown;
 };
 const props = withDefaults(defineProps<Props>(), {
-  title: 'Default title',
+  title: "Default title",
   showClose: true,
   appendToBody: true,
   withHeader: true,
   defaultFooter: true,
-  confirmButtonText: 'Сохранить',
-  cancelButtonText: 'Отмена',
+  confirmButtonText: "Сохранить",
+  cancelButtonText: "Отмена",
   confirmDisabled: false,
   lockScroll: true,
 
-  onConfirmButton: () => console.log('Click onConfirmButton'),
-  onCancelButton: () => console.log('Click onCancelButton'),
+  onConfirmButton: () => console.log("Click onConfirmButton"),
+  onCancelButton: () => console.log("Click onCancelButton"),
 });
 const slots = defineSlots<Slots>();
 
@@ -81,7 +81,8 @@ defineExpose({
     ref="baseDrawerRef"
     v-model="modelValue"
     :class="[classes.root]"
-    :headerClass="classes.headerTitle">
+    :headerClass="classes.headerTitle"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -93,11 +94,16 @@ defineExpose({
     <template #footer v-if="slots.footer || defaultFooter">
       <slot name="footer">
         <div :class="classes.footer">
-          <PrizmButton type="primary" :disabled="confirmDisabled" @click="onConfirmButton">{{
-            confirmButtonText
-          }}</PrizmButton>
+          <PrizmButton
+            type="primary"
+            :disabled="confirmDisabled"
+            @click="onConfirmButton"
+            >{{ confirmButtonText }}</PrizmButton
+          >
 
-          <PrizmButton @click="onCancelButton">{{ cancelButtonText }}</PrizmButton>
+          <PrizmButton @click="onCancelButton">{{
+            cancelButtonText
+          }}</PrizmButton>
         </div>
       </slot>
     </template>

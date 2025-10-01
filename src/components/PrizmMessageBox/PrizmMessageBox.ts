@@ -3,27 +3,32 @@
  * @components ElMessageBox
  */
 
-import { ElMessageBox, type ElMessageBoxOptions, type MessageBoxData, type MessageBoxType } from 'element-plus';
-import 'element-plus/es/components/message-box/style/css';
-import classes from './PrizmMessageBox.module.scss';
+import {
+  ElMessageBox,
+  type ElMessageBoxOptions,
+  type MessageBoxData,
+  type MessageBoxType,
+} from "element-plus";
+import "element-plus/es/components/message-box/style/css";
+import classes from "./PrizmMessageBox.module.scss";
 
 export type Props = Pick<
   ElMessageBoxOptions,
-  | 'title'
-  | 'message'
-  | 'showCancelButton'
-  | 'showConfirmButton'
-  | 'center'
-  | 'customClass'
-  | 'confirmButtonClass'
-  | 'cancelButtonClass'
-  | 'buttonSize'
-  | 'customStyle'
+  | "title"
+  | "message"
+  | "showCancelButton"
+  | "showConfirmButton"
+  | "center"
+  | "customClass"
+  | "confirmButtonClass"
+  | "cancelButtonClass"
+  | "buttonSize"
+  | "customStyle"
 > & {
   /** 'primary' refers to the confirm styles from Figma. 'danger' refers to the delete styles from Figma. @default 'primary' */
-  variant?: 'primary' | 'danger';
+  variant?: "primary" | "danger";
   /** @default 'confirm' */
-  boxType?: Extract<MessageBoxType, 'confirm'>;
+  boxType?: Extract<MessageBoxType, "confirm">;
   cancelButtonText?: string;
   confirmButtonText?: string;
   classLocalComponent?: string;
@@ -33,10 +38,10 @@ export type Props = Pick<
 
 function handleWidth(width: number | string | undefined): string {
   if (width === undefined) return `100%`;
-  if (typeof width === 'number') width = String(width);
+  if (typeof width === "number") width = String(width);
   if (!width.length) return `100%`;
-  if (width.indexOf('px')) return `${width}px`;
-  if (width.indexOf('%')) return `${width}%`;
+  if (width.indexOf("px")) return `${width}px`;
+  if (width.indexOf("%")) return `${width}%`;
   return `${width}px`;
 }
 
@@ -44,8 +49,8 @@ export const PrizmMessageBox = ({
   showCancelButton = true,
   showConfirmButton = true,
   center = false,
-  variant = 'primary',
-  boxType = 'confirm',
+  variant = "primary",
+  boxType = "confirm",
   vertical = false,
   ...props
 }: Props): Promise<MessageBoxData> => {
@@ -57,8 +62,8 @@ export const PrizmMessageBox = ({
       classes.baseMessageBox,
       props.classLocalComponent,
       classes[variant],
-      vertical ? classes.vertical : '',
-    ].join(' '),
+      vertical ? classes.vertical : "",
+    ].join(" "),
     customStyle: handleStyle,
     boxType,
     showCancelButton,
