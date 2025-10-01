@@ -24,7 +24,9 @@ type Props = {
   width?: string;
 };
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  showMessage: true,
+});
 
 function handleWidth(width: number | string | undefined): string {
   if (width === undefined) return `100%`;
