@@ -1,4 +1,5 @@
 import "./style.scss";
+import "element-plus/es/components/loading/style/css";
 export * from "./components";
 export * from "./shared/icon";
 export type {
