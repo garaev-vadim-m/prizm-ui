@@ -34,6 +34,7 @@ type PickedProps = Pick<
   | "modelValue"
   | "size"
   | "id"
+  | "showPassword"
 >;
 
 type Props = {
