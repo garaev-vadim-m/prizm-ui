@@ -20,8 +20,8 @@ type PickedProps = Pick<
   | "onValidate"
   | "validateOnRuleChange"
   | "labelWidth"
-  | "inline",
-  "rules"
+  | "inline"
+  | "rules"
 >;
 
 type Props = {
