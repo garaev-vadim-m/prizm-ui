@@ -46,6 +46,8 @@
   /*color*/
   --color-danger: #d44332;
   --color-primary: #436cee;
+  --color-success: #49ab4d;
+  --color-warning: #ff7c0a;
 
   --color-gray: #c3c7cf;
   --color-dark-gray: #6e778c;
@@ -53,22 +55,31 @@
   --color-dark: #3f4759;
   --color-light-gray: #f3f4f5;
   --color-thin-gray: #e0e3e7;
-  --color-success: #49ab4d;
   --color-swamp: #f3f4f566;
-  --color-warning: #ff7c0a;
+  --color-info: #6e778c;
   /*end color*/
+
+  /*color hover*/
+  --color-primary-hover: rgba(61, 99, 218, 1);
+  --color-danger-hover: rgba(193, 63, 47, 1);
+  --color-success-hover: rgba(62, 124, 19, 1);
+  --color-warning-hover: rgba(222, 142, 39, 1);
+  --color-info-hover: rgba(100, 109, 132, 1);
+
+  /*end color hover*/
+
   --border-radius: 2px;
   --bg-primary: #d9e2ff;
   --bg-primary-light: #d9e2ff66;
 
-  --bg-html: #1e222a;
+  --bg-html: #ffffff;
 
   /*переопределение цветов*/
   --el-color-primary: #436cee;
   --el-color-danger: #d44332;
-  --el-color-success: #49ab4d;
+  --el-color-success: #498714;
   --el-color-warning: #ff7c0a;
-
+  --el-color-info: #6e778c;
   --el-border-color: #6e778c;
   --el-text-color-regular: #0f1115;
 }
