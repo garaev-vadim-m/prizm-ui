@@ -37,7 +37,7 @@ const modelValue = defineModel({
 const slots = defineSlots<Slots>();
 </script>
 <template>
-  <ElRadioGroup v-bind="props" v-model="modelValue">
+  <ElRadioGroup v-bind="props" v-model="modelValue" :class="classes.root">
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -45,5 +45,6 @@ const slots = defineSlots<Slots>();
 </template>
 <style module="classes" lang="scss">
 .root {
+  flex-wrap: nowrap;
 }
 </style>
