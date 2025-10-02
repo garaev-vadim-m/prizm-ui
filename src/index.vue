@@ -525,7 +525,9 @@ function onOpenDialog() {
 
         <PrizmTableColumn label="Age" prop="age" fixed width="180" sortable />
 
-        <PrizmTableColumn label="MockAge" prop="age" width="180" />
+        <PrizmTableColumn label="MockAge" prop="age" width="180">
+          <template #default="scope"> {{ console.log(scope) }} </template>
+        </PrizmTableColumn>
 
         <PrizmTableColumn label="MockAge" prop="age" width="180" />
 
