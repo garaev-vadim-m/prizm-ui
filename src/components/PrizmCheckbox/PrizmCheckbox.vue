@@ -24,6 +24,7 @@ type PickedProps = Pick<
   | "value"
   | "label"
   | "checked"
+  | "onChange"
 >;
 
 type Props = {
@@ -35,12 +36,14 @@ type Props = {
   value?: PickedProps["value"];
   label?: PickedProps["label"];
   checked?: PickedProps["checked"];
+
+  onChange?: PickedProps["onChange"];
 };
 
 const checkboxRef = useTemplateRef("checkboxRef");
 const slots = defineSlots<Slots>();
 const modelValue = defineModel<string | number | boolean>({
-  required: true,
+  required: false,
 });
 const props = withDefaults(defineProps<Props>(), {
   size: "large",

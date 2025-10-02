@@ -16,7 +16,7 @@ type ElCheckboxGroupProps = InstanceType<typeof ElCheckboxGroup>["$props"];
 
 type PickedProps = Pick<
   ElCheckboxGroupProps,
-  "max" | "fill" | "disabled" | "min" | "textColor"
+  "max" | "fill" | "disabled" | "min" | "textColor" | "onChange"
 >;
 
 export type Props = {
@@ -25,6 +25,8 @@ export type Props = {
   disabled?: PickedProps["disabled"];
   min?: PickedProps["min"];
   textColor?: PickedProps["textColor"];
+
+  onChange?: PickedProps["onChange"];
 };
 
 const checkboxGroupRef = useTemplateRef("checkboxGroupRef");
