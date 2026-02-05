@@ -13,7 +13,7 @@ sidebar: auto
 import { PrizmIcon } from 'prizm-ui-vue';
 ```
 
-## Пример использования
+## Примеры использования
 
 ```vue
 <script setup lang="ts">

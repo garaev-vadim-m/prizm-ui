@@ -4,9 +4,9 @@
  * @components ElInput
  */
 
-import { ElInput, type InputEmits } from 'element-plus';
-import 'element-plus/es/components/input/style/css';
-import { useTemplateRef } from 'vue';
+import { ElInput, type InputEmits } from "element-plus";
+import "element-plus/es/components/input/style/css";
+import { useTemplateRef } from "vue";
 
 type Slots = {
   prefix?: unknown;
@@ -15,69 +15,76 @@ type Slots = {
   append?: unknown;
 };
 
-type ElTableProps = InstanceType<typeof ElInput>['$props'];
+type ElTableProps = InstanceType<typeof ElInput>["$props"];
 
 type PickedProps = Pick<
   ElTableProps,
-  | 'disabled'
-  | 'maxlength'
-  | 'minlength'
-  | 'type'
-  | 'autosize'
-  | 'autocomplete'
-  | 'placeholder'
-  | 'suffixIcon'
-  | 'prefixIcon'
-  | 'autofocus'
-  | 'formatter'
-  | 'parser'
-  | 'modelValue'
-  | 'size'
-  | 'id'
+  | "disabled"
+  | "maxlength"
+  | "minlength"
+  | "type"
+  | "autosize"
+  | "autocomplete"
+  | "placeholder"
+  | "suffixIcon"
+  | "prefixIcon"
+  | "autofocus"
+  | "formatter"
+  | "parser"
+  | "modelValue"
+  | "size"
+  | "id"
+  | "showPassword"
 >;
 
 type Props = {
-  disabled?: PickedProps['disabled'];
-  maxlength?: PickedProps['maxlength'];
-  minlength?: PickedProps['minlength'];
-  type?: PickedProps['type'];
-  autosize?: PickedProps['autosize'];
-  autocomplete?: PickedProps['autocomplete'];
-  placeholder?: PickedProps['placeholder'];
-  suffixIcon?: PickedProps['suffixIcon'];
-  prefixIcon?: PickedProps['prefixIcon'];
-  autofocus?: PickedProps['autofocus'];
-  formatter?: PickedProps['formatter'];
-  parser?: PickedProps['parser'];
-  size?: PickedProps['size'];
+  disabled?: PickedProps["disabled"];
+  maxlength?: PickedProps["maxlength"];
+  minlength?: PickedProps["minlength"];
+  type?: PickedProps["type"];
+  autosize?: PickedProps["autosize"];
+  autocomplete?: PickedProps["autocomplete"];
+  placeholder?: PickedProps["placeholder"];
+  suffixIcon?: PickedProps["suffixIcon"];
+  prefixIcon?: PickedProps["prefixIcon"];
+  autofocus?: PickedProps["autofocus"];
+  formatter?: PickedProps["formatter"];
+  parser?: PickedProps["parser"];
+  size?: PickedProps["size"];
+  showPassword?: PickedProps["showPassword"];
 
-  onInput?: InputEmits['input'];
-  onChange?: InputEmits['change'];
-  onFocus?: InputEmits['focus'];
-  onBlur?: InputEmits['blur'];
-  onClear?: InputEmits['clear'];
-  onMouseleave?: InputEmits['mouseleave'];
-  onMouseenter?: InputEmits['mouseenter'];
-  onKeydown?: InputEmits['keydown'];
-  onCompositionstart?: InputEmits['compositionstart'];
-  onCompositionupdate?: InputEmits['compositionupdate'];
-  onCompositionend?: InputEmits['compositionend'];
+  onInput?: InputEmits["input"];
+  onChange?: InputEmits["change"];
+  onFocus?: InputEmits["focus"];
+  onBlur?: InputEmits["blur"];
+  onClear?: InputEmits["clear"];
+  onMouseleave?: InputEmits["mouseleave"];
+  onMouseenter?: InputEmits["mouseenter"];
+  onKeydown?: InputEmits["keydown"];
+  onCompositionstart?: InputEmits["compositionstart"];
+  onCompositionupdate?: InputEmits["compositionupdate"];
+  onCompositionend?: InputEmits["compositionend"];
 };
 
 const modelValue = defineModel<string | number>();
 
-const props = withDefaults(defineProps<Props>(), { size: 'large' });
+const props = withDefaults(defineProps<Props>(), { size: "large" });
 
 const slots = defineSlots<Slots>();
 
-const baseInputRef = useTemplateRef('baseInputRef');
+const baseInputRef = useTemplateRef("baseInputRef");
 
 defineExpose({
   baseInputRef,
 });
 </script>
 <template>
-  <ElInput v-bind="props" ref="baseInputRef" v-model="modelValue" :class="[classes.root]">
+  <ElInput
+    v-bind="props"
+    ref="baseInputRef"
+    v-model="modelValue"
+    :class="[classes.root]"
+  >
     <template #prefix v-if="slots.prefix">
       <slot name="prefix" />
     </template>

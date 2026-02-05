@@ -4,19 +4,22 @@
  * @components ElRadioGroup
  */
 
-import { ElRadioGroup } from 'element-plus';
-import 'element-plus/es/components/radio-group/style/css';
-import { type PropType } from 'vue';
+import { ElRadioGroup } from "element-plus";
+import "element-plus/es/components/radio-group/style/css";
+import { type PropType } from "vue";
 
-type ElRadioProps = InstanceType<typeof ElRadioGroup>['$props'];
-type PickedProps = Pick<ElRadioProps, 'fill' | 'disabled' | 'name' | 'onChange'>;
+type ElRadioProps = InstanceType<typeof ElRadioGroup>["$props"];
+type PickedProps = Pick<
+  ElRadioProps,
+  "fill" | "disabled" | "name" | "onChange"
+>;
 
 type Props = {
-  fill?: PickedProps['fill'];
-  disabled?: PickedProps['disabled'];
-  name?: PickedProps['name'];
+  fill?: PickedProps["fill"];
+  disabled?: PickedProps["disabled"];
+  name?: PickedProps["name"];
 
-  onChange?: PickedProps['onChange'];
+  onChange?: PickedProps["onChange"];
 };
 
 type Slots = {
@@ -28,13 +31,13 @@ const props = defineProps<Props>();
 const modelValue = defineModel({
   type: String as PropType<string | number | boolean>,
   required: true,
-  default: '',
+  default: "",
 });
 
 const slots = defineSlots<Slots>();
 </script>
 <template>
-  <ElRadioGroup v-bind="props" v-model="modelValue">
+  <ElRadioGroup v-bind="props" v-model="modelValue" :class="classes.root">
     <template #default v-if="slots.default">
       <slot />
     </template>
@@ -42,5 +45,6 @@ const slots = defineSlots<Slots>();
 </template>
 <style module="classes" lang="scss">
 .root {
+  flex-wrap: nowrap;
 }
 </style>

@@ -3,45 +3,45 @@
  * @author Garaev.VM
  * @components ElDropdown
  */
-import { type DropdownInstance, ElDropdown } from 'element-plus';
-import 'element-plus/es/components/dropdown/style/css';
-import { useTemplateRef } from 'vue';
+import { type DropdownInstance, ElDropdown } from "element-plus";
+import "element-plus/es/components/dropdown/style/css";
+import { useTemplateRef } from "vue";
 
-type ElDropdownProps = InstanceType<typeof ElDropdown>['$props'];
+type ElDropdownProps = InstanceType<typeof ElDropdown>["$props"];
 
 type PickedProps = Pick<
   ElDropdownProps,
-  | 'type'
-  | 'effect'
-  | 'disabled'
-  | 'trigger'
-  | 'loop'
-  | 'maxHeight'
-  | 'splitButton'
-  | 'onClick'
-  | 'size'
-  | 'placement'
-  | 'triggerKeys'
-  | 'onVisible-change'
-  | 'onCommand'
+  | "type"
+  | "effect"
+  | "disabled"
+  | "trigger"
+  | "loop"
+  | "maxHeight"
+  | "splitButton"
+  | "onClick"
+  | "size"
+  | "placement"
+  | "triggerKeys"
+  | "onVisible-change"
+  | "onCommand"
 >;
 
 type Props = {
-  type?: PickedProps['type'];
-  effect?: PickedProps['effect'];
-  disabled?: PickedProps['disabled'];
-  trigger?: PickedProps['trigger'];
-  loop?: PickedProps['loop'];
-  maxHeight?: PickedProps['maxHeight'];
-  splitButton?: PickedProps['splitButton'];
-  size?: 'large' | 'default' | 'small';
-  placement?: PickedProps['placement'];
-  triggerKeys?: PickedProps['triggerKeys'];
+  type?: PickedProps["type"];
+  effect?: PickedProps["effect"];
+  disabled?: PickedProps["disabled"];
+  trigger?: PickedProps["trigger"];
+  loop?: PickedProps["loop"];
+  maxHeight?: PickedProps["maxHeight"];
+  splitButton?: PickedProps["splitButton"];
+  size?: "large" | "default" | "small";
+  placement?: PickedProps["placement"];
+  triggerKeys?: PickedProps["triggerKeys"];
   openList?: boolean;
 
-  onClick?: PickedProps['onClick'];
-  'onVisible-change'?: PickedProps['onVisible-change'];
-  onCommand?: PickedProps['onCommand'];
+  onClick?: PickedProps["onClick"];
+  "onVisible-change"?: PickedProps["onVisible-change"];
+  onCommand?: PickedProps["onCommand"];
 };
 
 type Slots = {
@@ -49,7 +49,7 @@ type Slots = {
   dropdown?: unknown;
 };
 
-const baseDropdownRef = useTemplateRef<DropdownInstance>('baseDropdownRef');
+const baseDropdownRef = useTemplateRef<DropdownInstance>("baseDropdownRef");
 
 function openDropdown() {
   if (!baseDropdownRef.value || !props.splitButton || !props.openList) return;
@@ -57,10 +57,10 @@ function openDropdown() {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'large',
-  placement: 'top',
-  trigger: 'click',
-  type: 'default',
+  size: "large",
+  placement: "top",
+  trigger: "click",
+  type: "default",
   openList: false,
 });
 
@@ -71,7 +71,12 @@ defineExpose({
 });
 </script>
 <template>
-  <ElDropdown ref="baseDropdownRef" v-bind="props" :class="[classes.root]" @click="openDropdown">
+  <ElDropdown
+    ref="baseDropdownRef"
+    v-bind="props"
+    :class="[classes.root]"
+    @click="openDropdown"
+  >
     <template #default v-if="slots.default">
       <slot />
     </template>

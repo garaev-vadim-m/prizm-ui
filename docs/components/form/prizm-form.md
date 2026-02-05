@@ -166,3 +166,40 @@ const submitForm = async (formEl: FormInstance | undefined) => {
   </PrizmForm>
 </template>
 ```
+
+## Props
+
+| Название                  | Тип                              | По умолчанию | Описание                                     |
+| ------------------------- | -------------------------------- | ------------ | -------------------------------------------- |
+| `disabled`                | `boolean`                        | `false`      | Блокировка формы                             |
+| `statusIcon`              | `boolean`                        | `false`      | Отображение статуса формы                    |
+| `inline`                  | `boolean`                        | `false`      | Отоброжение формы по горизонтали             |
+| `labelPosition`           | `'top'` \| `'right'` \| `'left'` | `left`       | Отображение label                            |
+| `requireAsteriskPosition` | `'top'` \| `'right'` \| `'left'` | `right`      | Отображение иконки обязательности заполнения |
+| `model`                   | `object`                         | `-`          | Оъект формы                                  |
+| `rules`                   | `object`                         | `-`          | Объект валидации формы                       |
+| `labelWidth`              | `string` \| `number`             | `auto`       | Объект валидации формы                       |
+| `validateOnRuleChange`    | `boolean`                        | `true`       | Проверка валидации формы                     |
+
+## Slots
+
+| Название  | Описание                                            |
+| --------- | --------------------------------------------------- |
+| `default` | Слот для <Badge type="info" text="PrizmFormItem" /> |
+
+## Event
+
+| Название   | Тип                                                               |                       |
+| ---------- | ----------------------------------------------------------------- | --------------------- |
+| `validate` | `(prop: FormItemProp, isValid: boolean, message: string) => void` | Метод валидации формы |
+
+## Expose
+
+| Название        | Expose                                     | Описание                                                   |
+| --------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| `validate`      | `someRef.$refs.baseTableRef.validate`      | Валидация формы                                            |
+| `validateField` | `someRef.$refs.baseTableRef.validateField` | Валидация указанных полей                                  |
+| `resetFields`   | `someRef.$refs.baseTableRef.resetFields`   | Очистка полей                                              |
+| `scrollToField` | `someRef.$refs.baseTableRef.scrollToField` | Скролл к указанному полю                                   |
+| `clearValidate` | `someRef.$refs.baseTableRef.clearValidate` | Очистка сообщения валидации указанного поля или всех поелй |
+| `fields`        | `someRef.$refs.baseTableRef.fields`        | Получение контекста всех полей                             |

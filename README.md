@@ -1,6 +1,6 @@
 # prizm-ui-vue
 
-**Версия:** 2.1.11  
+**Версия:** 2.3.0
 **Описание:** Vue 3 UI Kit, основанный на Element Plus, с ручным импортом компонентов.
 
 ## Установка
@@ -21,6 +21,12 @@ npm install prizm-ui-vue
 
 ```bash
 npm install -D sass
+```
+
+В `inex.html` нужно указать
+
+```html
+<html lang="en" class="light">
 ```
 
 ## Использование

@@ -4,16 +4,16 @@
  * @components ElIcon
  */
 
-import { ElIcon } from 'element-plus';
-import 'element-plus/es/components/icon/style/css';
+import { ElIcon } from "element-plus";
+import "element-plus/es/components/icon/style/css";
 
-type ElIconProps = InstanceType<typeof ElIcon>['$props'];
-type PickedProps = Pick<ElIconProps, 'size' | 'color' | 'class'>;
+type ElIconProps = InstanceType<typeof ElIcon>["$props"];
+type PickedProps = Pick<ElIconProps, "size" | "color" | "class">;
 
 type Props = {
-  size?: PickedProps['size'];
-  color?: PickedProps['color'];
-  class?: PickedProps['class'];
+  size?: PickedProps["size"];
+  color?: PickedProps["color"];
+  class?: PickedProps["class"];
 };
 
 type Slots = {

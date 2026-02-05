@@ -4,21 +4,24 @@
  * @components ElRadio
  */
 
-import { ElRadio } from 'element-plus';
-import 'element-plus/es/components/radio/style/css';
-import { type PropType } from 'vue';
+import { ElRadio } from "element-plus";
+import "element-plus/es/components/radio/style/css";
+import { type PropType } from "vue";
 
-type ElRadioProps = InstanceType<typeof ElRadio>['$props'];
-type PickedProps = Pick<ElRadioProps, 'border' | 'label' | 'name' | 'disabled' | 'onChange' | 'size' | 'value'>;
+type ElRadioProps = InstanceType<typeof ElRadio>["$props"];
+type PickedProps = Pick<
+  ElRadioProps,
+  "border" | "label" | "name" | "disabled" | "onChange" | "size" | "value"
+>;
 
 type Props = {
-  border?: PickedProps['border'];
-  label?: PickedProps['label'];
-  name?: PickedProps['name'];
-  disabled?: PickedProps['disabled'];
-  size?: PickedProps['size'];
+  border?: PickedProps["border"];
+  label?: PickedProps["label"];
+  name?: PickedProps["name"];
+  disabled?: PickedProps["disabled"];
+  size?: PickedProps["size"];
 
-  onChange?: PickedProps['onChange'];
+  onChange?: PickedProps["onChange"];
 };
 
 type Slots = {
@@ -26,13 +29,13 @@ type Slots = {
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'large',
+  size: "large",
 });
 
 const modelValue = defineModel({
   type: String as PropType<string | number | boolean>,
   required: false,
-  default: '',
+  default: "",
 });
 
 const slots = defineSlots<Slots>();

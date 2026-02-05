@@ -1,10 +1,9 @@
 {
   "name": "prizm-ui-vue",
-  "version": "2.2.53",
+  "version": "2.3.15",
   "description": "Vue 3 UI Kit with Element Plus (manual import)",
   "author": "your-name",
   "license": "MIT",
-  "main": "dist/prizm-ui.umd.js",
   "module": "dist/prizm-ui.es.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,7 +12,6 @@
   "exports": {
     ".": {
       "import": "./dist/prizm-ui.es.js",
-      "require": "./dist/prizm-ui.umd.js",
       "types": "./dist/index.d.ts"
     }
   },

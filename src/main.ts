@@ -1,5 +1,5 @@
-import './style.scss';
-import { createApp } from 'vue';
-import index from './index.vue';
+import "./style.scss";
+import { createApp } from "vue";
+import index from "./index.vue";
 const app = createApp(index);
-app.mount('#app');
+app.mount("#app");
