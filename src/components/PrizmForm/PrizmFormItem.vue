@@ -22,18 +22,28 @@ type Props = {
   showMessage?: FormItemProps["showMessage"];
   validateStatus?: FormItemProps["validateStatus"];
   width?: string;
+  size?: FormItemProps["size"];
+  labelWidth?: FormItemProps["labelWidth"];
+  inlineMessage?: FormItemProps["inlineMessage"];
+  for?: FormItemProps["for"];
 };
 
 const props = withDefaults(defineProps<Props>(), {
   showMessage: true,
+  size: "large",
+  inlineMessage: false,
 });
 
 function handleWidth(width: number | string | undefined): string {
   if (width === undefined) return `100%`;
   if (typeof width === "number") width = String(width);
   if (!width.length) return `100%`;
-  if (width.indexOf("px")) return `${width}px`;
-  if (width.indexOf("%")) return `${width}%`;
+  if (width.includes("px")) return width;
+  if (width.includes("%")) return width;
+  if (width.includes("rem")) return width;
+  if (width.includes("em")) return width;
+  if (width.includes("vw")) return width;
+  if (width.includes("vh")) return width;
   return `${width}px`;
 }
 
@@ -56,15 +66,15 @@ defineExpose({
     :class="[classes.root]"
     :style="style"
   >
-    <template #default v-if="slots.default">
-      <slot />
-    </template>
-
-    <template #label v-if="slots.label">
+    <template v-if="slots.label" #label>
       <slot name="label" />
     </template>
 
-    <template #error v-if="slots.error">
+    <template v-if="slots.default" #default>
+      <slot />
+    </template>
+
+    <template v-if="slots.error" #error>
       <slot name="error" />
     </template>
   </ElFormItem>

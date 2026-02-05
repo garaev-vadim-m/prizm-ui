@@ -24,6 +24,11 @@ type PickedProps = Pick<
   | "triggerKeys"
   | "onVisible-change"
   | "onCommand"
+  | "hideOnClick"
+  | "showTimeout"
+  | "hideTimeout"
+  | "role"
+  | "tabindex"
 >;
 
 type Props = {
@@ -34,9 +39,14 @@ type Props = {
   loop?: PickedProps["loop"];
   maxHeight?: PickedProps["maxHeight"];
   splitButton?: PickedProps["splitButton"];
-  size?: "large" | "default" | "small";
+  size?: PickedProps["size"];
   placement?: PickedProps["placement"];
   triggerKeys?: PickedProps["triggerKeys"];
+  hideOnClick?: PickedProps["hideOnClick"];
+  showTimeout?: PickedProps["showTimeout"];
+  hideTimeout?: PickedProps["hideTimeout"];
+  role?: PickedProps["role"];
+  tabindex?: PickedProps["tabindex"];
   openList?: boolean;
 
   onClick?: PickedProps["onClick"];
@@ -58,10 +68,11 @@ function openDropdown() {
 
 const props = withDefaults(defineProps<Props>(), {
   size: "large",
-  placement: "top",
+  placement: "bottom",
   trigger: "click",
   type: "default",
   openList: false,
+  hideOnClick: true,
 });
 
 const slots = defineSlots<Slots>();
@@ -77,11 +88,11 @@ defineExpose({
     :class="[classes.root]"
     @click="openDropdown"
   >
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
 
-    <template #dropdown v-if="slots.dropdown">
+    <template v-if="slots.dropdown" #dropdown>
       <slot name="dropdown" />
     </template>
   </ElDropdown>

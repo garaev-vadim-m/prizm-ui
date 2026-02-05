@@ -5,7 +5,7 @@
  */
 
 import { ElButton } from "element-plus";
-import { computed, useCssModule, useTemplateRef } from "vue";
+import { computed, useTemplateRef } from "vue";
 import "element-plus/es/components/button/style/css";
 
 type ElementProps = InstanceType<typeof ElButton>["$props"];
@@ -18,9 +18,15 @@ type PickedProps = Pick<
   | "link"
   | "plain"
   | "dark"
-  | "plain"
   | "onClick"
   | "nativeType"
+  | "loading"
+  | "loadingIcon"
+  | "circle"
+  | "round"
+  | "color"
+  | "autofocus"
+  | "tag"
 >;
 export type ButtonProps = {
   type?: PickedProps["type"];
@@ -31,6 +37,13 @@ export type ButtonProps = {
   plain?: PickedProps["plain"];
   dark?: PickedProps["dark"];
   nativeType?: PickedProps["nativeType"];
+  loading?: PickedProps["loading"];
+  loadingIcon?: PickedProps["loadingIcon"];
+  circle?: PickedProps["circle"];
+  round?: PickedProps["round"];
+  color?: PickedProps["color"];
+  autofocus?: PickedProps["autofocus"];
+  tag?: PickedProps["tag"];
 
   onClick?: PickedProps["onClick"];
 };
@@ -42,7 +55,6 @@ type Slots = {
 };
 
 const slots = defineSlots<Slots>();
-const style = useCssModule("classes");
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: "default",
@@ -51,7 +63,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   nativeType: "button",
 });
 
-const handleOutline = computed(() => (props.plain ? style.outline : ""));
+const handleOutline = computed(() => (props.plain ? classes.outline : ""));
 const baseButtonRef = useTemplateRef("baseButtonRef");
 
 defineExpose({
@@ -64,16 +76,16 @@ defineExpose({
     v-bind="props"
     :class="[classes.root, classes[type], handleOutline]"
   >
-    <template #icon v-if="slots.icon">
+    <template v-if="slots.icon" #icon>
       <slot name="icon" />
     </template>
 
-    <template #default v-if="slots.default">
-      <slot />
+    <template v-if="slots.loading" #loading>
+      <slot name="loading" />
     </template>
 
-    <template #loading v-if="slots.loading">
-      <slot name="loading" />
+    <template v-if="slots.default" #default>
+      <slot />
     </template>
   </ElButton>
 </template>
@@ -109,6 +121,7 @@ defineExpose({
   --el-button-disabled-bg-color: rgb(73, 135, 20, 45%);
   --el-button-disabled-border-color: rgb(73, 135, 20, 45%);
 }
+
 .warning {
   --el-button-hover-bg-color: var(--color-warning-hover);
   --el-button-hover-border-color: var(--color-warning-hover);

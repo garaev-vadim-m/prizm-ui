@@ -22,6 +22,10 @@ type PickedProps = Pick<
   | "labelWidth"
   | "inline"
   | "rules"
+  | "size"
+  | "scrollToError"
+  | "hideRequiredAsterisk"
+  | "showMessage"
 >;
 
 type Props = {
@@ -34,6 +38,10 @@ type Props = {
   labelWidth?: PickedProps["labelWidth"];
   inline?: PickedProps["inline"];
   rules?: PickedProps["rules"];
+  size?: PickedProps["size"];
+  scrollToError?: PickedProps["scrollToError"];
+  hideRequiredAsterisk?: PickedProps["hideRequiredAsterisk"];
+  showMessage?: PickedProps["showMessage"];
   onValidate?: PickedProps["onValidate"];
 };
 
@@ -45,6 +53,11 @@ const props = withDefaults(defineProps<Props>(), {
   labelPosition: "top",
   requireAsteriskPosition: "right",
   labelWidth: "auto",
+  size: "large",
+  scrollToError: false,
+  hideRequiredAsterisk: false,
+  showMessage: true,
+  validateOnRuleChange: true,
 });
 const slots = defineSlots<Slots>();
 
@@ -56,7 +69,7 @@ defineExpose({
 </script>
 <template>
   <ElForm v-bind="props" ref="baseFormRef" :class="[classes.root]">
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
   </ElForm>

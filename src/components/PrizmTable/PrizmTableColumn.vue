@@ -23,6 +23,16 @@ type PickedProps = Pick<
   | "headerAlign"
   | "type"
   | "filterMethod"
+  | "filters"
+  | "filteredValue"
+  | "filterPlacement"
+  | "filterMultiple"
+  | "index"
+  | "formatter"
+  | "selectable"
+  | "reserveSelection"
+  | "sortOrders"
+  | "sortBy"
 >;
 
 type Props = {
@@ -37,6 +47,16 @@ type Props = {
   columnKey?: PickedProps["columnKey"];
   headerAlign?: PickedProps["headerAlign"];
   type?: PickedProps["type"];
+  filters?: PickedProps["filters"];
+  filteredValue?: PickedProps["filteredValue"];
+  filterPlacement?: PickedProps["filterPlacement"];
+  filterMultiple?: PickedProps["filterMultiple"];
+  index?: PickedProps["index"];
+  onFormatter?: PickedProps["formatter"];
+  onSelectable?: PickedProps["selectable"];
+  reserveSelection?: PickedProps["reserveSelection"];
+  sortOrders?: PickedProps["sortOrders"];
+  sortBy?: PickedProps["sortBy"];
 
   onFilterMethod?: PickedProps["filterMethod"];
 };
@@ -55,14 +75,14 @@ const slots = defineSlots<Slots>();
 
 <template>
   <ElTableColumn v-bind="props" :class="[classes.root]">
-    <!-- default-слот -->
-    <template #default="slotProps" v-if="slots.default">
-      <slot name="default" v-bind="slotProps" />
+    <!-- header-слот -->
+    <template v-if="slots.header" #header="slotProps">
+      <slot name="header" v-bind="slotProps" />
     </template>
 
-    <!-- header-слот -->
-    <template #header="slotProps" v-if="slots.header">
-      <slot name="header" v-bind="slotProps" />
+    <!-- default-слот -->
+    <template v-if="slots.default" #default="slotProps">
+      <slot name="default" v-bind="slotProps" />
     </template>
   </ElTableColumn>
 </template>

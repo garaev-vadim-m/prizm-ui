@@ -19,13 +19,18 @@ type Slots = {
 
 type Props = {
   accordion?: CollapseProps["accordion"];
-
+  
+  // Добавляем остальные пропсы из CollapseProps
+  modelValue?: CollapseProps["modelValue"];
+  
   onChange?: (value: CollapseModelValue) => any;
 };
-const modelValue = defineModel<CollapseActiveName[] | number | string>();
+
+const modelValue = defineModel<CollapseModelValue>();
 const baseCollapseRef = useTemplateRef("baseCollapseRef");
 const slots = defineSlots<Slots>();
 const props = defineProps<Props>();
+
 defineExpose({
   baseCollapseRef,
 });

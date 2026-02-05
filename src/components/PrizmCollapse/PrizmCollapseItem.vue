@@ -39,16 +39,16 @@ defineExpose({
     ref="baseCollapseItemRef"
     :class="[classes.root]"
   >
-    <template #default v-if="slots.default">
-      <slot />
-    </template>
-
-    <template #title v-if="slots.title">
+    <template v-if="slots.title" #title>
       <slot name="title" />
     </template>
 
-    <template #icon v-if="slots.icon">
+    <template v-if="slots.icon" #icon>
       <slot name="icon" />
+    </template>
+
+    <template v-if="slots.default" #default>
+      <slot />
     </template>
   </ElCollapseItem>
 </template>

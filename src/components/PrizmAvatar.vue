@@ -3,19 +3,20 @@ import { IconUser } from "@/shared/icon";
 import { ElAvatar } from "element-plus";
 import "element-plus/es/components/avatar/style/css";
 
-type ElIconProps = InstanceType<typeof ElAvatar>["$props"];
+type ElAvatarProps = InstanceType<typeof ElAvatar>["$props"];
 type PickedProps = Pick<
-  ElIconProps,
-  "fit" | "icon" | "onError" | "size" | "shape" | "src"
+  ElAvatarProps,
+  "fit" | "icon" | "onError" | "size" | "shape" | "src" | "alt"
 >;
 
 type Props = {
   size?: PickedProps["size"];
-  fit?: "fill" | "contain" | "cover" | "none" | "scale-down";
+  fit?: PickedProps["fit"];
   icon?: PickedProps["icon"];
   onError?: PickedProps["onError"];
   shape?: PickedProps["shape"];
   src?: PickedProps["src"];
+  alt?: PickedProps["alt"];
 };
 
 type Slots = {
@@ -31,7 +32,7 @@ const slots = defineSlots<Slots>();
 </script>
 <template>
   <ElAvatar v-bind="props" :class="[classes.root]">
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
   </ElAvatar>

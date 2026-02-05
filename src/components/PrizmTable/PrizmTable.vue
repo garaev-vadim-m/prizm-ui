@@ -34,6 +34,8 @@ type PickedProps = Pick<
   | "emptyText"
   | "showSummary"
   | "showOverflowTooltip"
+  | "highlightCurrentRow"
+  | "defaultSort"
 >;
 
 type Slots = {
@@ -61,6 +63,8 @@ type Props = {
   showSummary?: PickedProps["showSummary"];
   rowClassName?: PickedProps["rowClassName"];
   showOverflowTooltip?: PickedProps["showOverflowTooltip"];
+  highlightCurrentRow?: PickedProps["highlightCurrentRow"];
+  defaultSort?: PickedProps["defaultSort"];
 
   onLoad?: PickedProps["load"];
   onCellClick?: PickedProps["onCell-click"];
@@ -91,15 +95,15 @@ defineExpose({
     :class="[classes.root]"
     :header-cell-class-name="classes.root_header"
   >
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
 
-    <template #append v-if="slots.append">
+    <template v-if="slots.append" #append>
       <slot name="append" />
     </template>
 
-    <template #empty v-if="slots.empty">
+    <template v-if="slots.empty" #empty>
       <slot name="empty" />
     </template>
   </ElTable>
@@ -108,7 +112,6 @@ defineExpose({
 .root {
   --el-table-text-color: var(--el-text-color-regular);
   --el-table-header-text-color: var(--el-text-color-secondary);
-
   --el-table-current-row-bg-color: var(--el-color-primary-light-9);
   --el-table-header-bg-color: var(--color-light-gray);
   --el-table-fixed-box-shadow: 2px 0 4px 0 rgba(191, 198, 215, 0.5);
@@ -116,6 +119,35 @@ defineExpose({
   color: var(--color-dark-gray);
   font-weight: 400;
   font-size: 14px;
+
+  // Стили для иконок сортировки
+  :global {
+    .sort-caret.ascending {
+      border-bottom-color: var(--color-gray);
+    }
+    
+    .sort-caret.descending {
+      border-top-color: var(--color-gray);
+    }
+    
+    .ascending .sort-caret.ascending {
+      border-bottom-color: var(--color-dark);
+    }
+    
+    .descending .sort-caret.descending {
+      border-top-color: var(--color-dark);
+    }
+    
+    .el-table .sort-column {
+      background-color: transparent;
+    }
+    
+    .el-table .sort-column .cell {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 .root :global(.el-table-fixed-column--left) {

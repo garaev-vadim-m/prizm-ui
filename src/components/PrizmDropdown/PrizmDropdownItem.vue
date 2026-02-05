@@ -8,11 +8,24 @@ import "element-plus/es/components/dropdown-item/style/css";
 
 type ElDropdownItemProps = InstanceType<typeof ElDropdownItem>["$props"];
 
-type PickedProps = Pick<ElDropdownItemProps, "disabled" | "icon" | "onClick">;
+type PickedProps = Pick<
+  ElDropdownItemProps,
+  | "disabled"
+  | "icon"
+  | "onClick"
+  | "divided"
+  | "command"
+  | "class"
+  | "style"
+>;
 
 type Props = {
   disabled?: PickedProps["disabled"];
   icon?: PickedProps["icon"];
+  divided?: PickedProps["divided"];
+  command?: PickedProps["command"];
+  class?: PickedProps["class"];
+  style?: PickedProps["style"];
   onClick?: PickedProps["onClick"];
 };
 
@@ -26,7 +39,7 @@ const slots = defineSlots<Slots>();
 </script>
 <template>
   <ElDropdownItem v-bind="props" :class="[classes.root]">
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
   </ElDropdownItem>

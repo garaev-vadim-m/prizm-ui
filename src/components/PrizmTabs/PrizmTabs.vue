@@ -6,7 +6,7 @@
 
 import { ElTabs } from "element-plus";
 import "element-plus/es/components/tabs/style/css";
-import { useTemplateRef, type PropType } from "vue";
+import { useTemplateRef } from "vue";
 
 type ElTabsProps = InstanceType<typeof ElTabs>["$props"];
 type PickedProps = Pick<
@@ -21,12 +21,17 @@ type PickedProps = Pick<
   | "beforeLeave"
   | "editable"
   | "closable"
+  | "tabPosition"
+  | "stretch"
 >;
 
 type TabsProps = {
   type?: PickedProps["type"];
   addable?: PickedProps["addable"];
   editable?: PickedProps["editable"];
+  closable?: PickedProps["closable"];
+  tabPosition?: PickedProps["tabPosition"];
+  stretch?: PickedProps["stretch"];
 
   onEdit?: PickedProps["onEdit"];
   onTabAdd?: PickedProps["onTabAdd"];
@@ -45,14 +50,14 @@ const baseTabsRef = useTemplateRef("baseTabsRef");
 
 const props = withDefaults(defineProps<TabsProps>(), {
   type: "",
+  tabPosition: "top",
+  stretch: false,
 });
 
 const slots = defineSlots<Slots>();
 
-const modelValue = defineModel({
-  type: String as PropType<string | number>,
+const modelValue = defineModel<string | number>({
   required: true,
-  default: "",
 });
 
 defineExpose({
@@ -66,11 +71,11 @@ defineExpose({
     v-model="modelValue"
     :class="[classes.root]"
   >
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
 
-    <template #add-icon v-if="slots.addIcon">
+    <template v-if="slots.addIcon" #addIcon>
       <slot name="addIcon" />
     </template>
   </ElTabs>

@@ -25,6 +25,11 @@ type PickedProps = Pick<
   | "label"
   | "checked"
   | "onChange"
+  | "trueValue"
+  | "indeterminate"
+  | "border"
+  | "tabindex"
+  | "id"
 >;
 
 type Props = {
@@ -36,6 +41,11 @@ type Props = {
   value?: PickedProps["value"];
   label?: PickedProps["label"];
   checked?: PickedProps["checked"];
+  trueValue?: PickedProps["trueValue"];
+  indeterminate?: PickedProps["indeterminate"];
+  border?: PickedProps["border"];
+  tabindex?: PickedProps["tabindex"];
+  id?: PickedProps["id"];
 
   onChange?: PickedProps["onChange"];
 };
@@ -43,10 +53,11 @@ type Props = {
 const checkboxRef = useTemplateRef("checkboxRef");
 const slots = defineSlots<Slots>();
 const modelValue = defineModel<string | number | boolean>({
-  required: false,
+  required: true,
 });
 const props = withDefaults(defineProps<Props>(), {
   size: "large",
+  validateEvent: true,
 });
 
 defineExpose({
@@ -60,12 +71,13 @@ defineExpose({
     v-model="modelValue"
     :class="[classes.root]"
   >
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
   </ElCheckbox>
 </template>
 <style module="classes" lang="scss">
 .root {
+  // Стили компонента
 }
 </style>

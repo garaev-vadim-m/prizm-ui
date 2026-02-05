@@ -15,7 +15,7 @@ const slots = defineSlots<Slots>();
 </script>
 <template>
   <ElDropdownMenu :class="[classes.root]">
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
   </ElDropdownMenu>

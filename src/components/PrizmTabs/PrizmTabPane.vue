@@ -11,7 +11,11 @@ import { useTemplateRef } from "vue";
 type ElTabPaneProps = InstanceType<typeof ElTabPane>["$props"];
 type PickedProps = Pick<
   ElTabPaneProps,
-  "label" | "disabled" | "name" | "closable"
+  | "label"
+  | "disabled"
+  | "name"
+  | "closable"
+  | "lazy"
 >;
 
 type Props = {
@@ -19,6 +23,7 @@ type Props = {
   disabled?: PickedProps["disabled"];
   name?: PickedProps["name"];
   closable?: PickedProps["closable"];
+  lazy?: PickedProps["lazy"];
 };
 
 const props = defineProps<Props>();
@@ -37,13 +42,17 @@ defineExpose({
 });
 </script>
 <template>
-  <ElTabPane ref="baseTabPaneRef" v-bind="props">
-    <template #default v-if="slots.default">
-      <slot />
+  <ElTabPane
+    ref="baseTabPaneRef"
+    v-bind="props"
+    :class="[classes.root]"
+  >
+    <template v-if="slots.label" #label>
+      <slot name="label" />
     </template>
 
-    <template #label v-if="slots.label">
-      <slot name="label" />
+    <template v-if="slots.default" #default>
+      <slot />
     </template>
   </ElTabPane>
 </template>

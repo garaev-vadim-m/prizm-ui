@@ -8,13 +8,17 @@ import { ElOption } from "element-plus";
 import "element-plus/es/components/option/style/css";
 import { useTemplateRef } from "vue";
 
-type ElSelectProps = InstanceType<typeof ElOption>["$props"];
-type PickedProps = Pick<ElSelectProps, "value" | "label" | "disabled">;
+type ElOptionProps = InstanceType<typeof ElOption>["$props"];
+type PickedProps = Pick<
+  ElOptionProps,
+  "value" | "label" | "disabled" | "created"
+>;
 
 type Props = {
   value: PickedProps["value"];
   label?: PickedProps["label"];
   disabled?: PickedProps["disabled"];
+  created?: PickedProps["created"];
   width?: "auto" | string | number;
 };
 
@@ -35,9 +39,16 @@ function handleWidth(width: number | string | undefined): string {
     (typeof width === "string" && !width.length)
   )
     return "auto";
+    
   if (typeof width === "number") width = String(width);
-  if (width.indexOf("px")) return `${width}px`;
-  if (width.indexOf("%")) return `${width}%`;
+  
+  // Исправляем indexOf на includes
+  if (width.includes("px") || width.includes("%") || 
+      width.includes("rem") || width.includes("em") ||
+      width.includes("vw") || width.includes("vh")) {
+    return width;
+  }
+  
   return `${width}px`;
 }
 
@@ -46,11 +57,11 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const style = {
-  textAlign: "left",
-  overflow: "initial",
-  whiteSpace: "initial",
-  overflowWrap: "break-word",
-  height: "auto",
+  textAlign: "left" as const,
+  overflow: "initial" as const,
+  whiteSpace: "initial" as const,
+  overflowWrap: "break-word" as const,
+  height: "auto" as const,
   paddingTop: "10px",
   paddingBottom: "10px",
   width: handleWidth(props.width) || "auto",
@@ -69,7 +80,7 @@ defineExpose({
     :class="[classes.root]"
     :style="style"
   >
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
   </ElOption>
