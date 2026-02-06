@@ -62,8 +62,9 @@ type Slots = {
 const baseSelectRef = useTemplateRef("baseSelectRef");
 const slots = defineSlots<Slots>();
 
-const modelValue = defineModel<string>({
+const modelValue = defineModel({
   required: true,
+  default: ''
 });
 
 type Props = {
@@ -126,7 +127,7 @@ function isValidValue(
 // Функция для очистки невалидного значения
 function clearInvalidValue() {
   if (!isValidValue(modelValue.value as any)) {
-    modelValue.value = props.multiple ? [] : undefined;
+    modelValue.value = ''
   }
 }
 

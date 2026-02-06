@@ -44,7 +44,7 @@ const tabs = ref("id1");
 const radio = ref("id1");
 const select = ref("");
 const selects = ref([]);
-const prizmForm = useTemplateRef("prizmForm");
+// const prizmForm = useTemplateRef("prizmForm");
 
 const dialog = ref(false);
 
@@ -115,7 +115,7 @@ function onOpenDialog() {
 }
 </script>
 <template>
-  <div :class="classes.root">
+  <!-- <div :class="classes.root">
     <h3>Button</h3>
 
     <div :class="classes.group">
@@ -643,7 +643,7 @@ function onOpenDialog() {
     <div>
       <p>Пока</p>
     </div>
-  </PrizmDialog>
+  </PrizmDialog> -->
 </template>
 <style module="classes" lang="scss">
 .root {
