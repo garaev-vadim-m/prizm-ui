@@ -6,6 +6,7 @@
 
 import { ElIcon } from "element-plus";
 import "element-plus/es/components/icon/style/css";
+import { useCssModule } from "vue"; 
 
 type ElIconProps = InstanceType<typeof ElIcon>["$props"];
 type PickedProps = Pick<ElIconProps, "size" | "color" | "class">;
@@ -22,6 +23,7 @@ type Slots = {
 
 const props = withDefaults(defineProps<Props>(), { size: 16 });
 const slots = defineSlots<Slots>();
+const classes = useCssModule("classes"); 
 </script>
 <template>
   <ElIcon v-bind="props" :class="[classes.root]">

@@ -5,6 +5,7 @@
  */
 import { ElDropdownItem } from "element-plus";
 import "element-plus/es/components/dropdown-item/style/css";
+import { useCssModule } from "vue";
 
 type ElDropdownItemProps = InstanceType<typeof ElDropdownItem>["$props"];
 
@@ -34,6 +35,8 @@ const props = defineProps<Props>();
 type Slots = {
   default?: unknown;
 };
+
+const classes = useCssModule("classes"); 
 
 const slots = defineSlots<Slots>();
 </script>

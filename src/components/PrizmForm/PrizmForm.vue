@@ -4,7 +4,7 @@
  * @components ElForm
  */
 import { ElForm } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import type PrizmFormItem from "./PrizmFormItem.vue";
 import "element-plus/es/components/form/style/css";
 
@@ -62,6 +62,8 @@ const props = withDefaults(defineProps<Props>(), {
 const slots = defineSlots<Slots>();
 
 const baseFormRef = useTemplateRef("baseFormRef");
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseFormRef,

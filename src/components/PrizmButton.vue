@@ -5,7 +5,7 @@
  */
 
 import { ElButton } from "element-plus";
-import { computed, useTemplateRef } from "vue";
+import { computed, useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/button/style/css";
 
 type ElementProps = InstanceType<typeof ElButton>["$props"];
@@ -63,8 +63,10 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   nativeType: "button",
 });
 
+const classes = useCssModule("classes"); 
 const handleOutline = computed(() => (props.plain ? classes.outline : ""));
 const baseButtonRef = useTemplateRef("baseButtonRef");
+
 
 defineExpose({
   baseButtonRef,

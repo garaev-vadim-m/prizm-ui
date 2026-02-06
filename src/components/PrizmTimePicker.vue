@@ -5,7 +5,7 @@
  */
 
 import { ElTimePicker } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useTemplateRef, useCssModule } from "vue"; // Добавлено useCssModule
 import "element-plus/es/components/time-picker/style/css";
 import { IconClock } from "@/shared/icon";
 
@@ -14,6 +14,7 @@ const modelValue = defineModel<string | number>({
 });
 
 const baseTimePickerRef = useTemplateRef("baseTimePickerRef");
+const classes = useCssModule("classes");
 
 type ElDatePickerProps = InstanceType<typeof ElTimePicker>["$props"];
 
@@ -74,7 +75,7 @@ const props = withDefaults(defineProps<Props>(), {
   format: "hh:mm:ss",
   timeFormat: "hh:mm:ss",
   valueFormat: "hh-mm-ss",
-  prefixIcon: IconClock,
+  prefixIcon: IconClock, // Оставляем как было
 });
 
 type Slots = {

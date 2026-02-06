@@ -6,7 +6,7 @@
 
 import { ElOption } from "element-plus";
 import "element-plus/es/components/option/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type ElOptionProps = InstanceType<typeof ElOption>["$props"];
 type PickedProps = Pick<
@@ -68,6 +68,8 @@ const style = {
 };
 
 const slots = defineSlots<Slots>();
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseOptionRef,

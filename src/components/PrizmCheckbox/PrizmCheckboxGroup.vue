@@ -5,7 +5,7 @@
  */
 
 import { ElCheckboxGroup } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/checkbox-group/style/css";
 
 type Slots = {
@@ -38,6 +38,8 @@ const modelValue = defineModel<string[] | number[]>({
 const props = withDefaults(defineProps<Props>(), {
   size: "large",
 });
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   checkboxGroupRef,

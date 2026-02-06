@@ -6,7 +6,7 @@
 
 import { ElTabs } from "element-plus";
 import "element-plus/es/components/tabs/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type ElTabsProps = InstanceType<typeof ElTabs>["$props"];
 type PickedProps = Pick<
@@ -59,6 +59,8 @@ const slots = defineSlots<Slots>();
 const modelValue = defineModel<string | number>({
   required: true,
 });
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseTabsRef,

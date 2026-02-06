@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ElTooltip } from "element-plus";
 import "element-plus/es/components/tooltip/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type ElTooltipProps = InstanceType<typeof ElTooltip>["$props"];
 
@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
 const slots = defineSlots<Slots>();
 
 const bseTooltipRef = useTemplateRef("bseTooltipRef");
-
+const classes = useCssModule("classes"); 
 defineExpose({
   bseTooltipRef,
 });

@@ -6,10 +6,13 @@
 
 import { ElDropdownMenu } from "element-plus";
 import "element-plus/es/components/dropdown-menu/style/css";
+import { useCssModule } from "vue";
 
 type Slots = {
   default?: unknown;
 };
+
+const classes = useCssModule("classes"); 
 
 const slots = defineSlots<Slots>();
 </script>

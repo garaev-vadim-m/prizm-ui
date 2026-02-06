@@ -6,7 +6,7 @@
 
 import { ElRadioGroup } from "element-plus";
 import "element-plus/es/components/radio-group/style/css";
-import { type PropType } from "vue";
+import { useCssModule, type PropType } from "vue";
 
 type ElRadioProps = InstanceType<typeof ElRadioGroup>["$props"];
 type PickedProps = Pick<
@@ -33,6 +33,8 @@ const modelValue = defineModel({
   required: true,
   default: "",
 });
+
+const classes = useCssModule("classes"); 
 
 const slots = defineSlots<Slots>();
 </script>

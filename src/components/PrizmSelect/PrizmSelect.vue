@@ -6,7 +6,7 @@
 
 import { ElSelect } from "element-plus";
 import "element-plus/es/components/select/style/css";
-import { useTemplateRef, type PropType, watch, ref, onMounted } from "vue";
+import { useTemplateRef, type PropType, watch, ref, onMounted, useCssModule } from "vue";
 
 type ElSelectProps = InstanceType<typeof ElSelect>["$props"];
 
@@ -140,6 +140,8 @@ onMounted(() => {
     }, 500);
   }
 });
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseSelectRef,

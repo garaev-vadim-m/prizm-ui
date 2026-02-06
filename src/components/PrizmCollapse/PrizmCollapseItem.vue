@@ -5,7 +5,7 @@
  */
 
 import { ElCollapseItem, type CollapseItemProps } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/collapse-item/style/css";
 import { IconDubleArrow } from "@/shared/icon";
 
@@ -28,6 +28,8 @@ const props = withDefaults(defineProps<Props>(), {
   title: "Default title",
   icon: IconDubleArrow,
 });
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseCollapseItemRef,

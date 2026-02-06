@@ -6,7 +6,7 @@
 
 import { ElRadioButton } from "element-plus";
 import "element-plus/es/components/radio-button/style/css";
-import { type PropType } from "vue";
+import { useCssModule, type PropType } from "vue";
 
 type ElRadioProps = InstanceType<typeof ElRadioButton>["$props"];
 type PickedProps = Pick<ElRadioProps, "disabled" | "label" | "name" | "value">;
@@ -30,6 +30,7 @@ const modelValue = defineModel({
   default: "",
 });
 
+const classes = useCssModule("classes"); 
 const slots = defineSlots<Slots>();
 </script>
 <template>

@@ -6,6 +6,7 @@
 
 import { ElTableColumn } from "element-plus";
 import "element-plus/es/components/table-column/style/css";
+import { useCssModule } from "vue";
 
 // Типизация пропсов ElTableColumn
 type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"];
@@ -70,6 +71,9 @@ type Slots = {
   default?: (scope: { row: any; column: any; $index: number }) => any;
   header?: (scope: { column: any; $index: number }) => any;
 };
+
+const classes = useCssModule("classes"); 
+
 const slots = defineSlots<Slots>();
 </script>
 

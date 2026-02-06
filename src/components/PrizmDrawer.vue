@@ -5,7 +5,7 @@
  */
 
 import { ElDrawer, type DrawerProps } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useTemplateRef, useCssModule } from "vue";
 import "element-plus/es/components/drawer/style/css";
 import { PrizmButton } from "../components";
 
@@ -15,6 +15,7 @@ const modelValue = defineModel<boolean>({
 });
 
 const baseDrawerRef = useTemplateRef("baseDrawerRef");
+const classes = useCssModule("classes"); // Добавлено
 
 type Slots = {
   default?: unknown;
@@ -55,6 +56,7 @@ type Props = {
   onConfirmButton?: () => unknown;
   onCancelButton?: () => unknown;
 };
+
 const props = withDefaults(defineProps<Props>(), {
   title: "Default title",
   showClose: true,
@@ -69,6 +71,7 @@ const props = withDefaults(defineProps<Props>(), {
   onConfirmButton: () => console.log("Click onConfirmButton"),
   onCancelButton: () => console.log("Click onCancelButton"),
 });
+
 const slots = defineSlots<Slots>();
 
 defineExpose({
@@ -81,7 +84,7 @@ defineExpose({
     ref="baseDrawerRef"
     v-model="modelValue"
     :class="[classes.root]"
-    :headerClass="classes.headerTitle"
+    :header-class="classes.headerTitle"
   >
     <template #default v-if="slots.default">
       <slot />
@@ -111,11 +114,15 @@ defineExpose({
 </template>
 <style module="classes" lang="scss">
 .root {
+  :global(.el-drawer__footer) {
+    padding: 0;
+  }
+
+  :global(.el-drawer__body) {
+    padding: 16px;
+  }
 }
 
-.root :global(.el-drawer__footer) {
-  padding: 0;
-}
 .headerTitle {
   font-size: 14px;
   font-weight: 600;

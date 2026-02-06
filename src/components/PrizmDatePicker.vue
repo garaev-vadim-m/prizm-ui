@@ -5,11 +5,11 @@
  */
 
 import { ElDatePicker } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/date-picker/style/css";
 import { IconCalendar } from "@/shared/icon";
 
-const modelValue = defineModel<string | number>({
+const modelValue = defineModel<string | number | [string, string]>({
   required: true,
 });
 
@@ -37,6 +37,11 @@ type PickedProps = Pick<
   | "endPlaceholder"
   | "size"
   | "shortcuts"
+  | "editable"
+  | "readonly"
+  | "disabledDate"
+  | "defaultValue"
+  | "defaultTime"
 >;
 
 type Props = {
@@ -58,6 +63,11 @@ type Props = {
   startPlaceholder?: PickedProps["startPlaceholder"];
   endPlaceholder?: PickedProps["endPlaceholder"];
   rangeSeparator?: PickedProps["rangeSeparator"];
+  editable?: PickedProps["editable"];
+  readonly?: PickedProps["readonly"];
+  disabledDate?: PickedProps["disabledDate"];
+  defaultValue?: PickedProps["defaultValue"];
+  defaultTime?: PickedProps["defaultTime"];
 
   onVisibility?: (visibility: boolean) => void;
   onCalendarChange?: (val: [Date, null | Date]) => void;
@@ -76,6 +86,8 @@ const props = withDefaults(defineProps<Props>(), {
   valueFormat: "YYYY-MM-DD",
   rangeSeparator: "—",
   prefixIcon: IconCalendar,
+  editable: false,
+  readonly: false,
 });
 
 type Slots = {
@@ -88,7 +100,7 @@ type Slots = {
 };
 
 const slots = defineSlots<Slots>();
-
+const classes = useCssModule("classes"); 
 defineExpose({
   baseDatePickerRef,
 });
@@ -98,29 +110,29 @@ defineExpose({
     v-bind="props"
     ref="baseDatePickerRef"
     v-model="modelValue"
-    :class="classes.root"
+    :class="[classes.root]"
   >
-    <template #default v-if="slots.default">
+    <template v-if="slots.default" #default>
       <slot />
     </template>
 
-    <template #rangeSeparator v-if="slots.rangeSeparator">
+    <template v-if="slots.rangeSeparator" #rangeSeparator>
       <slot name="rangeSeparator" />
     </template>
 
-    <template #prevMonth v-if="slots.prevMonth">
+    <template v-if="slots.prevMonth" #prevMonth>
       <slot name="prevMonth" />
     </template>
 
-    <template #nextMonth v-if="slots.nextMonth">
+    <template v-if="slots.nextMonth" #nextMonth>
       <slot name="nextMonth" />
     </template>
 
-    <template #prevYear v-if="slots.prevYear">
+    <template v-if="slots.prevYear" #prevYear>
       <slot name="prevYear" />
     </template>
 
-    <template #nextYear v-if="slots.nextYear">
+    <template v-if="slots.nextYear" #nextYear>
       <slot name="nextYear" />
     </template>
   </ElDatePicker>

@@ -6,7 +6,7 @@
 
 import { ElTable } from "element-plus";
 import "element-plus/es/components/table/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type ElTableProps = InstanceType<typeof ElTable>["$props"];
 
@@ -83,6 +83,8 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const slots = defineSlots<Slots>();
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseTableRef,

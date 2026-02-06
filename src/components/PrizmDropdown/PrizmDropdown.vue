@@ -5,7 +5,7 @@
  */
 import { type DropdownInstance, ElDropdown } from "element-plus";
 import "element-plus/es/components/dropdown/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type ElDropdownProps = InstanceType<typeof ElDropdown>["$props"];
 
@@ -76,6 +76,8 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const slots = defineSlots<Slots>();
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseDropdownRef,

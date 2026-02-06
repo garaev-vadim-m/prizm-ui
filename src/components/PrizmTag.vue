@@ -6,7 +6,7 @@
 
 import { ElTag } from "element-plus";
 import "element-plus/es/components/tag/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type Slots = {
   default: unknown;
@@ -50,6 +50,7 @@ const props = withDefaults(defineProps<Props>(), {
 const slots = defineSlots<Slots>();
 
 const baseTagRef = useTemplateRef("baseTagRef");
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseTagRef,

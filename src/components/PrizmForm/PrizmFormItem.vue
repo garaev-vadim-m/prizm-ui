@@ -4,7 +4,7 @@
  * @components ElFormItem
  */
 import { ElFormItem, type FormItemProps } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/form-item/style/css";
 
 type Slots = {
@@ -54,6 +54,8 @@ const baseFormItemRef = useTemplateRef("baseFormItemRef");
 const style = {
   width: handleWidth(props.width),
 };
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseFormItemRef,

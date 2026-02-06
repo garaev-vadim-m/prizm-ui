@@ -6,7 +6,7 @@
 
 import { ElInput, type InputEmits } from "element-plus";
 import "element-plus/es/components/input/style/css";
-import { useTemplateRef } from "vue";
+import { useTemplateRef, useCssModule } from "vue"; // Добавлено
 
 type Slots = {
   prefix?: unknown;
@@ -73,6 +73,7 @@ const props = withDefaults(defineProps<Props>(), { size: "large" });
 const slots = defineSlots<Slots>();
 
 const baseInputRef = useTemplateRef("baseInputRef");
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseInputRef,

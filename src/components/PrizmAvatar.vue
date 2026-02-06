@@ -2,6 +2,7 @@
 import { IconUser } from "@/shared/icon";
 import { ElAvatar } from "element-plus";
 import "element-plus/es/components/avatar/style/css";
+import { useCssModule } from "vue";
 
 type ElAvatarProps = InstanceType<typeof ElAvatar>["$props"];
 type PickedProps = Pick<
@@ -27,6 +28,8 @@ const props = withDefaults(defineProps<Props>(), {
   icon: IconUser,
   size: "large",
 });
+
+const classes = useCssModule("classes"); 
 
 const slots = defineSlots<Slots>();
 </script>

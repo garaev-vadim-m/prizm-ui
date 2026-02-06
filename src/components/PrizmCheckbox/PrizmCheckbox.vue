@@ -5,7 +5,7 @@
  */
 
 import { ElCheckbox } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/checkbox/style/css";
 
 type Slots = {
@@ -59,6 +59,8 @@ const props = withDefaults(defineProps<Props>(), {
   size: "large",
   validateEvent: true,
 });
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   checkboxRef,

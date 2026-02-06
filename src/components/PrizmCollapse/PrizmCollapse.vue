@@ -10,7 +10,7 @@ import {
   type CollapseActiveName,
   type CollapseModelValue,
 } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 import "element-plus/es/components/collapse/style/css";
 
 type Slots = {
@@ -30,6 +30,8 @@ const modelValue = defineModel<CollapseModelValue>();
 const baseCollapseRef = useTemplateRef("baseCollapseRef");
 const slots = defineSlots<Slots>();
 const props = defineProps<Props>();
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseCollapseRef,

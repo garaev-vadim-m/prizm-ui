@@ -5,7 +5,7 @@
  */
 
 import { ElDatePicker } from "element-plus";
-import { useTemplateRef } from "vue";
+import { useTemplateRef, computed, useCssModule } from "vue";
 import "element-plus/es/components/date-picker/style/css";
 import { IconCalendar } from "@/shared/icon";
 
@@ -33,7 +33,7 @@ type PickedProps = Pick<
   | "name"
   | "placeholder"
   | "size"
-  | "timeFormat"
+  | "timeFormat" // Добавлено
 >;
 
 type Props = {
@@ -51,6 +51,7 @@ type Props = {
   name?: PickedProps["name"];
   placeholder?: PickedProps["placeholder"];
   size?: PickedProps["size"];
+  timeFormat?: PickedProps["timeFormat"]; // Добавлено
 
   onVisibility?: (visibility: boolean) => void;
   onCalendarChange?: (val: [Date, null | Date]) => void;
@@ -65,12 +66,14 @@ type Props = {
 const props = withDefaults(defineProps<Props>(), {
   clearable: false,
   size: "large",
-  format: "DD.MM.YYYY:hh:mm:ss",
-  timeFormat: "hh:mm:ss",
-  valueFormat: "YYYY-MM-DD:hh-mm-ss",
+  format: "DD.MM.YYYY HH:mm:ss", // Исправлен формат
+  timeFormat: "HH:mm:ss", // Исправлен формат
+  valueFormat: "YYYY-MM-DD HH:mm:ss", // Исправлен формат
   type: "datetime",
   prefixIcon: IconCalendar,
 });
+
+
 
 type Slots = {
   default?: unknown;
@@ -82,11 +85,12 @@ type Slots = {
 };
 
 const slots = defineSlots<Slots>();
-
+const classes = useCssModule("classes"); 
 defineExpose({
   baseDateTimePickerRef,
 });
 </script>
+
 <template>
   <ElDatePicker
     v-bind="props"
@@ -119,6 +123,7 @@ defineExpose({
     </template>
   </ElDatePicker>
 </template>
+
 <style module="classes" lang="scss">
 .root {
   --el-input-border-radius: var(--border-radius);

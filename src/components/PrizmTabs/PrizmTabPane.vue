@@ -6,7 +6,7 @@
 
 import { ElTabPane } from "element-plus";
 import "element-plus/es/components/tab-pane/style/css";
-import { useTemplateRef } from "vue";
+import { useCssModule, useTemplateRef } from "vue";
 
 type ElTabPaneProps = InstanceType<typeof ElTabPane>["$props"];
 type PickedProps = Pick<
@@ -36,6 +36,8 @@ type Slots = {
 const slots = defineSlots<Slots>();
 
 const baseTabPaneRef = useTemplateRef("baseTabPaneRef");
+
+const classes = useCssModule("classes"); 
 
 defineExpose({
   baseTabPaneRef,
