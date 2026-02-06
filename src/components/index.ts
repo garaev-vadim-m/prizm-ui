@@ -27,6 +27,7 @@ export { default as PrizmTableColumn } from "./PrizmTable/PrizmTableColumn.vue";
 export { default as PrizmAvatar } from "./PrizmAvatar.vue";
 export { default as PrizmTooltip } from "./PrizmTooltip.vue";
 export { default as PrizmDialog } from "./PrizmDialog.vue";
+export { default as PrizmSwitch } from "./PrizmSwitch.vue";
 
 export { PrizmMessageBox } from "./PrizmMessageBox/PrizmMessageBox";
 export { PrizmNotification } from "./PrizmNotification/PrizmNotification";

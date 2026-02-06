@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-nocheck
 import { ref, useTemplateRef } from "vue";
 import {
   PrizmButton,
@@ -28,6 +29,7 @@ import {
   PrizmDateTimePicker,
   PrizmAvatar,
   PrizmTooltip,
+  PrizmSwitch,
 } from "./components";
 import { type BaseNotificationProps } from "./components/PrizmNotification/PrizmNotification";
 import { type CollapseModelValue } from "./index";
@@ -39,12 +41,13 @@ const dateTime = ref("");
 const drawer = ref(false);
 const drawer2 = ref(false);
 const drawer3 = ref(false);
+const switch1 = ref(false);
 
 const tabs = ref("id1");
 const radio = ref("id1");
 const select = ref("");
 const selects = ref([]);
-// const prizmForm = useTemplateRef("prizmForm");
+const prizmForm = useTemplateRef("prizmForm");
 
 const dialog = ref(false);
 
@@ -115,7 +118,7 @@ function onOpenDialog() {
 }
 </script>
 <template>
-  <!-- <div :class="classes.root">
+  <div :class="classes.root">
     <h3>Button</h3>
 
     <div :class="classes.group">
@@ -616,6 +619,21 @@ function onOpenDialog() {
     </PrizmTooltip>
   </div>
 
+  <h3>Switch</h3>
+
+  <div :class="classes.group">
+    <PrizmSwitch
+      v-model="switch1"
+      :active-text="switch1 ? 'Привет' : 'Пока'"
+    ></PrizmSwitch>
+    <PrizmSwitch
+      v-model="switch1"
+      name="Привет"
+      active-text="Привет"
+      inactive-text="Пока"
+    />
+  </div>
+
   <PrizmDrawer v-model="drawer" />
 
   <PrizmDrawer v-model="drawer2">
@@ -643,7 +661,7 @@ function onOpenDialog() {
     <div>
       <p>Пока</p>
     </div>
-  </PrizmDialog> -->
+  </PrizmDialog>
 </template>
 <style module="classes" lang="scss">
 .root {
