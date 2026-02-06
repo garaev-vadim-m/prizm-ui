@@ -73,7 +73,7 @@ const props = withDefaults(defineProps<Props>(), { size: "large" });
 const slots = defineSlots<Slots>();
 
 const baseInputRef = useTemplateRef("baseInputRef");
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseInputRef,

@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
   icon: IconDubleArrow,
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseCollapseItemRef,

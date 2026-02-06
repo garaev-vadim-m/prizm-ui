@@ -60,7 +60,7 @@ const props = withDefaults(defineProps<Props>(), {
   validateEvent: true,
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   checkboxRef,

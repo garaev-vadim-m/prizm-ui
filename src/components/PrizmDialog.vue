@@ -31,7 +31,7 @@ const props = withDefaults(
     lockScroll?: DialogProps["lockScroll"];
     alignCenter?: DialogProps["alignCenter"];
 
-    verticalFooter?: boolean; 
+    verticalFooter?: boolean;
     defaultFooter?: boolean;
     confirmDisabled?: boolean;
     cancelDisabled?: boolean;
@@ -49,7 +49,7 @@ const props = withDefaults(
     onCancelButton?: () => unknown;
   }>(),
   {
-    verticalFooter: true, 
+    verticalFooter: true,
     alignCenter: true,
     lockScroll: true,
     defaultFooter: true,
@@ -64,10 +64,10 @@ const props = withDefaults(
 
 const baseDialogRef = useTemplateRef("baseDialogRef");
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 const handleStyleFooter = computed(() =>
-  props.verticalFooter ? classes.root_footerVertical : "", 
+  props.verticalFooter ? classes.root_footerVertical : "",
 );
 
 defineExpose({

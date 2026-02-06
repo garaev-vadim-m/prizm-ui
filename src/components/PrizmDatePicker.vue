@@ -100,7 +100,7 @@ type Slots = {
 };
 
 const slots = defineSlots<Slots>();
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 defineExpose({
   baseDatePickerRef,
 });

@@ -60,7 +60,7 @@ const modelValue = defineModel<string | number>({
   required: true,
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseTabsRef,

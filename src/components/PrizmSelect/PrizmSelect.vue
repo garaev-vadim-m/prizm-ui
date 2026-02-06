@@ -6,7 +6,14 @@
 
 import { ElSelect } from "element-plus";
 import "element-plus/es/components/select/style/css";
-import { useTemplateRef, type PropType, watch, ref, onMounted, useCssModule } from "vue";
+import {
+  useTemplateRef,
+  type PropType,
+  watch,
+  ref,
+  onMounted,
+  useCssModule,
+} from "vue";
 
 type ElSelectProps = InstanceType<typeof ElSelect>["$props"];
 
@@ -55,7 +62,7 @@ type Slots = {
 const baseSelectRef = useTemplateRef("baseSelectRef");
 const slots = defineSlots<Slots>();
 
-const modelValue = defineModel<string | number | boolean | string[] | number[]>({
+const modelValue = defineModel<string>({
   required: true,
 });
 
@@ -101,17 +108,19 @@ const props = withDefaults(defineProps<Props>(), {
 const options = ref<Array<{ value: string | number | boolean }>>([]);
 
 // Функция для проверки валидности значения
-function isValidValue(value: string | number | boolean | (string | number)[]): boolean {
-  if (value === undefined || value === null || value === '') return false;
-  
+function isValidValue(
+  value: string | number | boolean | (string | number)[],
+): boolean {
+  if (value === undefined || value === null || value === "") return false;
+
   if (Array.isArray(value)) {
     if (value.length === 0) return false;
-    return value.every(v => 
-      options.value.some(option => option.value === v)
+    return value.every((v) =>
+      options.value.some((option) => option.value === v),
     );
   }
-  
-  return options.value.some(option => option.value === value);
+
+  return options.value.some((option) => option.value === value);
 }
 
 // Функция для очистки невалидного значения
@@ -120,7 +129,6 @@ function clearInvalidValue() {
     modelValue.value = props.multiple ? [] : undefined;
   }
 }
-
 
 // Слушаем изменения modelValue
 watch(modelValue, (newVal, oldVal) => {
@@ -133,7 +141,7 @@ watch(modelValue, (newVal, oldVal) => {
 onMounted(() => {
   // TODO: Нужно получить options из slot.default или передавать как пропс
   // Пока что очищаем, если значение явно невалидно
-  if (modelValue.value && modelValue.value !== '') {
+  if (modelValue.value && modelValue.value !== "") {
     // Можно добавить таймаут, чтобы дать опциям загрузиться
     setTimeout(() => {
       clearInvalidValue();
@@ -141,7 +149,7 @@ onMounted(() => {
   }
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseSelectRef,

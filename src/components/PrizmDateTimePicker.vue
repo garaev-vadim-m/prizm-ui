@@ -73,8 +73,6 @@ const props = withDefaults(defineProps<Props>(), {
   prefixIcon: IconCalendar,
 });
 
-
-
 type Slots = {
   default?: unknown;
   rangeSeparator?: unknown;
@@ -85,7 +83,7 @@ type Slots = {
 };
 
 const slots = defineSlots<Slots>();
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 defineExpose({
   baseDateTimePickerRef,
 });

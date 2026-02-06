@@ -63,7 +63,7 @@ const slots = defineSlots<Slots>();
 
 const baseFormRef = useTemplateRef("baseFormRef");
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseFormRef,

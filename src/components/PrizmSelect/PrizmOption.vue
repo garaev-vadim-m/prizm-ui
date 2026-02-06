@@ -39,16 +39,21 @@ function handleWidth(width: number | string | undefined): string {
     (typeof width === "string" && !width.length)
   )
     return "auto";
-    
+
   if (typeof width === "number") width = String(width);
-  
+
   // Исправляем indexOf на includes
-  if (width.includes("px") || width.includes("%") || 
-      width.includes("rem") || width.includes("em") ||
-      width.includes("vw") || width.includes("vh")) {
+  if (
+    width.includes("px") ||
+    width.includes("%") ||
+    width.includes("rem") ||
+    width.includes("em") ||
+    width.includes("vw") ||
+    width.includes("vh")
+  ) {
     return width;
   }
-  
+
   return `${width}px`;
 }
 
@@ -69,7 +74,7 @@ const style = {
 
 const slots = defineSlots<Slots>();
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseOptionRef,

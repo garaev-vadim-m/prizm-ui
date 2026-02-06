@@ -84,7 +84,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const slots = defineSlots<Slots>();
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseTableRef,
@@ -127,23 +127,23 @@ defineExpose({
     .sort-caret.ascending {
       border-bottom-color: var(--color-gray);
     }
-    
+
     .sort-caret.descending {
       border-top-color: var(--color-gray);
     }
-    
+
     .ascending .sort-caret.ascending {
       border-bottom-color: var(--color-dark);
     }
-    
+
     .descending .sort-caret.descending {
       border-top-color: var(--color-dark);
     }
-    
+
     .el-table .sort-column {
       background-color: transparent;
     }
-    
+
     .el-table .sort-column .cell {
       display: flex;
       justify-content: space-between;

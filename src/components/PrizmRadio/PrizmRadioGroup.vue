@@ -34,7 +34,7 @@ const modelValue = defineModel({
   default: "",
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 const slots = defineSlots<Slots>();
 </script>

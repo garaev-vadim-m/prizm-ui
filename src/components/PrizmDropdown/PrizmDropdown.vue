@@ -77,7 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const slots = defineSlots<Slots>();
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseDropdownRef,

@@ -55,7 +55,7 @@ const style = {
   width: handleWidth(props.width),
 };
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseFormItemRef,

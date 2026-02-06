@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
 const slots = defineSlots<Slots>();
 
 const bseTooltipRef = useTemplateRef("bseTooltipRef");
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 defineExpose({
   bseTooltipRef,
 });

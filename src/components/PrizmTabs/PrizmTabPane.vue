@@ -11,11 +11,7 @@ import { useCssModule, useTemplateRef } from "vue";
 type ElTabPaneProps = InstanceType<typeof ElTabPane>["$props"];
 type PickedProps = Pick<
   ElTabPaneProps,
-  | "label"
-  | "disabled"
-  | "name"
-  | "closable"
-  | "lazy"
+  "label" | "disabled" | "name" | "closable" | "lazy"
 >;
 
 type Props = {
@@ -37,18 +33,14 @@ const slots = defineSlots<Slots>();
 
 const baseTabPaneRef = useTemplateRef("baseTabPaneRef");
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseTabPaneRef,
 });
 </script>
 <template>
-  <ElTabPane
-    ref="baseTabPaneRef"
-    v-bind="props"
-    :class="[classes.root]"
-  >
+  <ElTabPane ref="baseTabPaneRef" v-bind="props" :class="[classes.root]">
     <template v-if="slots.label" #label>
       <slot name="label" />
     </template>

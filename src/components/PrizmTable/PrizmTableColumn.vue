@@ -72,7 +72,7 @@ type Slots = {
   header?: (scope: { column: any; $index: number }) => any;
 };
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 const slots = defineSlots<Slots>();
 </script>

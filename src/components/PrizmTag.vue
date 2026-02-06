@@ -50,7 +50,7 @@ const props = withDefaults(defineProps<Props>(), {
 const slots = defineSlots<Slots>();
 
 const baseTagRef = useTemplateRef("baseTagRef");
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   baseTagRef,

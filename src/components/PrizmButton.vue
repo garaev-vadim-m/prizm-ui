@@ -63,10 +63,9 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   nativeType: "button",
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 const handleOutline = computed(() => (props.plain ? classes.outline : ""));
 const baseButtonRef = useTemplateRef("baseButtonRef");
-
 
 defineExpose({
   baseButtonRef,

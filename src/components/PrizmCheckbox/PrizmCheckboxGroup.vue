@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
   size: "large",
 });
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 defineExpose({
   checkboxGroupRef,

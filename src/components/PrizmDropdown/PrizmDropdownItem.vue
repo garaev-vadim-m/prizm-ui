@@ -11,13 +11,7 @@ type ElDropdownItemProps = InstanceType<typeof ElDropdownItem>["$props"];
 
 type PickedProps = Pick<
   ElDropdownItemProps,
-  | "disabled"
-  | "icon"
-  | "onClick"
-  | "divided"
-  | "command"
-  | "class"
-  | "style"
+  "disabled" | "icon" | "onClick" | "divided" | "command" | "class" | "style"
 >;
 
 type Props = {
@@ -36,7 +30,7 @@ type Slots = {
   default?: unknown;
 };
 
-const classes = useCssModule("classes"); 
+const classes = useCssModule("classes");
 
 const slots = defineSlots<Slots>();
 </script>
